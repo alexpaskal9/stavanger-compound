@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1110" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="War room" />
+  <title>Compound War Room — Stavanger 2027</title>
+  <style>
+    :root {
+      --ink: #0b1110;
+      --ink-2: #141c1a;
+      --panel: #18221f;
+      --line: #2a3833;
+      --paper: #efe6d4;
+      --mute: #9aa89f;
+      --copper: #c45c26;
+      --copper-2: #e08a4f;
+      --moss: #6f9a74;
+      --gold: #e3b23c;
+      --blood: #c0392b;
+      --ok: #7dba7a;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--ink); color: var(--paper); }
+    body {
+      font: 15px/1.45 "Avenir Next", "Segoe UI", sans-serif;
+      min-height: 100vh;
+    }
+    button, input, select { font: inherit; color: inherit; }
+    a { color: var(--copper-2); }
+    .wrap { width: min(1320px, calc(100% - 28px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(11,17,16,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .top {
+      display: flex; justify-content: space-between; gap: 16px; align-items: end; flex-wrap: wrap;
+      padding: 16px 0 14px;
+    }
+    .kicker { letter-spacing: .22em; text-transform: uppercase; color: var(--copper-2); font-size: 11px; }
+    h1 { margin: 4px 0 0; font-family: Palatino, "Iowan Old Style", serif; font-size: clamp(28px, 4vw, 44px); font-weight: 600; }
+    .meta { color: var(--mute); text-align: right; font-size: 12px; max-width: 46%; }
+    .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); margin-right: 6px; box-shadow: 0 0 0 0 rgba(125,186,122,.7); animation: ping 2s infinite; }
+    @keyframes ping { 70% { box-shadow: 0 0 0 8px transparent; } }
+    .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; padding-bottom: 16px; }
+    .stat { background: var(--ink-2); border: 1px solid var(--line); padding: 12px 12px; min-width: 0; }
+    .stat b { display: block; font-family: Palatino, serif; font-size: 24px; }
+    .stat span { color: var(--mute); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+    .layout { display: grid; grid-template-columns: 300px minmax(0,1fr) 320px; gap: 14px; padding: 18px 0 48px; }
+    .panel { background: var(--ink-2); border: 1px solid var(--line); padding: 16px; }
+    h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+    p { margin: 0 0 10px; }
+    .brief p { color: #d9d1bf; }
+    .clock { display: grid; gap: 8px; margin: 14px 0; }
+    .tick { display: grid; grid-template-columns: 88px 1fr; gap: 8px; font-size: 13px; }
+    .tick em { font-style: normal; color: var(--gold); }
+    .must { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+    .chip {
+      border: 1px solid var(--line); background: transparent; padding: 8px 12px; cursor: pointer;
+      color: var(--mute); border-radius: 999px; font-size: 13px; min-height: 40px;
+    }
+    .chip.on { background: #24352c; border-color: var(--moss); color: var(--paper); }
+    .slider { width: 100%; accent-color: var(--copper); }
+    .budget-read { display: flex; justify-content: space-between; color: var(--mute); font-size: 12px; margin-top: 4px; }
+    .cards { display: grid; gap: 12px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); padding: 14px;
+      cursor: pointer; display: grid; grid-template-columns: 74px minmax(0,1fr); gap: 12px; align-items: start;
+    }
+    .card:hover, .card.sel { border-color: var(--copper); }
+    .headline { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+    .ring {
+      width: 74px; height: 74px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: conic-gradient(var(--copper) calc(var(--s) * 1%), #2a3833 0);
+    }
+    .ring i { width: 54px; height: 54px; border-radius: 50%; background: var(--panel); display: grid; place-items: center; font-family: Palatino, serif; font-size: 20px; font-style: normal; }
+    .addr { font-family: Palatino, serif; font-size: 20px; margin: 0 0 2px; }
+    .sub { color: var(--mute); font-size: 13px; }
+    .badge { display: inline-block; padding: 2px 7px; border: 1px solid var(--line); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; margin: 6px 4px 0 0; }
+    .badge.strong { color: var(--ok); border-color: #35573a; }
+    .badge.watch { color: var(--gold); border-color: #6b5420; }
+    .badge.trap { color: #f0a39c; border-color: #7a322b; }
+    .badge.dream { color: var(--copper-2); border-color: #7a3e22; }
+    .badge.wrong { color: var(--mute); }
+    .badge.sold { color: #d0c4b0; }
+    .price { text-align: right; font-family: Palatino, serif; font-size: 18px; flex: 0 0 auto; }
+    .price small { display: block; color: var(--mute); font-size: 12px; font-family: "Avenir Next", sans-serif; }
+    .empty { border: 1px dashed var(--line); padding: 28px; color: var(--mute); text-align: center; }
+    .bars { display: grid; gap: 7px; margin-top: 12px; }
+    .bar { display: grid; grid-template-columns: 92px 1fr 28px; gap: 8px; align-items: center; font-size: 12px; color: var(--mute); }
+    .bar i { display: block; height: 6px; background: #24302c; }
+    .bar i b { display: block; height: 100%; background: var(--copper); }
+    .take { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .cta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .btn {
+      background: var(--copper); color: #1a0d07; border: 0; padding: 9px 12px; cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .btn.ghost { background: transparent; color: var(--paper); border: 1px solid var(--line); }
+    .note { font-size: 12px; color: var(--mute); }
+    .callout { border-left: 3px solid var(--gold); padding: 8px 10px; background: #211c12; margin: 12px 0; font-size: 14px; }
+    footer { color: var(--mute); font-size: 12px; padding: 0 0 40px; }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .meta { text-align: left; max-width: none; }
+      .headline { flex-wrap: wrap; }
+      .btn, .btn.ghost { min-height: 44px; padding: 12px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <div class="kicker">Bærum → Stavanger · family compound</div>
+          <h1>War room</h1>
+        </div>
+        <div class="meta">
+          <div><span class="pulse"></span>Live FINN scrape · <span id="scrapedLabel">13 Aug 2026</span></div>
+          <div>Buy window: Apr / May 2027 · Ref budget 11m</div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="statEiganes">18</b><span>Houses Eiganes / Stokka / Sandal</span></div>
+        <div class="stat"><b id="statValand">9</b><span>Houses Våland / Bekkefaret</span></div>
+        <div class="stat"><b id="statFit">1</b><span>Live house that actually smells like the brief</span></div>
+        <div class="stat"><b>11.1%</b><span>Stavanger YoY SSB Q1 26</span></div>
+        <div class="stat"><b>~58k</b><span>kr / m² city average</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <aside class="panel brief">
+      <h2>The brief</h2>
+      <p>Sell Fossveien 4 around April / May 2027. Then buy a house a family of eventually ~4 kids can actually grow in.</p>
+      <div class="callout">Do not buy this week unless you want a bridge loan and two mortgages. Tonight is reconnaissance.</div>
+      <div class="clock">
+        <div class="tick"><em>Now</em><span>Watch. Build comps. Visit only if a house is a once-a-year fit.</span></div>
+        <div class="tick"><em>Winter 26</em><span>Prep Fossveien. Know your walk-away number.</span></div>
+        <div class="tick"><em>Apr 27</em><span>Sell, then buy. Prefer sequential, not heroic overlap.</span></div>
+      </div>
+      <h2>Must-haves — click to filter</h2>
+      <div class="must" id="musts"></div>
+      <label class="note" for="budget">Max total price</label>
+      <input id="budget" class="slider" type="range" min="6" max="16" step="0.25" value="12.5" />
+      <div class="budget-read"><span>6m</span><b id="budgetLabel">12.5m</b><span>16m</span></div>
+      <p class="note" style="margin-top:14px">Scoring: family 35 · garden 20 · area 20 · risk 15 · Forus 10. Gym is scored inside family. Syrinveien 27 is the ghost in the machine — 1978, 300+ m², sold June 2026, type specimen, not a live bid.</p>
+    </aside>
+
+    <section>
+      <h2 id="count">Inventory</h2>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <aside class="panel" id="inspector">
+      <h2>Inspector</h2>
+      <p class="note">Pick a house.</p>
+    </aside>
+  </main>
+
+  <footer class="wrap">
+    Built 13 Aug 2026 as a Grok 4.6 spin. Prices are asking / total from FINN tonight, not sold prices. SSB YoY is Q1 2026 existing dwellings. City m² from 2026 market summaries (~57.8–59.8k). Syrinveien sale is public-range only (tinglyst 8 Jun 2026, reported 10–15m). Open this file locally anytime — no server, no tracking.
+  </footer>
+
+<script src="houses.js"></script>
+<script>
+const MUSTS = [
+  {id:"beds", label:"4+ bedrooms"},
+  {id:"garden", label:"Real kid garden"},
+  {id:"zones", label:"Two living zones"},
+  {id:"gym", label:"Gym (rack + treadmill)"},
+  {id:"budget", label:"Inside 11m asking"},
+  {id:"live", label:"Still for sale"}
+];
+const state = { musts: new Set(["live"]), budget: 12.5, sel: "hoigard" };
+const HOUSES = (window.WAR_ROOM && window.WAR_ROOM.houses) || [];
+
+function applyMeta(){
+  const meta = window.WAR_ROOM || {};
+  const stats = meta.stats || {};
+  const set = (id, val) => { const el = document.getElementById(id); if (el && val != null) el.textContent = val; };
+  set("scrapedLabel", meta.scrapedLabel);
+  set("statEiganes", stats.eiganesHouses);
+  set("statValand", stats.valandHouses);
+  set("statFit", stats.fitCount);
+}
+function scoreOf(h){
+  return Math.round(h.scores.family*.35 + h.scores.garden*.20 + h.scores.area*.20 + h.scores.risk*.15 + h.scores.forus*.10);
+}
+function passes(h){
+  if (h.total > state.budget + 0.05 && h.id !== "syrin") return false;
+  if (state.musts.has("live") && h.status !== "live") return false;
+  if (state.musts.has("beds") && h.beds < 4) return false;
+  if (state.musts.has("garden") && !h.flags.includes("garden")) return false;
+  if (state.musts.has("zones") && !h.flags.includes("zones")) return false;
+  if (state.musts.has("gym") && !h.flags.includes("gym")) return false;
+  if (state.musts.has("budget") && h.ask > 11.05) return false;
+  return true;
+}
+function nok(n){ return n.toFixed(2).replace(".",",") + "m"; }
+function renderMusts(){
+  const el = document.getElementById("musts");
+  el.innerHTML = MUSTS.map(m => `<button class="chip ${state.musts.has(m.id)?"on":""}" data-id="${m.id}">${m.label}</button>`).join("");
+  el.onclick = e => {
+    const id = e.target.dataset.id; if(!id) return;
+    state.musts.has(id) ? state.musts.delete(id) : state.musts.add(id);
+    render();
+  };
+}
+function renderCards(){
+  const list = HOUSES.filter(passes).sort((a,b)=>scoreOf(b)-scoreOf(a));
+  document.getElementById("count").textContent = list.length ? `${list.length} that survive your filters` : "Inventory";
+  const root = document.getElementById("cards");
+  if (!list.length){
+    root.innerHTML = `<div class="empty">Nothing live survives that combination. That's the point. Soften a chip or wait for 2027 stock.</div>`;
+    return;
+  }
+  if (!list.find(h=>h.id===state.sel)) state.sel = list[0].id;
+  root.innerHTML = list.map(h => {
+    const s = scoreOf(h);
+    return `<article class="card ${state.sel===h.id?"sel":""}" data-id="${h.id}">
+      <div class="ring" style="--s:${s}"><i>${s}</i></div>
+      <div>
+        <div class="headline">
+          <p class="addr">${h.name}</p>
+          <div class="price">${nok(h.ask)}<small>tot ${nok(h.total)}</small></div>
+        </div>
+        <div class="sub">${h.area} · ${h.type} · ${h.sqm} m²${h.plot?` · ${h.plot} m² tomt`:""} · ${h.beds} sov</div>
+        <span class="badge ${h.verdict}">${label(h.verdict)}</span>
+        ${h.year?`<span class="badge">${h.year}</span>`:""}
+      </div>
+    </article>`;
+  }).join("");
+  root.onclick = e => {
+    const card = e.target.closest(".card"); if(!card) return;
+    state.sel = card.dataset.id; render();
+  };
+}
+function label(v){
+  return ({watch:"Worth watching", trap:"Renovation trap", dream:"Dream / stretch", wrong:"Wrong fit", sold:"Comp / sold", strong:"Strong candidate"})[v]||v;
+}
+function renderInspector(){
+  const h = HOUSES.find(x=>x.id===state.sel);
+  const el = document.getElementById("inspector");
+  if(!h){ el.innerHTML = "<h2>Inspector</h2><p class='note'>Pick a house.</p>"; return; }
+  const s = h.scores;
+  const row = (k,v,n)=>`<div class="bar"><span>${n}</span><i><b style="width:${v}%"></b></i><span>${v}</span></div>`;
+  el.innerHTML = `
+    <h2>Inspector</h2>
+    <p class="addr">${h.name}</p>
+    <p class="sub">${h.area} · ${h.viewing}</p>
+    <div class="bars">
+      ${row("family",s.family,"Family")}
+      ${row("garden",s.garden,"Garden")}
+      ${row("area",s.area,"Area")}
+      ${row("risk",s.risk,"Risk")}
+      ${row("forus",s.forus,"Forus")}
+    </div>
+    <div class="take">${h.take}</div>
+    <div class="cta">
+      <a class="btn" href="${h.url}" target="_blank" rel="noopener">Open listing</a>
+      <button class="btn ghost" id="copyTake">Copy take</button>
+    </div>
+    <p class="note" style="margin-top:10px">Forus off-peak from these belts is roughly 14–20 min. Treat rush hour as 25–35.</p>`;
+  const btn = document.getElementById("copyTake");
+  if (btn) btn.onclick = () => navigator.clipboard.writeText(`${h.name} (${nok(h.ask)}): ${h.take}`);
+}
+function render(){
+  applyMeta();
+  document.getElementById("budgetLabel").textContent = state.budget.toFixed(2).replace(".",",") + "m";
+  renderMusts(); renderCards(); renderInspector();
+}
+document.getElementById("budget").addEventListener("input", e => { state.budget = +e.target.value; render(); });
+render();
+</script>
+</body>
+</html>
