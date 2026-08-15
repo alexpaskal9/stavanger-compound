@@ -2,6 +2,8 @@
 
 Data lives in `houses.js` as `window.WAR_ROOM`. Do not hand-edit `index.html` for listing changes.
 
+Cadence: Hermes cron `d3b3b26d5849` runs daily at 18:00 Europe/Oslo. Scrape both belts, rewrite `houses.js`, commit, push. If nothing material changed, still bump `scrapedAt` only when you actually re-checked FINN.
+
 ## FINN searches
 
 - Houses in Eiganes / Stokka / Sandal: https://www.finn.no/realestate/homes/search.html?location=2.20012.20196.20716&property_type=1&property_type=2&property_type=4&sort=PUBLISHED_DESC
