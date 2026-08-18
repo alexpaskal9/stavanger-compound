@@ -1,6 +1,6 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-17T18:01:32+02:00",
-  scrapedLabel: "17 Aug 2026, 18:01 CEST",
+  scrapedAt: "2026-08-18T18:03:44+02:00",
+  scrapedLabel: "18 Aug 2026, 18:03 CEST",
   stats: {
     eiganesHouses: 16,
     valandHouses: 5,
@@ -20,7 +20,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=462844743",
       flags: ["zones", "gym", "garden", "garage"],
       scores: { family: 80, garden: 72, area: 90, risk: 70, forus: 82 },
-      take: "Still the cleanest live match after today’s scrape. 318 m² BRA-i / 338 m² total, 487 m² owned plot, terraces, double garage, extra kitchen downstairs, upgraded baths and enough internal volume for rack+treadmill plus proper adult/kid zones. The goblin has not left the basement: only 3 official bedrooms / 4 rooms, so the fourth bedroom remains a floorplan/legal question. Above the 11m reference, but not stupid. Recon only."
+      take: "Still the only live house that actually resembles the brief. 318 m² BRA-i / 338 m² total, 487 m² owned plot, terraces, double garage, extra kitchen downstairs, upgraded baths and enough volume for rack+treadmill plus adult/kid zones. Official count is still 3 bedrooms / 4 rooms, so the fourth bed remains a floorplan/legal question. Above the 11m reference, but not stupid. Recon only."
     },
     {
       id: "vestbo",
@@ -33,7 +33,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472851006",
       flags: ["beds", "garden", "zones", "rental"],
       scores: { family: 74, garden: 76, area: 91, risk: 62, forus: 82 },
-      take: "Good Stokka reconnaissance: 540 m² owned plot, 190 m² BRA-i, 4 bedrooms, child-friendly tags, 42 m² terrace, lake-view energy and a secondary unit upgraded in 2022. The upside is real, but so is the complexity: registered enebolig with hybel/sokkelleilighet and two boenheter, plus rammetillatelse for extension/facade/new garage/extra driveway. Could become a compound; today it is a project wearing a nice jacket."
+      take: "Still the best Stokka reconnaissance object: 540 m² owned plot, 190 m² BRA-i, 4 bedrooms, child-friendly tags, 42 m² terrace and a secondary unit upgraded in 2022. Complexity did not evaporate overnight: registered enebolig with hybel/sokkelleilighet, two boenheter, plus rammetillatelse for extension/facade/new garage/extra driveway. Could become a compound; today it is a project wearing a nice jacket."
     },
     {
       id: "hornklove",
@@ -46,7 +46,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473171110",
       flags: ["zones", "baths", "gym"],
       scores: { family: 69, garden: 58, area: 84, risk: 42, forus: 80 },
-      take: "Pretty Våland villa over four floors, now verified from the ad: 261 m², 396 m² corner plot, two stuer, loftstue, basement with own entrance, vaskerom, kjellerstue and disponibelt room. Two baths upstairs plus guest WC is good; 1915 + energy F is the maintenance gods asking for tribute. Same ask as Høigårds for less garden and more archaeology. Watch, don’t worship."
+      take: "Pretty Våland villa over four floors: 261 m², 396 m² corner plot, two stuer, loftstue, basement with own entrance, vaskerom, kjellerstue and a disponible room. Two baths upstairs plus guest WC is good; 1915 + energy F is the maintenance gods asking for tribute. Same ask as Høigårds for less garden and more archaeology. Watch, don’t worship."
     },
     {
       id: "jens-tvedts",
@@ -59,20 +59,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=468697314",
       flags: ["cheap", "beds"],
       scores: { family: 42, garden: 30, area: 64, risk: 66, forus: 78 },
-      take: "New-ish in the Eiganes/Stokka/Sandal search bucket, but it is Kampen and only 116 m². Four bedrooms at 5m is cute, like a golden retriever in a spreadsheet, but this is not a compound: no convincing garden, no gym path, no 2-zone family HQ. Useful only as market noise."
-    },
-    {
-      id: "spurve",
-      name: "Spurvekroken 6",
-      area: "Sandal",
-      type: "Enebolig",
-      ask: 8.5, total: 8.71, sqm: 240, plot: 330, beds: 3, year: 1983,
-      status: "live", verdict: "watch",
-      viewing: "Mon 17 Aug 16:00",
-      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=469178413",
-      flags: ["zones", "gym", "garage"],
-      scores: { family: 70, garden: 62, area: 74, risk: 58, forus: 80 },
-      take: "Still the value play near Stokkavannet. 240 m², garage and Sandal calm give gym/zones potential, but 3 official bedrooms and prior notes about not-all-rooms-approved remain the legal banana peel. 330 m² plot is fine, not a kid-powered football pitch. Cheap enough to investigate; not clean enough to love blindly."
+      take: "Still in the Eiganes/Stokka/Sandal search bucket, still Kampen, still only 116 m². Four bedrooms at 5m is cute, like a golden retriever in a spreadsheet, but this is not a compound: no convincing garden, no gym path, no 2-zone family HQ. Useful only as market noise."
     },
     {
       id: "steingata",
@@ -159,7 +146,7 @@ window.WAR_ROOM = {
       type: "Enebolig",
       ask: 6.95, total: 7.12, sqm: 201, plot: 161, beds: 5, year: 1910,
       status: "live", verdict: "trap",
-      viewing: "Mon 17 Aug 16:30",
+      viewing: "By appointment",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472396798",
       flags: ["beds", "zones"],
       scores: { family: 58, garden: 28, area: 82, risk: 32, forus: 80 },
@@ -179,6 +166,19 @@ window.WAR_ROOM = {
       take: "Still listed. Prize-winning heritage villa, garden, garage, charm by the bucket. Also 173 m², three bedrooms and conservation/old-house constraints. Beautiful problem, wrong operating base."
     },
     {
+      id: "spurve",
+      name: "Spurvekroken 6",
+      area: "Sandal",
+      type: "Enebolig",
+      ask: 8.5, total: 8.71, sqm: 240, plot: 330, beds: 3, year: 1983,
+      status: "sold", verdict: "sold",
+      viewing: "Sold / FINN marked 18 Aug",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=469178413",
+      flags: ["zones", "gym", "garage"],
+      scores: { family: 70, garden: 62, area: 74, risk: 58, forus: 80 },
+      take: "Sold as of today’s scrape. Keep briefly as the cheap Sandal comp: 240 m², 330 m² plot, garage, two kitchens/zones and a 1983 soul near Stokkavannet. Officially 3 bedrooms, unofficially more if you ignore the legal banana peel. This is what ~8.5m just bought when someone accepted the approval risk."
+    },
+    {
       id: "rogaland",
       name: "Rogalandsgata 19",
       area: "Våland",
@@ -189,7 +189,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=470177249",
       flags: ["beds", "garden", "zones", "gym", "rental", "garage"],
       scores: { family: 94, garden: 96, area: 86, risk: 62, forus: 80 },
-      take: "Sold as of today’s scrape. Keep briefly as the fresh dream-comp: 347 m² BRA-i / 381 m² total, 902 m² owned plot, 6 beds, 3 baths by floor description, double garage, basement rental setup and several living zones. It was the actual compound if budget stopped mattering; now it teaches what 15m Våland unicorns look like when they vanish."
+      take: "Still marked sold. Keep as the fresh dream-comp: 347 m² BRA-i / 381 m² total, 902 m² owned plot, 6 beds, 3 baths by floor description, double garage, basement rental setup and several living zones. It was the actual compound if budget stopped mattering; now it teaches what 15m Våland unicorns look like when they vanish."
     },
     {
       id: "stokkavei",
