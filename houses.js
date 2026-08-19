@@ -1,6 +1,6 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-18T18:03:44+02:00",
-  scrapedLabel: "18 Aug 2026, 18:03 CEST",
+  scrapedAt: "2026-08-19T18:10:12+02:00",
+  scrapedLabel: "19 Aug 2026, 18:10 CEST",
   stats: {
     eiganesHouses: 16,
     valandHouses: 5,
@@ -33,7 +33,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472851006",
       flags: ["beds", "garden", "zones", "rental"],
       scores: { family: 74, garden: 76, area: 91, risk: 62, forus: 82 },
-      take: "Still the best Stokka reconnaissance object: 540 m² owned plot, 190 m² BRA-i, 4 bedrooms, child-friendly tags, 42 m² terrace and a secondary unit upgraded in 2022. Complexity did not evaporate overnight: registered enebolig with hybel/sokkelleilighet, two boenheter, plus rammetillatelse for extension/facade/new garage/extra driveway. Could become a compound; today it is a project wearing a nice jacket."
+      take: "Ukens bolig, same 10.5m ask. 540 m² owned plot, 190 m² BRA-i, 4 bedrooms, child-friendly tags, 42 m² terrace and a secondary unit upgraded in 2022. Still a registered enebolig with hybel/sokkelleilighet, two boenheter, plus rammetillatelse for extension/facade/new garage/extra driveway. Could become a compound; today it is a project wearing a nice jacket."
     },
     {
       id: "hornklove",
@@ -46,7 +46,20 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473171110",
       flags: ["zones", "baths", "gym"],
       scores: { family: 69, garden: 58, area: 84, risk: 42, forus: 80 },
-      take: "Pretty Våland villa over four floors: 261 m², 396 m² corner plot, two stuer, loftstue, basement with own entrance, vaskerom, kjellerstue and a disponible room. Two baths upstairs plus guest WC is good; 1915 + energy F is the maintenance gods asking for tribute. Same ask as Høigårds for less garden and more archaeology. Watch, don’t worship."
+      take: "Still live, still pretty: 261 m², 396 m² corner plot, two stuer, loftstue, basement with own entrance, vaskerom, kjellerstue and a disponible room. Two baths upstairs plus guest WC is good; 1915 + energy F is the maintenance gods asking for tribute. Same ask as Høigårds for less garden and more archaeology. Watch, don’t worship."
+    },
+    {
+      id: "madlavei-10",
+      name: "Gamle Madlavei 10",
+      area: "Eiganes",
+      type: "Enebolig · new Swiss villa 2026",
+      ask: 25.0, total: 25.63, sqm: 211, plot: 930, beds: 4, year: 2026,
+      status: "live", verdict: "dream",
+      viewing: "By appointment / signup only",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=454755791",
+      flags: ["beds", "garden", "garage", "premium"],
+      scores: { family: 76, garden: 94, area: 90, risk: 74, forus: 84 },
+      take: "New on the board: rebuilt Swiss villa, 211 m², 4 beds, garage tag and a genuine 930 m² Eiganes plot. Garden math is unicorn. Price math is a different religion. 25m for 211 m² is compound-adjacent land with boutique-hotel invoices. Keep as a plot/area ceiling, not a 2027 target."
     },
     {
       id: "jens-tvedts",
@@ -127,6 +140,19 @@ window.WAR_ROOM = {
       take: "Eiganes, 2011, 272 m², 6 bedrooms and approved apartment. Functionally interesting, financially in another solar system. At 22.5m ask it is a luxury comp, not a 2027 reconnaissance target unless someone discovers oil under the sofa."
     },
     {
+      id: "misjonsveien",
+      name: "Misjonsveien 52",
+      area: "Kampen",
+      type: "Del av tomannsbolig",
+      ask: 4.49, total: 4.60, sqm: 87, plot: null, beds: 2, year: null,
+      status: "live", verdict: "wrong",
+      viewing: "Mon 24 Aug 16:15",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471877789",
+      flags: ["cheap"],
+      scores: { family: 28, garden: 16, area: 62, risk: 68, forus: 78 },
+      take: "New noise in the belt search: half a two-family house, 87 m², 2 bedrooms, loft, balcony, EV charger. Fine student/BI commute object. Zero compound. Ignore unless you are collecting Kampen postage stamps."
+    },
+    {
       id: "drgraesli",
       name: "Dr. Græslis vei 13C",
       area: "Vålandskråningen",
@@ -172,11 +198,11 @@ window.WAR_ROOM = {
       type: "Enebolig",
       ask: 8.5, total: 8.71, sqm: 240, plot: 330, beds: 3, year: 1983,
       status: "sold", verdict: "sold",
-      viewing: "Sold / FINN marked 18 Aug",
+      viewing: "Sold / still marked Solgt on FINN",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=469178413",
       flags: ["zones", "gym", "garage"],
       scores: { family: 70, garden: 62, area: 74, risk: 58, forus: 80 },
-      take: "Sold as of today’s scrape. Keep briefly as the cheap Sandal comp: 240 m², 330 m² plot, garage, two kitchens/zones and a 1983 soul near Stokkavannet. Officially 3 bedrooms, unofficially more if you ignore the legal banana peel. This is what ~8.5m just bought when someone accepted the approval risk."
+      take: "Still marked sold. Keep as the cheap Sandal comp: 240 m², 330 m² plot, garage, two kitchens/zones and a 1983 soul near Stokkavannet. Officially 3 bedrooms, unofficially more if you ignore the legal banana peel. This is what ~8.5m just bought when someone accepted the approval risk."
     },
     {
       id: "rogaland",
@@ -185,7 +211,7 @@ window.WAR_ROOM = {
       type: "Enebolig · 1917",
       ask: 15.0, total: 15.38, sqm: 347, plot: 902, beds: 6, year: 1917,
       status: "sold", verdict: "sold",
-      viewing: "Sold / FINN marked 17 Aug",
+      viewing: "Sold / still marked Solgt on FINN",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=470177249",
       flags: ["beds", "garden", "zones", "gym", "rental", "garage"],
       scores: { family: 94, garden: 96, area: 86, risk: 62, forus: 80 },
