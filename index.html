@@ -45,6 +45,8 @@
     .kicker { letter-spacing: .22em; text-transform: uppercase; color: var(--copper-2); font-size: 11px; }
     h1 { margin: 4px 0 0; font-family: Palatino, "Iowan Old Style", serif; font-size: clamp(28px, 4vw, 44px); font-weight: 600; }
     .meta { color: var(--mute); text-align: right; font-size: 12px; max-width: 46%; }
+    .twin-link { display:inline-block; margin-top:8px; padding:7px 12px; color:#b8ccff; border:1px solid #4f7cff; border-radius:999px; text-decoration:none; letter-spacing:.12em; font-size:10px; text-transform:uppercase; box-shadow:0 0 18px rgba(79,124,255,.18); }
+    .twin-link:hover { background:rgba(79,124,255,.14); }
     .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); margin-right: 6px; box-shadow: 0 0 0 0 rgba(125,186,122,.7); animation: ping 2s infinite; }
     @keyframes ping { 70% { box-shadow: 0 0 0 8px transparent; } }
     .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; padding-bottom: 16px; }
@@ -126,6 +128,7 @@
         <div class="meta">
           <div><span class="pulse"></span>Live FINN scrape · <span id="scrapedLabel">13 Aug 2026</span></div>
           <div>Buy window: Apr / May 2027 · Ref budget 11m</div>
+          <a class="twin-link" href="stavanger-2027.html">Launch cinematic digital twin ↗</a>
         </div>
       </div>
       <div class="stats">
@@ -168,7 +171,7 @@
   </main>
 
   <footer class="wrap">
-    Built 13 Aug 2026 as a Grok 4.6 spin. Prices are asking / total from FINN tonight, not sold prices. SSB YoY is Q1 2026 existing dwellings. City m² from 2026 market summaries (~57.8–59.8k). Syrinveien sale is public-range only (tinglyst 8 Jun 2026, reported 10–15m). Open this file locally anytime — no server, no tracking.
+    Built 13 Aug 2026; cinematic twin added 21 Aug by Ox Alpha. Prices are asking / total from FINN tonight, not sold prices. SSB YoY is Q1 2026 existing dwellings. City m² from 2026 market summaries (~57.8–59.8k). Syrinveien sale is public-range only (tinglyst 8 Jun 2026, reported 10–15m). No tracking.
   </footer>
 
 <script src="houses.js"></script>

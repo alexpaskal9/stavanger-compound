@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stavanger 2027 · Digital Twin</title>
+<style>
+  :root { --bg:#05070f; --panel:#0b1020ee; --line:#1e2a4a; --txt:#dbe4ff; --dim:#7d8bb5; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; overflow:hidden; background:var(--bg); font-family:'SF Mono',ui-monospace,Menlo,monospace; color:var(--txt); }
+  #app { position:fixed; inset:0; }
+  .hud { position:fixed; z-index:10; }
+  #title { top:18px; left:22px; pointer-events:none; }
+  #title h1 { font-size:20px; letter-spacing:.35em; font-weight:700; color:#fff; text-shadow:0 0 18px #4f7cff88; }
+  #title p { font-size:10px; letter-spacing:.2em; color:var(--dim); margin-top:6px; }
+  #legend { top:18px; right:22px; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 14px; font-size:10px; line-height:1.9; backdrop-filter:blur(6px); }
+  .chip { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:7px; vertical-align:middle; box-shadow:0 0 8px currentColor; }
+  #filters { top:110px; right:22px; display:flex; flex-direction:column; gap:6px; }
+  #filters button { background:var(--panel); border:1px solid var(--line); color:var(--dim); border-radius:8px; padding:6px 12px; font:inherit; font-size:10px; letter-spacing:.15em; cursor:pointer; text-align:right; transition:all .2s; }
+  #filters button:hover, #filters button.on { color:#fff; border-color:#4f7cff; box-shadow:0 0 14px #4f7cff44; }
+  #panel { right:-380px; top:0; bottom:0; width:360px; background:var(--panel); border-left:1px solid var(--line); backdrop-filter:blur(10px); padding:26px 24px; overflow-y:auto; transition:right .35s cubic-bezier(.2,.8,.2,1); }
+  #panel.open { right:0; }
+  #panel h2 { font-size:15px; color:#fff; margin-bottom:4px; line-height:1.4; }
+  #panel .area { font-size:10px; color:var(--dim); letter-spacing:.2em; margin-bottom:14px; }
+  .badge { display:inline-block; padding:3px 10px; border-radius:99px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; margin-bottom:16px; border:1px solid; }
+  .kv { display:flex; justify-content:space-between; font-size:11px; padding:7px 0; border-bottom:1px dashed var(--line); }
+  .kv b { color:#fff; font-weight:600; }
+  .scorebar { margin:10px 0 2px; font-size:9px; color:var(--dim); letter-spacing:.15em; }
+  .scorebar .track { height:4px; background:#141d38; border-radius:2px; margin-top:3px; }
+  .scorebar .fill { height:100%; border-radius:2px; background:linear-gradient(90deg,#2f4bd8,#7aa2ff); }
+  #take { font-size:11px; line-height:1.75; color:#b9c6ea; margin-top:16px; padding:12px; background:#0e1530aa; border-radius:8px; border:1px solid var(--line); }
+  #panel a.btn { display:block; margin-top:16px; text-align:center; padding:9px; border:1px solid #4f7cff; color:#9db9ff; border-radius:8px; font-size:11px; letter-spacing:.2em; text-decoration:none; }
+  #panel a.btn:hover { background:#4f7cff22; }
+  #closep { position:absolute; top:14px; right:14px; background:none; border:none; color:var(--dim); font-size:16px; cursor:pointer; }
+  #timeline { left:50%; transform:translateX(-50%); bottom:86px; width:min(680px,92vw); background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 20px 12px; backdrop-filter:blur(8px); }
+  #timeline .tl-head { display:flex; justify-content:space-between; font-size:10px; letter-spacing:.15em; color:var(--dim); margin-bottom:8px; }
+  #tl-week { color:#ffd479; }
+  input[type=range] { width:100%; accent-color:#ffd479; cursor:pointer; }
+  #tl-info { font-size:10.5px; line-height:1.7; color:#b9c6ea; margin-top:8px; min-height:32px; }
+  #tl-info b { color:#fff; } #tl-info .fit { color:#4ade80; }
+  #controls { bottom:18px; left:50%; transform:translateX(-50%); display:flex; gap:10px; align-items:center; font-size:10px; color:var(--dim); letter-spacing:.12em; }
+  #controls audio { height:30px; }
+  #watch-video { background:#111a34; border:1px solid #4f7cff; color:#b8ccff; border-radius:8px; padding:8px 12px; font:inherit; font-size:9px; letter-spacing:.15em; cursor:pointer; }
+  #video-modal { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; background:#02040bea; backdrop-filter:blur(10px); }
+  #video-modal.open { display:flex; }
+  #video-modal video { width:min(1180px,94vw); max-height:86vh; border:1px solid #28365e; box-shadow:0 0 80px #4f7cff33; background:#000; }
+  #video-close { position:absolute; top:18px; right:24px; color:#fff; background:none; border:0; font-size:24px; cursor:pointer; }
+  #hint { bottom:18px; left:22px; font-size:9.5px; color:#54628f; letter-spacing:.1em; line-height:1.8; pointer-events:none; }
+  #compass { bottom:64px; left:26px; font-size:10px; color:var(--dim); pointer-events:none; }
+  #compass b { color:#fff; font-size:13px; }
+  #loader { position:fixed; inset:0; background:var(--bg); z-index:99; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:14px; transition:opacity .8s; }
+  #loader.done { opacity:0; pointer-events:none; }
+  #loader .ox { font-size:11px; letter-spacing:.5em; color:#7aa2ff; animation:pulse 1.6s infinite; }
+  @keyframes pulse { 50% { opacity:.35; } }
+  @media (max-width:600px) {
+    #title { top:14px; left:14px; width:245px; }
+    #title h1 { font-size:16px; letter-spacing:.18em; }
+    #title p { font-size:8px; line-height:1.5; letter-spacing:.12em; max-width:235px; }
+    #legend { display:none; }
+    #filters { top:74px; right:10px; display:grid; grid-template-columns:repeat(2,70px); gap:4px; }
+    #filters button { padding:5px 6px; font-size:8px; letter-spacing:.1em; text-align:center; }
+    #panel { width:100%; right:-100%; }
+    #timeline { bottom:78px; width:calc(100vw - 24px); padding:10px 14px; }
+    #timeline .tl-head { font-size:8px; }
+    #tl-info { font-size:9px; line-height:1.55; }
+    #hint { display:none; }
+    #compass { bottom:50px; left:18px; font-size:8px; }
+    #controls { bottom:7px; width:100%; justify-content:center; font-size:8px; }
+    #controls audio { width:210px; height:30px; }
+    #watch-video { padding:7px 8px; font-size:8px; }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="loader"><div class="ox">STAVANGER 2027</div><div style="font-size:9px;color:#54628f;letter-spacing:.3em">IGNITING NIGHT CITY…</div></div>
+
+<div class="hud" id="title"><h1>STAVANGER 2027</h1><p>DIGITAL TWIN · HOUSE HUNT OPS · <span id="stamp"></span></p></div>
+<div class="hud" id="legend"></div>
+<div class="hud" id="filters"></div>
+<div class="hud" id="panel"><button id="closep">✕</button><div id="panel-body"></div></div>
+<div class="hud" id="timeline">
+  <div class="tl-head"><span>BUDGET TIMELINE · APR–MAI 2027</span><span id="tl-week">WEEK 1</span></div>
+  <input type="range" id="tl-slider" min="0" max="8" step="1" value="0">
+  <div id="tl-info"></div>
+</div>
+<div class="hud" id="controls"><span>♪ TOUR</span><audio id="tour-audio" controls preload="metadata"></audio><button id="watch-video">▶ VIDEO</button></div>
+<div class="hud" id="compass"><b>N</b> ↑ &nbsp;·&nbsp; fjord top · Ullandhaug bottom</div>
+<div class="hud" id="hint">DRAG rotate · SCROLL zoom · RIGHT-DRAG pan<br>CLICK a lit house for intel</div>
+<div id="video-modal"><button id="video-close">✕</button><video id="tour-video" controls preload="metadata" src="tour.mp4"></video></div>
+
+<script src="houses.js"></script>
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+               "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const W = window.WAR_ROOM;
+document.getElementById('stamp').textContent = (W.scrapedLabel||'').toUpperCase().slice(0,46);
+
+/* ---------- verdict palette ---------- */
+const VC = { strong:0x22c55e, watch:0xf59e0b, dream:0xa78bfa, trap:0xef4444, wrong:0x6b7280, sold:0x38bdf8 };
+const VN = { strong:'STRONG', watch:'WATCH', dream:'DREAM', trap:'TRAP', wrong:'WRONG', sold:'SOLD' };
+
+/* ---------- geo → world (stylised, relative-true) ---------- */
+const LON0=5.710, LAT0=58.958;
+const gx = lon => (lon-LON0)*5800;
+const gz = lat => -(lat-LAT0)*11100;
+// approximate real-relative positions (stylised twin, not surveying)
+const POS = {
+  hoigard:[5.7080,58.9630], bokfink:[5.6900,58.9500], vestbo:[5.6970,58.9600],
+  hornklove:[5.7280,58.9570], 'madlavei-6c':[5.7150,58.9620], 'madlavei-10':[5.7160,58.9610],
+  'jens-tvedts':[5.7250,58.9590], steingata:[5.7200,58.9610], 'bretland-28':[5.7180,58.9630],
+  'bretland-30':[5.7185,58.9632], kampensgata:[5.7260,58.9575], welhavens:[5.7190,58.9625],
+  misjonsveien:[5.7270,58.9585], drgraesli:[5.7240,58.9540], furras:[5.7290,58.9560],
+  muse:[5.7310,58.9565], spurve:[5.7000,58.9520], rogaland:[5.7300,58.9570],
+  stokkavei:[5.6940,58.9600], syrin:[5.6900,58.9610]
+};
+
+/* ---------- scene ---------- */
+const app = document.getElementById('app');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x05070f);
+scene.fog = new THREE.FogExp2(0x05070f, 0.0011);
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 1, 3000);
+camera.position.set(0, 420, 640);
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.25;
+app.appendChild(renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = .06;
+controls.maxPolarAngle = Math.PI*0.49; controls.minDistance = 40; controls.maxDistance = 900;
+
+scene.add(new THREE.HemisphereLight(0x2a3a6a, 0x0a0d18, .85));
+const moonL = new THREE.DirectionalLight(0xbfd2ff, .5); moonL.position.set(-300,500,-200); scene.add(moonL);
+
+/* stars */
+{
+  const g = new THREE.BufferGeometry(); const n=1400, pos=new Float32Array(n*3);
+  for(let i=0;i<n;i++){ pos[i*3]=(Math.random()-.5)*2600; pos[i*3+1]=200+Math.random()*900; pos[i*3+2]=(Math.random()-.5)*2600; }
+  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({color:0x9fb4ff,size:1.6,sizeAttenuation:false,transparent:true,opacity:.7})));
+}
+/* moon */
+{
+  const m = new THREE.Mesh(new THREE.SphereGeometry(26,32,32), new THREE.MeshBasicMaterial({color:0xe8efff}));
+  m.position.set(-520,430,-780); scene.add(m);
+}
+
+/* ---------- ground / water ---------- */
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(3200,3200), new THREE.MeshStandardMaterial({color:0x0a0e1c,roughness:1}));
+ground.rotation.x = -Math.PI/2; scene.add(ground);
+function water(cx,cz,rx,rz,col){
+  const w = new THREE.Mesh(new THREE.CircleGeometry(1,48), new THREE.MeshStandardMaterial({color:col,roughness:.12,metalness:.75,emissive:col,emissiveIntensity:.35}));
+  w.rotation.x=-Math.PI/2; w.position.set(cx,.05,cz); w.scale.set(rx,rz,1); scene.add(w); return w;
+}
+water(0,-330,1500,240,0x0a1c38);           // Byfjorden (north)
+water(-105,95,62,40,0x0b1e33);             // Store Stokkavatnet (SW)
+water(210,150,55,35,0x0b1e33);             // Mosvatnet (SE)
+
+/* ---------- street grid ---------- */
+{
+  const mat = new THREE.MeshBasicMaterial({color:0x2a3554,transparent:true,opacity:.5});
+  for(let x=-280;x<=280;x+=40){ const r=new THREE.Mesh(new THREE.PlaneGeometry(2.2,560),mat); r.rotation.x=-Math.PI/2; r.position.set(x,.1,0); scene.add(r); }
+  for(let z=-220;z<=220;z+=40){ const r=new THREE.Mesh(new THREE.PlaneGeometry(680,2.2),mat); r.rotation.x=-Math.PI/2; r.position.set(0,.1,z); scene.add(r); }
+  // street lamps: warm points along avenues
+  const lg=new THREE.BufferGeometry(); const pts=[];
+  for(let x=-280;x<=280;x+=40) for(let z=-220;z<=220;z+=20) pts.push(x+Math.random()*4-2, 2.4, z);
+  lg.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));
+  scene.add(new THREE.Points(lg,new THREE.PointsMaterial({color:0xffc97a,size:1.7,transparent:true,opacity:.85})));
+}
+
+/* ---------- procedural city blocks ---------- */
+function windowTexture(){
+  const c=document.createElement('canvas'); c.width=c.height=64; const x=c.getContext('2d');
+  x.fillStyle='#000'; x.fillRect(0,0,64,64);
+  for(let i=4;i<60;i+=8) for(let j=4;j<60;j+=8){
+    x.fillStyle = Math.random()<.42 ? (Math.random()<.8?'#ffd98a':'#aee4ff') : '#0a0a0a';
+    x.fillRect(i,j,4,5);
+  }
+  const t=new THREE.CanvasTexture(c); t.wrapS=t.wrapT=THREE.RepeatWrapping; return t;
+}
+const winTex = windowTexture();
+{
+  const N=650;
+  const geo = new THREE.BoxGeometry(1,1,1);
+  const mat = new THREE.MeshStandardMaterial({color:0xffffff, roughness:.85, emissive:0xffffff, emissiveIntensity:.55, emissiveMap:winTex});
+  const inst = new THREE.InstancedMesh(geo, mat, N);
+  const dummy = new THREE.Object3D(); const col = new THREE.Color();
+  let i=0, guard=0;
+  while(i<N && guard++<8000){
+    const x=(Math.random()-.5)*640, z=(Math.random()-.5)*480;
+    // keep centre plaza + water clear-ish
+    if(Math.abs(x)<26 && Math.abs(z)<26) continue;
+    if(z<-230 || (Math.hypot((x+105)/62,(z-95)/40)<1.15) || (Math.hypot((x-210)/55,(z-150)/35)<1.15)) continue;
+    const near = Math.max(Math.abs(x)/340, Math.abs(z)/240);
+    const h = 4 + Math.random()*10 + (1-near)*(Math.random()<.18? 26+Math.random()*30 : 0);
+    const w = 8+Math.random()*14, d = 8+Math.random()*14;
+    dummy.position.set(x, h/2, z); dummy.scale.set(w,h,d);
+    dummy.rotation.y = Math.round(Math.random()*4)*Math.PI/2;
+    dummy.updateMatrix(); inst.setMatrixAt(i,dummy.matrix);
+    col.setHSL(.6+Math.random()*.08, .25, .16+Math.random()*.1);
+    inst.setColorAt(i,col); i++;
+  }
+  inst.count=i; scene.add(inst);
+}
+
+/* ---------- landmarks ---------- */
+{ // Ullandhaustårnet (radio mast, blinking)
+  const mast=new THREE.Mesh(new THREE.CylinderGeometry(.8,2.4,90,6),new THREE.MeshStandardMaterial({color:0x39456e,roughness:.6}));
+  mast.position.set(-30,45,178); scene.add(mast);
+  const tip=new THREE.Mesh(new THREE.SphereGeometry(2.4,12,12),new THREE.MeshBasicMaterial({color:0xff3355}));
+  tip.position.set(-30,91,178); scene.add(tip); window.__tip=tip;
+}
+{ // Domkirke spire
+  const body=new THREE.Mesh(new THREE.BoxGeometry(16,22,10),new THREE.MeshStandardMaterial({color:0x2c3654,roughness:.9}));
+  body.position.set(60,11,-96); scene.add(body);
+  const spire=new THREE.Mesh(new THREE.ConeGeometry(4.5,26,4),new THREE.MeshStandardMaterial({color:0x3a4a77,roughness:.5,metalness:.4}));
+  spire.position.set(60,35,-96); scene.add(spire);
+  const cr=new THREE.PointLight(0xffd479,60,90); cr.position.set(60,26,-96); scene.add(cr);
+}
+{ // Bybrua over fjorden
+  const br=new THREE.Mesh(new THREE.BoxGeometry(150,1.6,5),new THREE.MeshStandardMaterial({color:0x33406b,roughness:.7}));
+  br.rotation.y=.5; br.position.set(30,7,-262); scene.add(br);
+  for(let i=-3;i<=3;i++){
+    const p=new THREE.Mesh(new THREE.CylinderGeometry(.7,.7,16,6),new THREE.MeshStandardMaterial({color:0x3a4a77}));
+    p.position.set(30+i*Math.cos(.5)*21,14,-262-i*Math.sin(.5)*21); scene.add(p);
+    const l=new THREE.Mesh(new THREE.SphereGeometry(.9,8,8),new THREE.MeshBasicMaterial({color:0xffe9b0}));
+    l.position.set(p.position.x,22.5,p.position.z); scene.add(l);
+  }
+}
+
+/* ---------- glow sprite helper ---------- */
+function glowTex(){
+  const c=document.createElement('canvas'); c.width=c.height=128; const x=c.getContext('2d');
+  const g=x.createRadialGradient(64,64,2,64,64,64);
+  g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(.25,'rgba(255,255,255,.45)'); g.addColorStop(1,'rgba(255,255,255,0)');
+  x.fillStyle=g; x.fillRect(0,0,128,128); return new THREE.CanvasTexture(c);
+}
+const GLOW = glowTex();
+function beacon(x,z,color,scale){
+  const s=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));
+  s.position.set(x,26,z); s.scale.setScalar(scale); scene.add(s); return s;
+}
+
+/* ---------- tracked houses ---------- */
+const houseMeshes=[]; const idToHouse={};
+for(const h of W.houses){
+  const p = POS[h.id]; if(!p) continue;
+  const x=gx(p[0]), z=gz(p[1]);
+  const grp=new THREE.Group(); grp.position.set(x,0,z);
+  const c = VC[h.verdict]||0x888888;
+  const tall = 14 + Math.min(h.sqm||150,350)/11;
+  const body=new THREE.Mesh(
+    new THREE.BoxGeometry(10,tall,10),
+    new THREE.MeshStandardMaterial({color:0x1a2750,roughness:.55,emissive:c,emissiveIntensity:h.status==='live'?.45:.18})
+  );
+  body.position.y=tall/2; grp.add(body);
+  const roof=new THREE.Mesh(new THREE.ConeGeometry(8,6,4),new THREE.MeshStandardMaterial({color:0x101a36,roughness:.8}));
+  roof.position.y=tall+3; roof.rotation.y=Math.PI/4; grp.add(roof);
+  const win=new THREE.Mesh(new THREE.BoxGeometry(10.4,tall*.72,10.4),
+    new THREE.MeshStandardMaterial({color:0x000000,emissive:0xffd98a,emissiveIntensity:h.status==='live'?.85:.2,emissiveMap:winTex,transparent:true,opacity:.92}));
+  win.position.y=tall/2; grp.add(win);
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(9.5,.5,8,40),new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.95}));
+  ring.rotation.x=Math.PI/2; ring.position.y=.7; grp.add(ring);
+  const gl=beacon(0,0,c,h.status==='live'?44:22); grp.add(gl);
+  grp.userData.house=h; grp.userData.baseScale=1;
+  scene.add(grp); houseMeshes.push(grp); idToHouse[h.id]=grp;
+}
+
+/* ---------- UI: legend + filters ---------- */
+const legend=document.getElementById('legend');
+legend.innerHTML = Object.keys(VN).map(k=>`<div><span class="chip" style="background:#${VC[k].toString(16).padStart(6,'0')};color:#${VC[k].toString(16).padStart(6,'0')}"></span>${VN[k]} · ${W.houses.filter(h=>h.verdict===k).length}</div>`).join('');
+const filters=document.getElementById('filters');
+let activeFilter='ALL';
+['ALL',...Object.keys(VN)].forEach(k=>{
+  const b=document.createElement('button'); b.textContent=k==='ALL'?'SHOW ALL':VN[k];
+  if(k==='ALL') b.classList.add('on');
+  b.onclick=()=>{ activeFilter=k;
+    filters.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    houseMeshes.forEach(g=>{ const show=k==='ALL'||g.userData.house.verdict===k;
+      g.visible=show; });
+  };
+  filters.appendChild(b);
+});
+
+/* ---------- info panel ---------- */
+const panel=document.getElementById('panel'), pbody=document.getElementById('panel-body');
+function scoreBar(label,v){ return `<div class="scorebar">${label.toUpperCase()} ${v}<div class="track"><div class="fill" style="width:${v}%"></div></div></div>`; }
+function openPanel(h){
+  const c='#'+(VC[h.verdict]||0x888888).toString(16).padStart(6,'0');
+  pbody.innerHTML = `
+    <h2>${h.name}</h2><div class="area">${(h.area||'').toUpperCase()} · ${(h.type||'').toUpperCase()}</div>
+    <span class="badge" style="color:${c};border-color:${c}">${VN[h.verdict]||h.verdict}${h.status==='sold'?' · SOLDED':''}</span>
+    <div class="kv"><span>Ask</span><b>${h.ask!=null?h.ask.toFixed(2)+' M':''}</b></div>
+    <div class="kv"><span>Total price</span><b>${h.total!=null?h.total.toFixed(2)+' M':''}</b></div>
+    <div class="kv"><span>BRA-i</span><b>${h.sqm??'—'} m²</b></div>
+    <div class="kv"><span>Plot</span><b>${h.plot?h.plot+' m²':'—'}</b></div>
+    <div class="kv"><span>Bedrooms</span><b>${h.beds??'—'}</b></div>
+    <div class="kv"><span>Year</span><b>${h.year??'—'}</b></div>
+    <div class="kv"><span>Viewing</span><b style="font-size:10px">${h.viewing||'—'}</b></div>
+    ${h.scores?Object.entries(h.scores).map(([k,v])=>scoreBar(k,v)).join(''):''}
+    <div id="take">${h.take||''}</div>
+    <a class="btn" href="${h.url}" target="_blank" rel="noopener">OPEN FINN AD ↗</a>`;
+  panel.classList.add('open');
+}
+document.getElementById('closep').onclick=()=>panel.classList.remove('open');
+
+/* ---------- picking ---------- */
+const ray=new THREE.Raycaster(), mouse=new THREE.Vector2(); let hovered=null;
+function pick(e){
+  mouse.x=(e.clientX/innerWidth)*2-1; mouse.y=-(e.clientY/innerHeight)*2+1;
+  ray.setFromCamera(mouse,camera);
+  const hits=ray.intersectObjects(houseMeshes,true);
+  if(!hits.length) return null;
+  let o=hits[0].object; while(o && !o.userData.house) o=o.parent;
+  return o;
+}
+renderer.domElement.addEventListener('pointermove',e=>{
+  const g=pick(e);
+  if(hovered && hovered!==g){ hovered.scale.setScalar(1); }
+  hovered=g;
+  if(g){ g.scale.setScalar(1.12); renderer.domElement.style.cursor='pointer'; }
+  else renderer.domElement.style.cursor='grab';
+});
+let downXY=null;
+renderer.domElement.addEventListener('pointerdown',e=>downXY=[e.clientX,e.clientY]);
+renderer.domElement.addEventListener('pointerup',e=>{
+  if(!downXY) return;
+  const moved=Math.hypot(e.clientX-downXY[0],e.clientY-downXY[1]); downXY=null;
+  if(moved>6) return;                    // it was a drag, not a click
+  const g=pick(e);
+  if(g){ openPanel(g.userData.house); flyTo(g); }
+});
+
+/* ---------- camera fly-to tween ---------- */
+let tween=null;
+function flyTo(g){
+  const p=g.position;
+  tween={t:0, fromP:camera.position.clone(), fromT:controls.target.clone(),
+         toP:new THREE.Vector3(p.x+34,42,p.z+52), toT:new THREE.Vector3(p.x,12,p.z)};
+}
+function flyHome(){
+  tween={t:0, fromP:camera.position.clone(), fromT:controls.target.clone(),
+         toP:new THREE.Vector3(0,300,430), toT:new THREE.Vector3(0,0,0)};
+}
+
+/* ---------- timeline scrubber ---------- */
+const slider=document.getElementById('tl-slider'), tlWeek=document.getElementById('tl-week'), tlInfo=document.getElementById('tl-info');
+const BUDGET=11.0; // MNOK
+const comps=W.houses.filter(h=>h.status==='sold'&&h.total&&h.sqm);
+const baseKrM2=comps.reduce((a,h)=>a+h.total*1e6/h.sqm,0)/comps.length;
+const DRIFT=1.0009; // +~0.09 %/week, conservative Norwegian drift
+const start=new Date('2027-04-05T00:00:00');
+function weekLabel(w){ const d=new Date(start.getTime()+w*7*864e5);
+  return d.toLocaleDateString('no-NO',{day:'numeric',month:'short'}); }
+function updateTL(){
+  const w=+slider.value;
+  tlWeek.textContent=`WEEK ${w+1} · ${weekLabel(w)}`;
+  const krM2=baseKrM2*Math.pow(DRIFT,w*7/7);
+  const m2=BUDGET*1e6/krM2;
+  const fits=W.houses.filter(h=>h.status==='live'&&h.total&&h.total<=BUDGET);
+  tlInfo.innerHTML=`Sold-comps average <b>${(krM2/1000).toFixed(1)} kKr/m²</b> → your <b>${BUDGET.toFixed(1)} M</b> buys ≈ <b>${m2.toFixed(0)} m²</b> of comp-quality house. `+
+    `Live boards under budget right now: <span class="fit">${fits.length}</span> — ${fits.map(h=>h.name.split(' ')[0]).slice(0,6).join(', ')}${fits.length>6?'…':''}. <i style="color:#54628f">(toy extrapolation from ${comps.length} sold comps)</i>`;
+  houseMeshes.forEach(g=>{ const h=g.userData.house;
+    const ok=h.status==='live'&&h.total&&h.total<=BUDGET;
+    g.children[4].material.opacity = ok? .95 : .25;   // beacon glow dim/bright
+  });
+}
+slider.oninput=updateTL; updateTL();
+
+/* ---------- audio tour ---------- */
+const au=document.getElementById('tour-audio');
+au.src='tour.mp3';
+const vm=document.getElementById('video-modal'), vv=document.getElementById('tour-video');
+document.getElementById('watch-video').onclick=()=>{ vm.classList.add('open'); au.pause(); vv.play().catch(()=>{}); };
+document.getElementById('video-close').onclick=()=>{ vv.pause(); vm.classList.remove('open'); };
+vm.addEventListener('click',e=>{ if(e.target===vm){ vv.pause(); vm.classList.remove('open'); } });
+
+/* ---------- debug/h shot hooks ---------- */
+{
+  const qs=new URLSearchParams(location.search);
+  if(qs.get('shot')){
+    try{ const s=JSON.parse(qs.get('shot'));
+      camera.position.set(s.p[0],s.p[1],s.p[2]); controls.target.set(s.t[0],s.t[1],s.t[2]); tween=null;
+    }catch(e){}
+  }
+  if(qs.get('clean')==='1'){
+    document.querySelectorAll('.hud').forEach(e=>e.style.display='none');
+    const ld=document.getElementById('loader'); if(ld) ld.style.display='none';
+  }
+}
+
+/* ---------- intro flight + loop ---------- */
+flyHome(); tween.t=-1.2; // hold a beat before flying in
+const clock=new THREE.Clock();
+function animate(){
+  requestAnimationFrame(animate);
+  const dt=clock.getDelta();
+  if(window.__tip) window.__tip.material.color.setHex(Math.sin(clock.elapsedTime*3)>0?0xff3355:0x551122);
+  if(tween){
+    tween.t+=dt*.55;
+    const k=Math.min(Math.max(tween.t,0),1), e=1-Math.pow(1-k,3);
+    camera.position.lerpVectors(tween.fromP,tween.toP,e);
+    controls.target.lerpVectors(tween.fromT,tween.toT,e);
+    if(k>=1) tween=null;
+  }
+  houseMeshes.forEach((g,i)=>{ g.children[4].position.y=26+Math.sin(clock.elapsedTime*1.4+i)*2.2; });
+  controls.update();
+  renderer.render(scene,camera);
+}
+animate();
+window.__sceneReady = true;   // one synchronous render has completed
+setTimeout(()=>document.getElementById('loader').classList.add('done'),700);
+
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+</script>
+</body>
+</html>
