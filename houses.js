@@ -1,8 +1,8 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-21T12:05:00+02:00",
-  scrapedLabel: "21 Aug 2026, 12:05 CEST · full ad-level verification pass",
+  scrapedAt: "2026-08-21T18:12:00+02:00",
+  scrapedLabel: "21 Aug 2026, 18:12 CEST · evening FINN pass",
   stats: {
-    eiganesHouses: 17,
+    eiganesHouses: 16,
     valandHouses: 4,
     fitCount: 1,
     yoy: "11.1%",
@@ -33,7 +33,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473900649",
       flags: ["garden", "garage", "zones"],
       scores: { family: 56, garden: 94, area: 76, risk: 34, forus: 80 },
-      take: "New today-ish: 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet as the neighbour, 9.5m ask. That land is compound-shaped. The house is not: 160 m² BRA-i / 177 m², 3 beds / 4 rooms, 1954, 'modernisering må påregnes', garage only 17 m². Basement 51 m² could become gym later if you survive the archaeology. Watch the plot, don’t fall in love with the building."
+      take: "Still the land play, not the house. 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet as the neighbour, 9.5m ask. The building is 160 m² BRA-i / 177 m², 3 beds / 4 rooms, 1954, 'modernisering må påregnes', garage only 17 m². Basement 51 m² could become gym later if you survive the archaeology. Watch the plot, don’t fall in love with the building."
     },
     {
       id: "vestbo",
@@ -72,7 +72,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/projectsingle/ad.html?finnkode=423023110",
       flags: ["zones", "newer", "premium"],
       scores: { family: 68, garden: 42, area: 90, risk: 80, forus: 84 },
-      take: "New on the board: Eiganesveien 168 byvilla, 196 m², 3 (maybe 4) beds, two stuer, ungdomsavdeling in the basement, carport, handover Q3 2026. Functionally closer than the 25m Swiss sibling. Garden is a shared green between houses, not a private kid-chaos plot. 14.85m for 196 m² is still boutique-hotel money. Dream/price ceiling, not a 2027 target."
+      take: "Eiganesveien 168 byvilla, 196 m², 3 (maybe 4) beds, two stuer, ungdomsavdeling in the basement, carport, handover Q3 2026. Functionally closer than the 25m Swiss sibling. Garden is a shared green between houses, not a private kid-chaos plot. 14.85m for 196 m² is still boutique-hotel money. Dream/price ceiling, not a 2027 target."
     },
     {
       id: "madlavei-10",
@@ -86,19 +86,6 @@ window.WAR_ROOM = {
       flags: ["beds", "garden", "garage", "premium"],
       scores: { family: 76, garden: 94, area: 90, risk: 74, forus: 84 },
       take: "Rebuilt Swiss villa, 211 m², 4 beds, garage tag and a genuine 930 m² Eiganes plot. Garden math is unicorn. Price math is a different religion. 25m for 211 m² is compound-adjacent land with boutique-hotel invoices. Keep as a plot/area ceiling, not a 2027 target."
-    },
-    {
-      id: "jens-tvedts",
-      name: "Jens Tvedts gate 4",
-      area: "Kampen",
-      type: "Tomannsbolig",
-      ask: 4.99, total: 5.12, sqm: 116, plot: 374, beds: 4, year: 1935,
-      status: "live", verdict: "wrong",
-      viewing: "Thu 20 Aug 17:30",
-      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=468697314",
-      flags: ["cheap", "beds"],
-      scores: { family: 42, garden: 30, area: 64, risk: 66, forus: 78 },
-      take: "Still in the Eiganes/Stokka/Sandal search bucket, still Kampen, still only 116 m². Four bedrooms at 5m is cute, like a golden retriever in a spreadsheet, but this is not a compound: no convincing garden, no gym path, no 2-zone family HQ. Useful only as market noise."
     },
     {
       id: "steingata",
@@ -185,24 +172,11 @@ window.WAR_ROOM = {
       type: "Rekkehus",
       ask: 5.49, total: 5.63, sqm: 133, plot: 78, beds: 2, year: 1952,
       status: "live", verdict: "wrong",
-      viewing: "Thu 20 Aug 16:30",
+      viewing: "By appointment",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473172605",
       flags: ["cheap"],
       scores: { family: 38, garden: 24, area: 76, risk: 70, forus: 80 },
-      take: "Still the wrong little bastard. 133 m² rekkehus, 2 bedrooms, good standard and nice view perhaps, but no compound garden and no rack+treadmill path without evicting normal life. Fine for someone else."
-    },
-    {
-      id: "furras",
-      name: "Furras gate 15",
-      area: "Våland",
-      type: "Enebolig",
-      ask: 6.95, total: 7.12, sqm: 201, plot: 161, beds: 5, year: 1910,
-      status: "live", verdict: "trap",
-      viewing: "By appointment",
-      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472396798",
-      flags: ["beds", "zones"],
-      scores: { family: 58, garden: 28, area: 82, risk: 32, forus: 80 },
-      take: "Unchanged trap. Five bedrooms and a 1910 soul for 7m sounds clever until the 161 m² plot and 'modernisering kan påregnes' walk in wearing a plague mask. Rooms: yes. Kid outdoor chaos: no. Gym: cellar project after you spend the savings. Not the compound."
+      take: "Still the wrong little bastard. 133 m² rekkehus, 2 bedrooms, good standard and nice view perhaps, but no compound garden and no rack+treadmill path without evicting normal life. Viewing slot expired; now by appointment. Fine for someone else."
     },
     {
       id: "muse",
@@ -216,6 +190,32 @@ window.WAR_ROOM = {
       flags: ["garden", "heritage"],
       scores: { family: 48, garden: 55, area: 84, risk: 40, forus: 78 },
       take: "Still listed. Prize-winning heritage villa, garden, garage, charm by the bucket. Also 173 m², three bedrooms and conservation/old-house constraints. Beautiful problem, wrong operating base."
+    },
+    {
+      id: "furras",
+      name: "Furras gate 15",
+      area: "Våland",
+      type: "Enebolig",
+      ask: 6.95, total: 7.12, sqm: 201, plot: 161, beds: 5, year: 1910,
+      status: "sold", verdict: "sold",
+      viewing: "Sold 21 Aug 2026 (FINN badge · ad last changed 10:07)",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472396798",
+      flags: ["beds", "zones"],
+      scores: { family: 58, garden: 28, area: 82, risk: 32, forus: 80 },
+      take: "Trap closed. Five bedrooms and a 1910 soul for 6.95m sounded clever until the 161 m² plot walked in. Keep a few weeks as the Våland-without-garden transact: rooms yes, kid chaos no, gym a cellar project after the savings are gone. Not the compound, and now not even available."
+    },
+    {
+      id: "jens-tvedts",
+      name: "Jens Tvedts gate 4",
+      area: "Kampen",
+      type: "Tomannsbolig",
+      ask: 4.99, total: 5.12, sqm: 116, plot: 374, beds: 4, year: 1935,
+      status: "sold", verdict: "sold",
+      viewing: "Sold 21 Aug 2026 (FINN badge · ad last changed 15:11)",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=468697314",
+      flags: ["cheap", "beds"],
+      scores: { family: 42, garden: 30, area: 64, risk: 66, forus: 78 },
+      take: "Gone today. Still Kampen, still 116 m² of a horizontal two-family. Four bedrooms at ~5m was cute market noise, not a compound. Drop once it stops teaching that the cheap Kampen slice actually moves."
     },
     {
       id: "spurve",
