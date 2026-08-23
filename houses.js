@@ -1,6 +1,6 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-22T18:05:00+02:00",
-  scrapedLabel: "22 Aug 2026, 18:05 CEST · evening FINN pass",
+  scrapedAt: "2026-08-23T18:00:34+02:00",
+  scrapedLabel: "23 Aug 2026, 18:00 CEST · evening FINN pass",
   stats: {
     eiganesHouses: 18,
     valandHouses: 4,
@@ -20,7 +20,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474154858",
       flags: ["beds", "baths", "zones", "garden", "rental", "garage"],
       scores: { family: 90, garden: 80, area: 92, risk: 68, forus: 82 },
-      take: "New today, and the first live house that actually ticks the official family boxes. Stokka 4022, 292 m² BRA-i / 301 total, 582 m² owned plot, 7 bedrooms, 3 baths, 3 stuer, 83 m² terrace, approved sokkelleilighet. Main house is 5 beds / 2 stuer / 2 baths plus guest WC; the unit adds 2 beds and a bath. 1999 beats 1915 archaeology. The catch: the real basement volume is the rental (74 m²), main kjeller is only 17 m², so rack+treadmill means eating the sokkel or a stue. 12.5m / 12.81 total is above the 11m stick, not stupid. Recon, not a bid."
+      take: "Still the best live fit and now badged Ukens bolig. Stokka 4022, 292 m² BRA-i / 301 total, 582 m² owned plot, 7 bedrooms, 3 baths, 3 stuer, 83 m² terrace, approved sokkelleilighet. Main house is 5 beds / 2 stuer / 2 baths plus guest WC; the unit adds 2 beds and a bath. 1999 beats 1915 archaeology. The catch: the real basement volume is the rental (74 m²), main kjeller is only 17 m², so rack+treadmill means eating the sokkel or a stue. 12.5m / 12.81 total is above the 11m stick, not stupid. Recon, not a bid."
     },
     {
       id: "hoigard",
@@ -68,11 +68,11 @@ window.WAR_ROOM = {
       type: "Enebolig · 1915",
       ask: 11.99, total: 12.29, sqm: 261, plot: 396, beds: 3, year: 1915,
       status: "live", verdict: "watch",
-      viewing: "Sun 23 Aug 16:00–17:00",
+      viewing: "Sun 23 Aug 16:00–17:00 · held",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473171110",
       flags: ["zones", "baths", "gym"],
       scores: { family: 69, garden: 58, area: 84, risk: 42, forus: 80 },
-      take: "Still live, viewing tomorrow 16–17. 261 m², 396 m² corner plot, two stuer, loftstue, basement with own entrance. Two baths upstairs plus guest WC is good; 1915 + energy F is the maintenance gods asking for tribute. Same ask as Høigårds for less garden and more archaeology. Watch, don’t worship."
+      take: "Still live after today’s viewing. 261 m², 396 m² corner plot, two stuer, loftstue, basement with own entrance. Two baths upstairs plus guest WC is good; 1915 + energy F is the maintenance gods asking for tribute. Same ask as Høigårds for less garden and more archaeology. Watch, don’t worship."
     },
     {
       id: "madlavei-6c",
@@ -274,13 +274,13 @@ window.WAR_ROOM = {
       name: "Øvre Stokkavei 82A",
       area: "Stokka",
       type: "Enebolig",
-      ask: 10.5, total: 10.76, sqm: 163, plot: null, beds: 4, year: null,
+      ask: 10.5, total: 10.76, sqm: 163, plot: 463, beds: 4, year: 1971,
       status: "sold", verdict: "sold",
       viewing: "Sold",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472024319",
       flags: ["beds", "gym", "rental"],
       scores: { family: 76, garden: 55, area: 88, risk: 78, forus: 82 },
-      take: "Still absent from the live search. Upgraded 2023–24, four bedrooms, hybel around 11k/month. This is what ~10.5m recently bought on Stokka when someone else had already done the expensive wet-room suffering."
+      take: "Still sold. 163 m² BRA-i on a 463 m² plot, built 1971, upgraded 2023–24, four bedrooms and hybel around 11k/month. This is what ~10.5m recently bought on Stokka when someone else had already done the expensive wet-room suffering."
     },
     {
       id: "syrin",
