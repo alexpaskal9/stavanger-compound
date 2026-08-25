@@ -1,9 +1,9 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-24T18:04:34+02:00",
-  scrapedLabel: "24 Aug 2026, 18:04 CEST · evening FINN pass",
+  scrapedAt: "2026-08-25T18:03:13+02:00",
+  scrapedLabel: "25 Aug 2026, 18:03 CEST · evening FINN pass",
   stats: {
     eiganesHouses: 16,
-    valandHouses: 3,
+    valandHouses: 4,
     fitCount: 2,
     yoy: "11.1%",
     sqm: "~58k"
@@ -20,7 +20,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474154858",
       flags: ["beds", "baths", "zones", "garden", "rental", "garage"],
       scores: { family: 90, garden: 80, area: 92, risk: 68, forus: 82 },
-      take: "Still the best live fit and still Ukens bolig. Same 12.5m / 12.81 total, 292 m² BRA-i, 582 m² owned plot, 7 beds / 3 baths / 3 stuer, approved sokkel. Ad touched today; viewing is next Monday. Gym still eats the rental or a stue. Recon, not a bid."
+      take: "Still Ukens bolig and still the only live house that actually looks like Syrinveien with extra bedrooms. Same 12.5m / 12.81 total, 292 m² BRA-i, 582 m² owned plot, 7 beds / 3 baths / 3 stuer, approved sokkel. Viewing Monday. Gym still eats the rental or a stue. Recon, not a bid."
     },
     {
       id: "hoigard",
@@ -36,6 +36,19 @@ window.WAR_ROOM = {
       take: "Unchanged volume play. 318 m² BRA-i / 338 m², 487 m² owned plot, terraces, double garage, extra kitchen downstairs. Official count is still 3 bedrooms / 4 rooms, so the fourth bed is paperwork. Same 11.99m. More gym-shaped than Rosestien, worse bedroom docs. Keep both."
     },
     {
+      id: "ovrebo",
+      name: "Øvrebøveien 3",
+      area: "Våland",
+      type: "Enebolig · 1972 · 1. etg 2018",
+      ask: 9.25, total: 9.48, sqm: 242, plot: 558, beds: 3, year: 1972,
+      status: "live", verdict: "watch",
+      viewing: "Mon 31 Aug 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474436092",
+      flags: ["garden", "garage", "zones", "gym"],
+      scores: { family: 70, garden: 78, area: 84, risk: 56, forus: 80 },
+      take: "New today. 9.25m / 9.48 total, 242 m² BRA-i, 558 m² owned plot, garage + EV, greenhouse. Official 3 beds + office + 97 m² basement with hobby/verksted/kjellerstue — gym lives downstairs. Two baths plus two WCs. Price is the interesting part; bedroom count is still a paperwork fight. Viewing Monday 17–18. Watch, don’t sprint."
+    },
+    {
       id: "bokfink",
       name: "Bokfinkveien 26",
       area: "Sandal",
@@ -46,7 +59,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473900649",
       flags: ["garden", "garage", "zones"],
       scores: { family: 56, garden: 94, area: 76, risk: 34, forus: 80 },
-      take: "Lost the weekly crown, still the land play. 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet next door, 9.5m ask. Building is 160 m² BRA-i, 3 beds, 1954, modernisering må påregnes. Watch the plot Wednesday, not the brochure."
+      take: "Still the land play. 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet next door, 9.5m ask. Building is 160 m² BRA-i, 3 beds, 1954, modernisering må påregnes. Viewing tomorrow — grade the plot, not the brochure."
     },
     {
       id: "vestbo",
@@ -55,11 +68,11 @@ window.WAR_ROOM = {
       type: "Enebolig · hybel/sokkel · two units",
       ask: 10.5, total: 10.76, sqm: 190, plot: 540, beds: 4, year: 1985,
       status: "live", verdict: "watch",
-      viewing: "Mon 24 Aug 16:00–17:00 · held",
+      viewing: "By appointment · Mon 24 viewing held",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472851006",
       flags: ["beds", "garden", "zones", "rental"],
       scores: { family: 74, garden: 76, area: 91, risk: 62, forus: 82 },
-      take: "Same 10.5m. Viewing was today 16–17. 540 m² owned plot, 190 m² BRA-i, 4 beds, two boenheter plus rammetillatelse for extension/new garage. Could become a compound; today it is still a project wearing a nice jacket. Grade the floorplan, don’t bid round one."
+      take: "Same 10.5m. Monday’s viewing is done; now by appointment. 540 m² owned plot, 190 m² BRA-i, 4 beds, two boenheter plus rammetillatelse for extension/new garage. Could become a compound; today it is still a project wearing a nice jacket. Grade the floorplan, don’t bid round one."
     },
     {
       id: "hornklove",
@@ -72,7 +85,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473171110",
       flags: ["zones", "baths", "gym"],
       scores: { family: 69, garden: 58, area: 84, risk: 42, forus: 80 },
-      take: "Still live after Sunday’s viewing; now by appointment. Same 11.99m as Høigårds for 261 m², 396 m² corner plot, two baths plus guest WC. 1915 + energy F is the maintenance invoice. Watch, don’t worship."
+      take: "Still live after Sunday’s viewing; still by appointment. Same 11.99m as Høigårds for 261 m², 396 m² corner plot, two baths plus guest WC. 1915 + energy F is the maintenance invoice. Watch, don’t worship."
     },
     {
       id: "madlavei-6c",
@@ -85,7 +98,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/projectsingle/ad.html?finnkode=423023110",
       flags: ["zones", "newer", "premium"],
       scores: { family: 68, garden: 42, area: 90, risk: 80, forus: 84 },
-      take: "Eiganesveien 168 byvilla, 196 m², 3 (maybe 4) beds, ungdomsavdeling in the basement, handover Q3 2026. Garden is shared green, not a private kid-chaos plot. 14.85m is still boutique-hotel money. Dream/price ceiling, not a 2027 target."
+      take: "Still the Eiganesveien 168 byvilla (project parent is also back on the search). 196 m², 3 (maybe 4) beds, ungdomsavdeling in the basement, handover Q3/Q4 2026. Garden is shared green, not a private kid-chaos plot. 14.85m is still boutique-hotel money. Dream/price ceiling, not a 2027 target."
     },
     {
       id: "madlavei-10",
@@ -137,7 +150,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471177161",
       flags: ["baths", "zones", "premium"],
       scores: { family: 60, garden: 38, area: 92, risk: 78, forus: 84 },
-      take: "Premium Eiganes townhouse: 3 beds, 3 baths, 4 stuer. Viewing tomorrow. Lovely object, bad compound math. 15.9m for 179 m² is consulting-hour money. Dream/price ceiling, not a target."
+      take: "Premium Eiganes townhouse: 3 beds, 3 baths, 4 stuer. Viewing today 16:30. Lovely object, bad compound math. 15.9m for 179 m² is consulting-hour money. Dream/price ceiling, not a target."
     },
     {
       id: "bretland-30",
@@ -150,7 +163,7 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471179333",
       flags: ["premium", "newer"],
       scores: { family: 58, garden: 36, area: 92, risk: 80, forus: 84 },
-      take: "Sibling to 28: new, polished, expensive, and too townhouse-shaped for the must-haves. Compound money without compound outdoor space. Nice market reference, wrong target."
+      take: "Sibling to 28: new, polished, expensive, and too townhouse-shaped for the must-haves. Viewing today. Compound money without compound outdoor space. Nice market reference, wrong target."
     },
     {
       id: "welhavens",
@@ -172,11 +185,11 @@ window.WAR_ROOM = {
       type: "Del av tomannsbolig",
       ask: 4.49, total: 4.60, sqm: 87, plot: 222, beds: 2, year: 1912,
       status: "live", verdict: "wrong",
-      viewing: "Mon 24 Aug 16:15 · held",
+      viewing: "By appointment · Mon 24 viewing held",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471877789",
       flags: ["cheap"],
       scores: { family: 28, garden: 16, area: 62, risk: 68, forus: 78 },
-      take: "Half a two-family house, 87 m², 2 bedrooms. Viewing was today. Fine student/BI commute object. Zero compound. Ignore."
+      take: "Half a two-family house, 87 m², 2 bedrooms. Monday’s viewing is done. Fine student/BI commute object. Zero compound. Ignore."
     },
     {
       id: "drgraesli",
