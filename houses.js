@@ -1,6 +1,6 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-25T18:03:13+02:00",
-  scrapedLabel: "25 Aug 2026, 18:03 CEST · evening FINN pass",
+  scrapedAt: "2026-08-26T18:02:55+02:00",
+  scrapedLabel: "26 Aug 2026, 18:02 CEST · evening FINN pass",
   stats: {
     eiganesHouses: 16,
     valandHouses: 4,
@@ -55,11 +55,11 @@ window.WAR_ROOM = {
       type: "Enebolig · 1954",
       ask: 9.5, total: 9.74, sqm: 160, plot: 1073, beds: 3, year: 1954,
       status: "live", verdict: "watch",
-      viewing: "Wed 26 Aug 16:00–17:00",
+      viewing: "Wed 26 Aug 16:00–17:00 · held",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473900649",
       flags: ["garden", "garage", "zones"],
       scores: { family: 56, garden: 94, area: 76, risk: 34, forus: 80 },
-      take: "Still the land play. 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet next door, 9.5m ask. Building is 160 m² BRA-i, 3 beds, 1954, modernisering må påregnes. Viewing tomorrow — grade the plot, not the brochure."
+      take: "Still the land play. 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet next door, 9.5m ask. Building is 160 m² BRA-i, 3 beds, 1954, modernisering må påregnes. Today’s viewing is done — grade the plot, not the brochure."
     },
     {
       id: "vestbo",
@@ -80,12 +80,12 @@ window.WAR_ROOM = {
       area: "Våland",
       type: "Enebolig · 1915",
       ask: 11.99, total: 12.29, sqm: 261, plot: 396, beds: 3, year: 1915,
-      status: "live", verdict: "watch",
-      viewing: "By appointment · Sun 23 viewing held",
+      status: "sold", verdict: "sold",
+      viewing: "Sold 26 Aug 2026 (FINN badge; ask 11.99m)",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473171110",
       flags: ["zones", "baths", "gym"],
       scores: { family: 69, garden: 58, area: 84, risk: 42, forus: 80 },
-      take: "Still live after Sunday’s viewing; still by appointment. Same 11.99m as Høigårds for 261 m², 396 m² corner plot, two baths plus guest WC. 1915 + energy F is the maintenance invoice. Watch, don’t worship."
+      take: "Sold today at a 11.99m ask. Useful Våland comp: 261 m² over four floors, 396 m² corner plot, two baths plus guest WC, loftstue and kjellerstue — but only three approved bedrooms. The 1915 / energy-F maintenance invoice did not stop it moving."
     },
     {
       id: "madlavei-6c",
@@ -146,11 +146,11 @@ window.WAR_ROOM = {
       type: "Tomannsbolig · townhouse",
       ask: 15.9, total: 16.3, sqm: 179, plot: null, beds: 3, year: null,
       status: "live", verdict: "dream",
-      viewing: "Tue 25 Aug 16:30",
+      viewing: "By appointment · Tue 25 viewing held",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471177161",
       flags: ["baths", "zones", "premium"],
       scores: { family: 60, garden: 38, area: 92, risk: 78, forus: 84 },
-      take: "Premium Eiganes townhouse: 3 beds, 3 baths, 4 stuer. Viewing today 16:30. Lovely object, bad compound math. 15.9m for 179 m² is consulting-hour money. Dream/price ceiling, not a target."
+      take: "Premium Eiganes townhouse: 3 beds, 3 baths, 4 stuer. Tuesday’s viewing is done; now by appointment. Lovely object, bad compound math. 15.9m for 179 m² is consulting-hour money. Dream/price ceiling, not a target."
     },
     {
       id: "bretland-30",
@@ -159,11 +159,11 @@ window.WAR_ROOM = {
       type: "Tomannsbolig · townhouse",
       ask: 15.9, total: 16.3, sqm: 175, plot: null, beds: 3, year: null,
       status: "live", verdict: "dream",
-      viewing: "Tue 25 Aug 16:30",
+      viewing: "By appointment · Tue 25 viewing held",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471179333",
       flags: ["premium", "newer"],
       scores: { family: 58, garden: 36, area: 92, risk: 80, forus: 84 },
-      take: "Sibling to 28: new, polished, expensive, and too townhouse-shaped for the must-haves. Viewing today. Compound money without compound outdoor space. Nice market reference, wrong target."
+      take: "Sibling to 28: new, polished, expensive, and too townhouse-shaped for the must-haves. Tuesday’s viewing is done; now by appointment. Compound money without compound outdoor space. Nice market reference, wrong target."
     },
     {
       id: "welhavens",
