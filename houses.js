@@ -1,6 +1,6 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-26T18:02:55+02:00",
-  scrapedLabel: "26 Aug 2026, 18:02 CEST · evening FINN pass",
+  scrapedAt: "2026-08-27T18:01:07+02:00",
+  scrapedLabel: "27 Aug 2026, 18:01 CEST · evening FINN pass",
   stats: {
     eiganesHouses: 16,
     valandHouses: 4,
@@ -54,12 +54,12 @@ window.WAR_ROOM = {
       area: "Sandal",
       type: "Enebolig · 1954",
       ask: 9.5, total: 9.74, sqm: 160, plot: 1073, beds: 3, year: 1954,
-      status: "live", verdict: "watch",
-      viewing: "Wed 26 Aug 16:00–17:00 · held",
+      status: "sold", verdict: "sold",
+      viewing: "Sold 27 Aug 2026 (FINN badge; ask 9.5m)",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473900649",
       flags: ["garden", "garage", "zones"],
       scores: { family: 56, garden: 94, area: 76, risk: 34, forus: 80 },
-      take: "Still the land play. 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet next door, 9.5m ask. Building is 160 m² BRA-i, 3 beds, 1954, modernisering må påregnes. Today’s viewing is done — grade the plot, not the brochure."
+      take: "Sold today at a 9.5m ask. Useful land comp: 1 073 m² owned plot at the end of a Sandal blindvei, Stokkavatnet next door, but only 160 m² BRA-i, 3 beds and a 1954 renovation invoice. The plot moved fast; the house still did not fit the brief."
     },
     {
       id: "vestbo",
@@ -68,11 +68,11 @@ window.WAR_ROOM = {
       type: "Enebolig · hybel/sokkel · two units",
       ask: 10.5, total: 10.76, sqm: 190, plot: 540, beds: 4, year: 1985,
       status: "live", verdict: "watch",
-      viewing: "By appointment · Mon 24 viewing held",
+      viewing: "Tue 8 Sep 16:00–16:45",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472851006",
       flags: ["beds", "garden", "zones", "rental"],
       scores: { family: 74, garden: 76, area: 91, risk: 62, forus: 82 },
-      take: "Same 10.5m. Monday’s viewing is done; now by appointment. 540 m² owned plot, 190 m² BRA-i, 4 beds, two boenheter plus rammetillatelse for extension/new garage. Could become a compound; today it is still a project wearing a nice jacket. Grade the floorplan, don’t bid round one."
+      take: "Same 10.5m, now with a fresh 8 September viewing. 540 m² owned plot, 190 m² BRA-i, 4 beds, two boenheter plus rammetillatelse for extension/new garage. Could become a compound; today it is still a project wearing a nice jacket. Grade the floorplan, not the lake-view spell."
     },
     {
       id: "hornklove",
