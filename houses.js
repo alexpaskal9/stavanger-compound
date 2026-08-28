@@ -1,10 +1,10 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-27T18:01:07+02:00",
-  scrapedLabel: "27 Aug 2026, 18:01 CEST · evening FINN pass",
+  scrapedAt: "2026-08-28T18:04:07+02:00",
+  scrapedLabel: "28 Aug 2026, 18:04 CEST · evening FINN pass",
   stats: {
-    eiganesHouses: 16,
-    valandHouses: 4,
-    fitCount: 2,
+    eiganesHouses: 17,
+    valandHouses: 5,
+    fitCount: 3,
     yoy: "11.1%",
     sqm: "~58k"
   },
@@ -20,7 +20,20 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474154858",
       flags: ["beds", "baths", "zones", "garden", "rental", "garage"],
       scores: { family: 90, garden: 80, area: 92, risk: 68, forus: 82 },
-      take: "Still Ukens bolig and still the only live house that actually looks like Syrinveien with extra bedrooms. Same 12.5m / 12.81 total, 292 m² BRA-i, 582 m² owned plot, 7 beds / 3 baths / 3 stuer, approved sokkel. Viewing Monday. Gym still eats the rental or a stue. Recon, not a bid."
+      take: "Still Ukens bolig and still the cleanest live Syrinveien rhyme near the reference price. Same 12.5m / 12.81 total, 292 m² BRA-i, 582 m² owned plot, 7 beds / 3 baths / 3 stuer, approved sokkel. Viewing Monday. Gym still eats the rental or a stue. Recon, not a bid."
+    },
+    {
+      id: "adjunkt-hauglands",
+      name: "Adjunkt Hauglands gate 28",
+      area: "Stokka",
+      type: "Enebolig · kjellerleilighet · 1984",
+      ask: 13.5, total: 13.84, sqm: 307, plot: 498, beds: 4, year: 1984,
+      status: "live", verdict: "strong",
+      viewing: "Mon 7 Sep 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474866838",
+      flags: ["beds", "baths", "zones", "garden", "rental", "garage", "gym"],
+      scores: { family: 94, garden: 84, area: 92, risk: 66, forus: 82 },
+      take: "New today and a real brief-fit: 307 m² BRA-i, 498 m² owned plot, 4 bedrooms, several stuer, four wet rooms and an approved basement apartment. The blindvei garden is properly kid-shaped; the volume leaves a gym path without deleting family life. At 13.5m it is above reference and four wet rooms in a 1984 house are not decorative details. Strong recon, not a buy signal."
     },
     {
       id: "hoigard",
@@ -46,7 +59,20 @@ window.WAR_ROOM = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474436092",
       flags: ["garden", "garage", "zones", "gym"],
       scores: { family: 70, garden: 78, area: 84, risk: 56, forus: 80 },
-      take: "New today. 9.25m / 9.48 total, 242 m² BRA-i, 558 m² owned plot, garage + EV, greenhouse. Official 3 beds + office + 97 m² basement with hobby/verksted/kjellerstue — gym lives downstairs. Two baths plus two WCs. Price is the interesting part; bedroom count is still a paperwork fight. Viewing Monday 17–18. Watch, don’t sprint."
+      take: "Yesterday’s useful arrival. 9.25m / 9.48 total, 242 m² BRA-i, 558 m² owned plot, garage + EV, greenhouse. Official 3 beds + office + 97 m² basement with hobby/verksted/kjellerstue — gym lives downstairs. Two baths plus two WCs. Price is the interesting part; bedroom count is still a paperwork fight. Viewing Monday 17–18. Watch, don’t sprint."
+    },
+    {
+      id: "byfoged-finnes",
+      name: "Byfoged Finnes gate 16",
+      area: "Våland",
+      type: "Tomannsbolig · eierseksjon · 1955",
+      ask: 5.85, total: 6.0, sqm: 193, plot: 708, beds: 4, year: 1955,
+      status: "live", verdict: "trap",
+      viewing: "Thu 3 Sep 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474643856",
+      flags: ["beds", "baths", "zones", "garden", "gym", "garage"],
+      scores: { family: 74, garden: 52, area: 84, risk: 24, forus: 84 },
+      take: "New today and seductively cheap: 193 m² BRA-i, 4 approved bedrooms upstairs, 2 baths, garage and an 82 m² basement that can swallow a gym and second zone. Then the paperwork arrives. The 708 m² garden belongs to the two-section sameie, most of the basement conversion is unapproved, and the report flags elevated moisture, old drainage and wet-room risk. Useful floor-plan recon; a 5.85m trap until the basement and garden rights survive daylight."
     },
     {
       id: "bokfink",
@@ -184,12 +210,12 @@ window.WAR_ROOM = {
       area: "Kampen",
       type: "Del av tomannsbolig",
       ask: 4.49, total: 4.60, sqm: 87, plot: 222, beds: 2, year: 1912,
-      status: "live", verdict: "wrong",
-      viewing: "By appointment · Mon 24 viewing held",
+      status: "sold", verdict: "sold",
+      viewing: "Sold 28 Aug 2026 (FINN badge; ask 4.49m)",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471877789",
       flags: ["cheap"],
       scores: { family: 28, garden: 16, area: 62, risk: 68, forus: 78 },
-      take: "Half a two-family house, 87 m², 2 bedrooms. Monday’s viewing is done. Fine student/BI commute object. Zero compound. Ignore."
+      take: "Sold today at a 4.49m ask. Half a two-family house, 87 m² and 2 bedrooms: useful only as proof that cheap Kampen stock still moves. Fine student/BI object, zero compound."
     },
     {
       id: "drgraesli",
@@ -198,11 +224,11 @@ window.WAR_ROOM = {
       type: "Rekkehus",
       ask: 5.49, total: 5.63, sqm: 133, plot: 78, beds: 2, year: 1952,
       status: "live", verdict: "wrong",
-      viewing: "By appointment",
+      viewing: "Tue 1 Sep 16:30–17:30",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473172605",
       flags: ["cheap"],
       scores: { family: 38, garden: 24, area: 76, risk: 70, forus: 80 },
-      take: "Still the wrong little bastard. 133 m² rekkehus, 2 bedrooms, no compound garden and no rack+treadmill path without evicting normal life. Fine for someone else."
+      take: "Still the wrong little bastard, now with a Tuesday viewing. 133 m² rekkehus, 2 bedrooms, no compound garden and no rack+treadmill path without evicting normal life. Fine for someone else."
     },
     {
       id: "muse",
