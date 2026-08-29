@@ -1,9 +1,9 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-28T18:04:07+02:00",
-  scrapedLabel: "28 Aug 2026, 18:04 CEST · evening FINN pass",
+  scrapedAt: "2026-08-29T18:01:21+02:00",
+  scrapedLabel: "29 Aug 2026, 18:01 CEST · evening FINN pass",
   stats: {
-    eiganesHouses: 17,
-    valandHouses: 5,
+    eiganesHouses: 18,
+    valandHouses: 4,
     fitCount: 3,
     yoy: "11.1%",
     sqm: "~58k"
