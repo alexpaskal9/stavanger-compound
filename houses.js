@@ -1,6 +1,6 @@
 window.WAR_ROOM = {
-  scrapedAt: "2026-08-30T18:01:48+02:00",
-  scrapedLabel: "30 Aug 2026, 18:01 CEST · evening FINN pass",
+  scrapedAt: "2026-08-31T18:01:39+02:00",
+  scrapedLabel: "31 Aug 2026, 18:01 CEST · evening FINN pass",
   stats: {
     eiganesHouses: 17,
     valandHouses: 4,
@@ -9,6 +9,19 @@ window.WAR_ROOM = {
     sqm: "~58k"
   },
   houses: [
+    {
+      id: "edvard-griegs",
+      name: "Edvard Griegs vei 33",
+      area: "Stokka",
+      type: "Enebolig · rebuilt 2016 · 1960",
+      ask: 14.5, total: 14.86, sqm: 187, plot: 689, beds: 3, year: 1960,
+      status: "live", verdict: "watch",
+      viewing: "Mon 7 Sep 16:00–17:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475184173",
+      flags: ["baths", "garden", "garage", "gym", "newer"],
+      scores: { family: 72, garden: 91, area: 92, risk: 76, forus: 82 },
+      take: "New today: a handsome 2016 rebuild on a rare 689 m² blindvei plot, with 3 baths, carport and a 40 m² main suite. The basement soverom/kjellerstue is the only obvious second zone or gym path, and FINN still counts just 3 bedrooms. At 14.5m for 187 m², the garden is doing expensive work. Good layout recon; not a clean must-have fit."
+    },
     {
       id: "rosestien",
       name: "Rosestien 1",
