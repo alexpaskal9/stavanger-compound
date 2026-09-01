@@ -2,13 +2,11 @@
 // Updated from live listing pages and broad Greater Stavanger search on 2026-09-01.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
-window.HOUSE_DATA = {
-  meta: {
-    scrapedAt: "2026-09-01T18:07:00+02:00",
-    scrapedLabel: "1 Sep 2026, 18:07 CEST",
-    source: "FINN.no live ads plus broker pages",
-    methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed."
-  },
+window.WAR_ROOM = {
+  scrapedAt: "2026-09-01T18:07:00+02:00",
+  scrapedLabel: "1 Sep 2026, 18:07 CEST",
+  source: "FINN.no live ads plus broker pages",
+  methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
   stats: {
     totalHouses: 7,
     stavangerHouses: 4,
@@ -20,7 +18,7 @@ window.HOUSE_DATA = {
   houses: [
     {
       id: "per-spelemanns-29",
-      address: "Per Spelemanns vei 29",
+      name: "Per Spelemanns vei 29",
       area: "Ullandhaug, Stavanger",
       type: "Enebolig",
       ask: 10.9,
@@ -34,7 +32,7 @@ window.HOUSE_DATA = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472523998",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/08/8/472/523/998_72ccd71c-7671-4e36-957c-a70ef3f6def3.jpg",
       verdict: "strong",
-      flags: ["family", "garden", "gym", "forus"],
+      flags: ["family", "baths", "garden", "zones", "gym", "forus"],
       scores: { family: 90, garden: 90, area: 92, risk: 70, forus: 100 },
       score: 79,
       facts: [
@@ -52,7 +50,7 @@ window.HOUSE_DATA = {
     },
     {
       id: "teineveien-28",
-      address: "Teineveien 28",
+      name: "Teineveien 28",
       area: "Hommersåk, Sandnes",
       type: "Enebolig",
       ask: 6.99,
@@ -66,7 +64,7 @@ window.HOUSE_DATA = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474571071",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/26/1/474/571/071_f5f88ec0-3003-40c2-acec-d1cc7f5a2193.jpg",
       verdict: "strong",
-      flags: ["family", "garden", "gym", "rental", "value"],
+      flags: ["family", "baths", "garden", "zones", "gym", "rental", "value"],
       scores: { family: 94, garden: 82, area: 50, risk: 62, forus: 55 },
       score: 76,
       facts: [
@@ -84,7 +82,7 @@ window.HOUSE_DATA = {
     },
     {
       id: "myrvegen-20",
-      address: "Myrvegen 20",
+      name: "Myrvegen 20",
       area: "Tananger, Sola",
       type: "Enebolig",
       ask: 7.5,
@@ -98,7 +96,7 @@ window.HOUSE_DATA = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473834353",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/22/3/473/834/353_51f6c87d-c482-419f-b2ae-e57228a8815f.jpg",
       verdict: "strong",
-      flags: ["family", "garden", "gym", "value"],
+      flags: ["family", "baths", "garden", "zones", "gym", "value"],
       scores: { family: 95, garden: 98, area: 65, risk: 55, forus: 78 },
       score: 76,
       facts: [
@@ -116,7 +114,7 @@ window.HOUSE_DATA = {
     },
     {
       id: "bruvikveien-48c",
-      address: "Bruvikveien 48C",
+      name: "Bruvikveien 48C",
       area: "Mariero, Stavanger",
       type: "Enebolig",
       ask: 10.9,
@@ -130,7 +128,7 @@ window.HOUSE_DATA = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474768680",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/28/0/474/768/680_e27cfecd-99d4-4228-a699-c141447dad35.jpg",
       verdict: "watch",
-      flags: ["family", "garden", "forus", "low-maintenance"],
+      flags: ["family", "garden", "zones", "forus", "low-maintenance"],
       scores: { family: 82, garden: 70, area: 78, risk: 82, forus: 100 },
       score: 72,
       facts: [
@@ -148,7 +146,7 @@ window.HOUSE_DATA = {
     },
     {
       id: "randeberggeilen-41",
-      address: "Randeberggeilen 41",
+      name: "Randeberggeilen 41",
       area: "Randaberg",
       type: "Enebolig",
       ask: 7.0,
@@ -162,7 +160,7 @@ window.HOUSE_DATA = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475199038",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/31/8/475/199/038_2a64fb5b-0402-4d0f-9d48-96e341f7064d.jpg",
       verdict: "trap",
-      flags: ["family", "garden", "gym", "value", "risk"],
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "risk"],
       scores: { family: 82, garden: 100, area: 55, risk: 20, forus: 45 },
       score: 64,
       facts: [
@@ -181,7 +179,7 @@ window.HOUSE_DATA = {
     },
     {
       id: "ovrebo-25",
-      address: "Øvrebø 25",
+      name: "Øvrebø 25",
       area: "Hinna, Stavanger",
       type: "Enebolig",
       ask: 11.5,
@@ -208,7 +206,7 @@ window.HOUSE_DATA = {
     },
     {
       id: "syrin",
-      address: "Syrinveien 11",
+      name: "Syrinveien 11",
       area: "Eiganes, Stavanger",
       type: "Enebolig",
       ask: 13.2,
@@ -222,7 +220,7 @@ window.HOUSE_DATA = {
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=377615749",
       image: "https://images.finncdn.no/dynamic/1280w/2024/10/vertical-2/14/9/377/615/749_4dc2a74d-e1d3-480e-992e-c00fa475185b.jpg",
       verdict: "sold",
-      flags: ["family", "garden", "gym", "benchmark"],
+      flags: ["family", "baths", "garden", "zones", "gym", "benchmark"],
       scores: { family: 96, garden: 94, area: 95, risk: 78, forus: 92 },
       score: 83,
       facts: [
