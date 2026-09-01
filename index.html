@@ -165,16 +165,17 @@
           <h3>Timing &amp; money</h3>
           <ul>
             <li>Sell Fossveien 4 around April / May 2027; buy after the sale.</li>
-            <li>Target roughly 11m asking; use 12.5m total as the reconnaissance ceiling.</li>
-            <li>Above the ceiling is a market comp, not a candidate, unless the brief changes.</li>
+            <li>Owner-only baseline: roughly 11m asking; use 12.5m total as the reconnaissance ceiling.</li>
+            <li>A legal rental unit likely to produce about 15,000 kr/month adds 2m to the working ceiling.</li>
+            <li>Any allowance above 2m needs bank confirmation and a vacancy, maintenance and tax case.</li>
           </ul>
         </div>
         <div class="criteria-group">
           <h3>Location</h3>
           <ul>
-            <li>Primary: Eiganes, Stokka and Våland.</li>
-            <li>Also acceptable: Lassa, Sandal and Bekkefaret when the house and Forus commute compensate.</li>
-            <li>Practical Forus commute; roughly 14–20 min off-peak, with rush-hour risk shown honestly.</li>
+            <li>Search Greater Stavanger broadly. Location is a preference and score — never an automatic rejection.</li>
+            <li>Eiganes, Stokka and Våland remain benchmarks, not a postcode fence.</li>
+            <li>Any neighbourhood works when family function, economics and a practical Forus commute compensate.</li>
           </ul>
         </div>
         <div class="criteria-group">
@@ -190,7 +191,8 @@
         <div class="criteria-group">
           <h3>Preference &amp; risk</h3>
           <ul>
-            <li>Detached house preferred; a full duplex works only if control, layout and garden rights are clear.</li>
+            <li>A legal, rentable unit is a major positive when market rent is credible; record expected monthly rent.</li>
+            <li>Detached house preferred; a full duplex works when control, layout and garden rights are clear.</li>
             <li>Garage / practical parking is valuable, but not allowed to rescue a weak family plan.</li>
             <li>Unapproved rooms, moisture, old wet rooms, conservation and major renovation reduce the score.</li>
             <li>Syrinveien 27 remains the type specimen: volume, plot and flexible zones — not a live listing.</li>
@@ -200,10 +202,10 @@
       </div>
       <h2>Quick filters — tap to narrow inventory</h2>
       <div class="must" id="musts"></div>
-      <label class="note" for="budget">Max total price</label>
+      <label class="note" for="budget">Base max total price · qualifying rental adds 2m</label>
       <input id="budget" class="slider" type="range" min="6" max="16" step="0.25" value="12.5" />
       <div class="budget-read"><span>6m</span><b id="budgetLabel">12.5m</b><span>16m</span></div>
-      <p class="note" style="margin-top:14px">Scoring: family 35 · garden 20 · area 20 · risk 15 · Forus 10. Gym is scored inside family. Syrinveien 27 is the ghost in the machine — 1978, 300+ m², sold June 2026, type specimen, not a live bid.</p>
+      <p class="note" style="margin-top:14px">Scoring: family 40 · garden 20 · risk 15 · area 10 · rental 10 · Forus 5. Location is deliberately only 15% including commute. A confirmed ~15k rental gets the full rental score; an unpriced rental unit gets half until verified.</p>
     </aside>
 
     <section>
@@ -229,7 +231,7 @@ const MUSTS = [
   {id:"garden", label:"Real kid garden"},
   {id:"zones", label:"Two living zones"},
   {id:"gym", label:"Gym (rack + treadmill)"},
-  {id:"budget", label:"Inside 11m asking"},
+  {id:"budget", label:"Inside 11m (+2m if rental)"},
   {id:"live", label:"Still for sale"}
 ];
 const state = { musts: new Set(["live"]), budget: 12.5, sel: "hoigard" };
@@ -244,18 +246,25 @@ function applyMeta(){
   set("statValand", stats.valandHouses);
   set("statFit", stats.fitCount);
 }
+function rentalScore(h){
+  if ((h.rentMonthly || 0) >= 15000) return 100;
+  return h.flags.includes("rental") ? 50 : 0;
+}
+function rentalAllowance(h){
+  return h.flags.includes("rental") ? 2 : 0;
+}
 function scoreOf(h){
-  return Math.round(h.scores.family*.35 + h.scores.garden*.20 + h.scores.area*.20 + h.scores.risk*.15 + h.scores.forus*.10);
+  return Math.round(h.scores.family*.40 + h.scores.garden*.20 + h.scores.risk*.15 + h.scores.area*.10 + rentalScore(h)*.10 + h.scores.forus*.05);
 }
 function passes(h){
-  if (h.total > state.budget + 0.05 && h.id !== "syrin") return false;
+  if (h.total > state.budget + rentalAllowance(h) + 0.05 && h.id !== "syrin") return false;
   if (state.musts.has("live") && h.status !== "live") return false;
   if (state.musts.has("beds") && h.beds < 4) return false;
   if (state.musts.has("baths") && !h.flags.includes("baths")) return false;
   if (state.musts.has("garden") && !h.flags.includes("garden")) return false;
   if (state.musts.has("zones") && !h.flags.includes("zones")) return false;
   if (state.musts.has("gym") && !h.flags.includes("gym")) return false;
-  if (state.musts.has("budget") && h.ask > 11.05) return false;
+  if (state.musts.has("budget") && h.ask > 11.05 + rentalAllowance(h)) return false;
   return true;
 }
 function nok(n){ return n.toFixed(2).replace(".",",") + "m"; }
@@ -289,6 +298,7 @@ function renderCards(){
         <div class="sub">${h.area} · ${h.type} · ${h.sqm} m²${h.plot?` · ${h.plot} m² tomt`:""} · ${h.beds} sov</div>
         <span class="badge ${h.verdict}">${label(h.verdict)}</span>
         ${h.year?`<span class="badge">${h.year}</span>`:""}
+        ${h.flags.includes("rental")?`<span class="badge strong">Rental +2m${h.rentMonthly?` · ${Math.round(h.rentMonthly/1000)}k/mo`:" · verify rent"}</span>`:""}
       </div>
     </article>`;
   }).join("");
@@ -315,6 +325,7 @@ function renderInspector(){
       ${row("garden",s.garden,"Garden")}
       ${row("area",s.area,"Area")}
       ${row("risk",s.risk,"Risk")}
+      ${row("rental",rentalScore(h),"Rental")}
       ${row("forus",s.forus,"Forus")}
     </div>
     <div class="take">${h.take}</div>
@@ -322,7 +333,7 @@ function renderInspector(){
       <a class="btn" href="${h.url}" target="_blank" rel="noopener">Open listing</a>
       <button class="btn ghost" id="copyTake">Copy take</button>
     </div>
-    <p class="note" style="margin-top:10px">Forus off-peak from these belts is roughly 14–20 min. Treat rush hour as 25–35.</p>`;
+    <p class="note" style="margin-top:10px">Location is a preference, not a gate. Rental allowance is provisional until legality, achievable rent, vacancy, maintenance, tax treatment and bank credit are checked.</p>`;
   const btn = document.getElementById("copyTake");
   if (btn) btn.onclick = () => navigator.clipboard.writeText(`${h.name} (${nok(h.ask)}): ${h.take}`);
 }

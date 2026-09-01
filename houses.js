@@ -175,6 +175,7 @@ window.WAR_ROOM = {
       viewing: "By appointment",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=465832042",
       flags: ["beds", "rental", "garage"],
+      rentMonthly: 17000,
       scores: { family: 64, garden: 48, area: 88, risk: 66, forus: 84 },
       take: "Still live. Whole two-family house with garage/parking, 2025 roof and 17k/month rental income. 166 m² is tight for compound mode, and a gym probably cannibalises the rental. Useful Eiganes foothold, weak family HQ."
     },
