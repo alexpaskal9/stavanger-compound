@@ -1,14 +1,14 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-01.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-02.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-01T18:07:00+02:00",
-  scrapedLabel: "1 Sep 2026, 18:07 CEST",
+  scrapedAt: "2026-09-02T18:01:49+02:00",
+  scrapedLabel: "2 Sep 2026, 18:01 CEST",
   source: "FINN.no live ads plus broker pages",
   methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
   stats: {
-    totalHouses: 7,
+    totalHouses: 8,
     stavangerHouses: 4,
     eiganesHouses: 0,
     valandHouses: 0,
@@ -47,6 +47,38 @@ window.WAR_ROOM = {
         "At the upper owner-only range, renovation surprises would be particularly bureaucratic and expensive"
       ],
       take: "Best current functional/location fit. The garden is real rather than brochure shrubbery, and the 217 m² plan appears to preserve both family zones and training space. Verify two compliant bathrooms, all alterations and the actual lower-floor gym dimensions before upgrading this from reconnaissance to serious interest."
+    },
+    {
+      id: "rognestien-8",
+      name: "Rognestien 8",
+      area: "Skadberg, Sola",
+      type: "Enebolig",
+      ask: 10.9,
+      total: 11.174,
+      sqm: 296,
+      plot: 412,
+      beds: 5,
+      year: 2008,
+      status: "live",
+      viewing: "No scheduled viewing shown · contact broker",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474101266",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/22/6/474/101/266_21268005-0123-441d-9787-d4889e8ae304.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "gym", "forus"],
+      scores: { family: 95, garden: 65, area: 72, risk: 78, forus: 95 },
+      score: 75,
+      facts: [
+        "FINN verifies 5 bedrooms, 2 bathrooms, 296 m² BRA-i, 412 m² owned plot and 2008 build",
+        "Ad describes three floors, a hagestue, two large terraces and the possibility of a sixth bedroom",
+        "Triple garage plus two large storage rooms make a dedicated rack-and-treadmill zone credible without deleting family space (inference)",
+        "Ordinary drive to Forus is roughly 8–15 minutes, with Sola/Forus peak traffic variability (inference)"
+      ],
+      risks: [
+        "No rental unit is advertised; no rental allowance assumed",
+        "The 412 m² plot is compact relative to the 296 m² house, so verify how much level, private child-usable lawn remains beyond terraces and hagestue",
+        "Confirm the floor plan provides two proper indoor living zones; the headline and summary do not document them clearly"
+      ],
+      take: "New strongest broad-search addition: huge modern family volume, two verified bathrooms, a near-ideal Forus run and unusually credible gym capacity at 11.17m total. The bureaucratic catch is physical rather than financial: inspect the actual lawn and confirm a second proper indoor living zone before calling it the complete brief."
     },
     {
       id: "teineveien-28",
@@ -91,15 +123,16 @@ window.WAR_ROOM = {
       plot: 1206,
       beds: 7,
       year: 1968,
-      status: "live",
-      viewing: "No scheduled viewing shown · contact broker",
+      status: "sold",
+      viewing: "Sold · final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473834353",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/22/3/473/834/353_51f6c87d-c482-419f-b2ae-e57228a8815f.jpg",
-      verdict: "strong",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "value"],
       scores: { family: 95, garden: 98, area: 65, risk: 55, forus: 78 },
       score: 76,
       facts: [
+        "FINN marked the ad sold on 2 Sep 2026; final transaction price is not yet verified",
         "FINN verifies 7 bedrooms, 242 m² BRA-i, 293 m² total BRA and a 1,206 m² owned plot",
         "The ad describes several living rooms and a large garage; family zoning and a dedicated gym are credible (inference)",
         "Large private plot is unusually strong for children and future optionality",
@@ -110,7 +143,7 @@ window.WAR_ROOM = {
         "Seven advertised bedrooms do not by themselves prove every room is legally approved for permanent residence",
         "No legal rental unit is advertised; do not infer one from spare rooms or floor separation"
       ],
-      take: "A broad-search success: enormous family capacity and child-usable land at 7.69m total, with a practical rather than perfect Forus run. The price is attractive enough to make the technical report the whole case. Treat surplus bedrooms as family/gym flexibility, not rental income."
+      take: "Now a sold comp: enormous family capacity and child-usable land was offered at 7.69m total, with a practical rather than perfect Forus run. Asking is not achieved price; retain briefly while the sale figure catches up with reality."
     },
     {
       id: "bruvikveien-48c",
@@ -156,7 +189,7 @@ window.WAR_ROOM = {
       beds: 4,
       year: 1960,
       status: "live",
-      viewing: "No scheduled viewing shown · contact broker",
+      viewing: "6 Sep · 17:30–18:30",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475199038",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/31/8/475/199/038_2a64fb5b-0402-4d0f-9d48-96e341f7064d.jpg",
       verdict: "trap",
