@@ -1,18 +1,18 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-03.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-04.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-03T18:05:32+02:00",
-  scrapedLabel: "3 Sep 2026, 18:05 CEST",
+  scrapedAt: "2026-09-04T18:03:16+02:00",
+  scrapedLabel: "4 Sep 2026, 18:03 CEST",
   source: "FINN.no live ads plus broker pages",
   methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
   stats: {
-    totalHouses: 12,
-    stavangerHouses: 4,
+    totalHouses: 17,
+    stavangerHouses: 7,
     eiganesHouses: 0,
     valandHouses: 0,
-    fitCount: 6,
+    fitCount: 10,
     strongestScore: 79
   },
   houses: [
@@ -365,6 +365,165 @@ window.WAR_ROOM = {
         "Vacancy, tenant wear, maintenance, tax/legal compliance and loss of family space reduce the headline income value"
       ],
       take: "Verified rental, awkward family arithmetic. NOK 11k/month is real advertised income rather than wishful yield, but the main house has only three bedrooms while the unit is occupied. Good reconnaissance for rental economics; not a complete six-person-family fit unless space is reclaimed or legally reconfigured."
+    },
+    {
+      id: "tvarabergkroken-22",
+      name: "Tvarabergkroken 22",
+      area: "Madla/Revheim, Stavanger",
+      type: "Enebolig",
+      ask: 9.65,
+      total: 9.91,
+      sqm: 211,
+      plot: 387,
+      beds: 5,
+      year: 2007,
+      status: "live",
+      viewing: "14 Sep · 16:30–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475546552",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/04/2/475/546/552_9a053438-8458-4cce-9ab2-8e65f0248646.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value"],
+      scores: { family: 95, garden: 70, area: 75, risk: 70, forus: 80 },
+      score: 74,
+      facts: [
+        "FINN verifies 5 bedrooms, 211 m² BRA-i, 387 m² owned plot and 2007 build",
+        "The ad explicitly describes three living rooms, two bathrooms, garage, garden, terrace and hagestue",
+        "Garage/bod volume makes rack plus treadmill credible without deleting a bedroom or living room, subject to measurement (inference)",
+        "Madla/Revheim to Forus is roughly 15–25 minutes in ordinary traffic; Madlaveien and E39 queues can add friction (inference)"
+      ],
+      risks: [
+        "The plot is compact, so verify the photographed lawn is private, level and genuinely useful once terraces and buildings are excluded",
+        "The ad calls the second-floor office and bod unapproved; obtain the completion certificate and approved drawings for the entire plan",
+        "No rental unit is advertised; no rental allowance assumed"
+      ],
+      take: "Best new complete-paper fit: five bedrooms, three living rooms, two baths, garden and plausible dedicated gym space at 9.91m total. The 387 m² plot is the compromise, and the expressly unapproved office/bod means the municipal file—not the styling—gets the last word."
+    },
+    {
+      id: "brauta-23",
+      name: "Brauta 23",
+      area: "Øvre Vaulen, Stavanger",
+      type: "Enebolig",
+      ask: 10.99,
+      total: 11.266,
+      sqm: 245,
+      plot: 723,
+      beds: 4,
+      year: 1975,
+      status: "live",
+      viewing: "10 Sep · 16:30–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473676094",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/18/4/473/676/094_274d6dc3-387c-4c8b-aebd-fc18587d2c72.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "gym", "forus"],
+      scores: { family: 90, garden: 88, area: 82, risk: 60, forus: 100 },
+      score: 76,
+      facts: [
+        "FINN verifies 4 bedrooms, 245 m² BRA-i, 723 m² owned plot and 1975 build",
+        "The ad verifies 2 bathrooms, laundry, two storage rooms, garage and a landscaped private garden",
+        "The 245 m² internal footprint makes a non-bedroom training zone plausible, but its exact location needs the plan and measurements (inference)",
+        "Øvre Vaulen gives a practical Forus run of roughly 7–15 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "The ad describes living/dining/TV space together rather than proving two acoustically useful living zones; verify the floor plan",
+        "Exactly four bedrooms leaves no legal spare if one room fails approval or function",
+        "1975 construction requires drainage, wet-room, roof, electrical and alteration diligence; no rental unit is advertised"
+      ],
+      take: "The strongest new land-and-location candidate: four bedrooms, two baths, 245 m² and a real 723 m² garden at 11.27m total, close to Forus. It is not yet a clean brief match because the second proper living zone and dedicated gym room are inferred rather than advertised."
+    },
+    {
+      id: "folkvordveien-101",
+      name: "Folkvordveien 101",
+      area: "Stangeland, Sandnes",
+      type: "Enebolig",
+      ask: 10.79,
+      total: 11.061,
+      sqm: 196,
+      plot: 359,
+      beds: 4,
+      year: 2023,
+      status: "live",
+      viewing: "16 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=471854980",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/07/0/471/854/980_36948dc2-901f-4e08-9dd8-d57e12d2f530.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "forus", "low-maintenance"],
+      scores: { family: 90, garden: 58, area: 62, risk: 92, forus: 100 },
+      score: 73,
+      facts: [
+        "FINN verifies 4 bedrooms, 196 m² BRA-i, 359 m² owned plot and 2023 build",
+        "The ad explicitly verifies 2 living rooms, 2 bathrooms, laundry, finished outdoor zones and a spacious garage",
+        "The garage is the credible rack-and-treadmill solution without sacrificing the four bedrooms or second living room (inference)",
+        "Stangeland to Forus is roughly 5–12 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "The 359 m² plot is compact; verify how much level private lawn remains after house, garage and 63 m² of terraces",
+        "Exactly four bedrooms means no spare-room buffer",
+        "No rental unit is advertised; the owner-only ceiling therefore applies"
+      ],
+      take: "The low-maintenance new-build answer: every indoor requirement is explicitly present and Forus is easy. The unresolved question is whether the compact plot contains enough actual child lawn, rather than several elegant surfaces performing an impression of a garden."
+    },
+    {
+      id: "gustav-vigelands-19",
+      name: "Gustav Vigelands gate 19",
+      area: "Trones, Sandnes",
+      type: "Enebolig",
+      ask: 6.7,
+      total: 6.877,
+      sqm: 165,
+      plot: 555,
+      beds: 6,
+      year: 1972,
+      status: "live",
+      viewing: "14 Sep · 17:00–17:45",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475201411",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/31/1/475/201/411_3cef885d-548a-4bd4-a74a-889f2410aa14.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "value", "forus"],
+      scores: { family: 88, garden: 72, area: 65, risk: 65, forus: 92 },
+      score: 70,
+      facts: [
+        "FINN verifies 6 bedrooms, 165 m² BRA-i, 555 m² owned plot and 1972 build",
+        "The ad states 5 bedrooms plus a TV-room/bedroom, 2 bathrooms, sunny terrace and child-usable garden",
+        "The house was extensively renovated in 2017, including electrical, plumbing and windows according to the ad",
+        "Trones to Forus is roughly 8–15 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "Using the sixth room as a gym would consume the advertised TV room and weaken the two-zone brief; no separate rack-and-treadmill space is verified",
+        "At 165 m², six sleeping rooms may make circulation, storage and shared spaces tighter than the bedroom count suggests",
+        "Verify approvals and condition behind the 2017 renovation; no rental unit is advertised"
+      ],
+      take: "A compelling 6.88m value check, not a complete gym answer. Five bedrooms can remain while the TV room becomes training space, but that trades away the second proper living zone—the floor plan has performed the traditional miracle of counting one room twice."
+    },
+    {
+      id: "boygen-15",
+      name: "Bøygen 15",
+      area: "Ullandhaugskråningen, Stavanger",
+      type: "Tomannsbolig",
+      ask: 6.55,
+      total: 6.715,
+      sqm: 148,
+      plot: 280,
+      beds: 5,
+      year: 1961,
+      status: "live",
+      viewing: "9 Sep · 18:30–19:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475467795",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/03/5/475/467/795_316156af-8525-41a6-9e26-3d8777f10c5e.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "value", "forus"],
+      scores: { family: 78, garden: 55, area: 88, risk: 60, forus: 100 },
+      score: 65,
+      facts: [
+        "FINN key information says 5 bedrooms, 148 m² BRA-i, 280 m² owned plot and 1961 build",
+        "The body text instead says 4 bedrooms and 2 living rooms; it also verifies 2 bathrooms, a lawn garden and garage",
+        "Ullandhaug gives an easy Forus run of roughly 7–15 minutes and immediate access to Sykkelstamveien (inference)"
+      ],
+      risks: [
+        "Bedroom count conflicts within the live ad: treat four as the conservative number until the approved plan explains the fifth",
+        "No dedicated gym volume is established; using the garage may sacrifice parking and still needs clear-height and floor checks",
+        "The 280 m² plot and 148 m² interior are tight for the eventual six-person brief; no rental unit is advertised"
+      ],
+      take: "Excellent location/value reconnaissance at 6.71m total, with two baths, two living rooms and some private lawn. It is a compact duplex, not a hidden compound; resolve the four-versus-five-bedroom contradiction and garage-gym reality before treating the headline count as usable capacity."
     },
     {
       id: "syrin",
