@@ -1,21 +1,87 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-04.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-05.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-04T18:03:16+02:00",
-  scrapedLabel: "4 Sep 2026, 18:03 CEST",
+  scrapedAt: "2026-09-05T18:04:20+02:00",
+  scrapedLabel: "5 Sep 2026, 18:04 CEST",
   source: "FINN.no live ads plus broker pages",
   methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
   stats: {
-    totalHouses: 17,
-    stavangerHouses: 7,
+    totalHouses: 19,
+    stavangerHouses: 5,
     eiganesHouses: 0,
     valandHouses: 0,
-    fitCount: 10,
-    strongestScore: 79
+    fitCount: 11,
+    strongestScore: 76
   },
   houses: [
+    {
+      id: "friheim-52",
+      name: "Friheim 52",
+      area: "Hafrsfjord/Sunde, Stavanger",
+      type: "Enebolig",
+      ask: 7.59,
+      total: 7.781,
+      sqm: 185,
+      plot: 711,
+      beds: 5,
+      year: 1987,
+      status: "live",
+      viewing: "15 Sep · 16:00–17:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475380820",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/03/0/475/380/820_9d87df17-2dbe-41ff-bdcd-8ea37c489d22.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value"],
+      scores: { family: 92, garden: 88, area: 65, risk: 65, forus: 70 },
+      score: 74,
+      facts: [
+        "FINN verifies 5 bedrooms, 185 m² BRA-i, 711 m² owned plot and 1987 build",
+        "The ad describes a loft living room plus several main-floor living zones, a screened lawn garden, terrace and double garage",
+        "FINN's room/gallery material shows a first-floor guest bathroom and a second-floor bathroom",
+        "The double garage makes rack plus treadmill credible without deleting a bedroom or living zone (inference)",
+        "Friheim-to-Forus is roughly 18–30 minutes in ordinary traffic; Madlaveien/E39 queues can add friction (inference)"
+      ],
+      risks: [
+        "Confirm both bathrooms' approved status and condition in the complete sales prospectus",
+        "A garage gym must be measured and tested against retaining practical parking/storage",
+        "No rental unit is advertised; no rental allowance assumed, and 1987 wet rooms, drainage and alterations need diligence"
+      ],
+      take: "Best fresh value fit: five bedrooms, two living levels, two bathroom spaces, a real 711 m² garden and plausible double-garage gym at 7.78m total. The west-side Forus run is workable rather than elegant; verify bathrooms, garage dimensions and the 1987 technical file before promoting it beyond reconnaissance."
+    },
+    {
+      id: "bulegsbakken-22",
+      name: "Bulegsbakken 22",
+      area: "Grødem, Randaberg",
+      type: "Enebolig",
+      ask: 7.85,
+      total: 8.067,
+      sqm: 216,
+      plot: 481,
+      beds: 4,
+      year: 1981,
+      status: "live",
+      viewing: "15 Sep · 16:00–17:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=465650180",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/02/0/465/650/180_346d41ca-6ed1-45dc-9c6d-ad32fd2dfb16.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "value"],
+      scores: { family: 92, garden: 75, area: 55, risk: 55, forus: 55 },
+      score: 68,
+      facts: [
+        "FINN verifies 4 bedrooms, 216 m² BRA-i, 481 m² owned plot and 1981 build",
+        "The ad explicitly verifies 2 living rooms, 2 tiled bathrooms plus guest WC, a sunny zoned garden and 28 m² garage",
+        "The lower floor was previously used partly as a rental section, but the ad does not verify present approval, separation or rent",
+        "The garage/lower-floor volume makes a dedicated gym credible, subject to plans and measurement (inference)",
+        "Grødem-to-Forus is roughly 25–35 minutes in ordinary traffic and vulnerable to E39 queues (inference)"
+      ],
+      risks: [
+        "No rental flag or allowance: previous rental use is not evidence of a legal rentable unit, and rent needs verification",
+        "Vacancy, tenant wear, maintenance, tax/legal compliance and loss of family space apply if a legal rental case is later established",
+        "1981 construction requires drainage, wet-room, electrical, roof and alteration diligence; commute friction is material"
+      ],
+      take: "A credible space/value alternative rather than a location pick: four bedrooms, two stues, two baths, garden and gym-capable volume at 8.07m total. Treat the former rental section as family space only until municipal approvals, separation and market rent are documented."
+    },
     {
       id: "per-spelemanns-29",
       name: "Per Spelemanns vei 29",
@@ -27,15 +93,16 @@ window.WAR_ROOM = {
       plot: 721,
       beds: 4,
       year: 1960,
-      status: "live",
-      viewing: "3 Sep · 18:30–19:15",
+      status: "sold",
+      viewing: "Sold · final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472523998",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/08/8/472/523/998_72ccd71c-7671-4e36-957c-a70ef3f6def3.jpg",
-      verdict: "strong",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "forus"],
       scores: { family: 90, garden: 90, area: 92, risk: 70, forus: 100 },
       score: 79,
       facts: [
+        "FINN marked the ad sold on 5 Sep 2026; final transaction price is not yet verified",
         "FINN verifies 4 bedrooms, 217 m² BRA-i, 721 m² owned plot and 1960 build",
         "Ad describes a mature private garden facing open recreational land, with greenhouse and several outdoor zones",
         "Multiple living areas and the lower-floor footprint make rack plus treadmill credible without deleting a bedroom (inference)",
@@ -46,7 +113,7 @@ window.WAR_ROOM = {
         "1960 shell plus extensions/alterations require a full permits, wet-room, drainage and electrical review",
         "At the upper owner-only range, renovation surprises would be particularly bureaucratic and expensive"
       ],
-      take: "Best current functional/location fit. The garden is real rather than brochure shrubbery, and the 217 m² plan appears to preserve both family zones and training space. Verify two compliant bathrooms, all alterations and the actual lower-floor gym dimensions before upgrading this from reconnaissance to serious interest."
+      take: "Sold since the previous refresh. Retain briefly as the best recent Ullandhaug functional comp: 217 m², four bedrooms and a 721 m² garden at 11.17m advertised total. Asking is not the achieved sale price."
     },
     {
       id: "rognestien-8",
