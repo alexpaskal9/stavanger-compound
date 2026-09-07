@@ -1,21 +1,53 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-06.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-07.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-06T18:11:22+02:00",
-  scrapedLabel: "6 Sep 2026, 18:11 CEST",
+  scrapedAt: "2026-09-07T20:24:00+02:00",
+  scrapedLabel: "7 Sep 2026, 20:24 CEST",
   source: "FINN.no live ads plus broker pages",
   methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
   stats: {
-    totalHouses: 22,
-    stavangerHouses: 7,
-    eiganesHouses: 0,
+    totalHouses: 24,
+    stavangerHouses: 10,
+    eiganesHouses: 1,
     valandHouses: 0,
-    fitCount: 16,
+    fitCount: 17,
     strongestScore: 77
   },
   houses: [
+    {
+      id: "agatveien-15",
+      name: "Agatveien 15",
+      area: "Sandved, Sandnes",
+      type: "Enebolig",
+      ask: 9.99,
+      total: 10.241,
+      sqm: 180,
+      plot: 439,
+      beds: 5,
+      year: 2023,
+      status: "live",
+      viewing: "10 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=467085262",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/05/2/467/085/262_12e43f46-c20c-40f2-bb28-375545ac5d10.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "forus", "low-maintenance"],
+      scores: { family: 98, garden: 65, area: 60, risk: 95, forus: 95 },
+      score: 77,
+      facts: [
+        "FINN verifies a 2023 freehold detached house with 5 bedrooms, 180 m² BRA-i and a 439 m² owned plot",
+        "The ad explicitly verifies 2 living rooms, 2 full bathrooms, laundry, garage, covered terrace and a west-facing lawn garden",
+        "Garage, storage room or one of the two living zones makes rack plus treadmill plausible without deleting a bedroom (inference)",
+        "Sandved-to-Forus is roughly 8–12 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "No rental unit is advertised; no rental allowance assumed",
+        "The 439 m² plot is moderate, so verify level child-usable lawn after house, garage and terraces",
+        "Measure garage clear height and floor area before assigning it both training and normal storage/parking jobs"
+      ],
+      take: "Best new owner-only fit: five bedrooms, two proper living zones, two baths, private lawn and plausible gym capacity at 10.24m total, with a very practical Forus run. It needs measurements rather than reconstruction—the rarest form of property improvement."
+    },
     {
       id: "friheim-52",
       name: "Friheim 52",
@@ -417,11 +449,11 @@ window.WAR_ROOM = {
       plot: 807,
       beds: 6,
       year: 1951,
-      status: "live",
-      viewing: "6 Sep · 13:30–14:30",
+      status: "sold",
+      viewing: "Sold · final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474512640",
       image: "https://images.finncdn.no/dynamic/default/2026/8/vertical-2/26/0/474/512/640_3c3a256e-866b-49a3-8339-ca13d53499cb.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "forus", "risk"],
       scores: { family: 96, garden: 85, area: 60, risk: 35, forus: 100 },
       score: 72,
@@ -436,7 +468,7 @@ window.WAR_ROOM = {
         "Other rooms and alterations refer readers to the completion-certificate section, so approvals require line-by-line municipal verification",
         "The 1951 shell and unusually complex current use raise condition, fire-separation, insurance and remediation risk"
       ],
-      take: "Spectacular space and commute, but not clean economics. The house works superbly for a large family and gym if the approved main volume is as described; the separate rented section is explicitly illegal for that use, so the rent case is zero until regularised—not merely until someone finds a more optimistic spreadsheet."
+      take: "Sold. Retain briefly as a Forus-adjacent volume comp at 11.17m advertised total. The achieved price is not published, and the separate rented section was explicitly unapproved; its rent case therefore remains zero rather than becoming legal through the administrative miracle of a completed sale."
     },
     {
       id: "lyngholen-84",
@@ -566,6 +598,38 @@ window.WAR_ROOM = {
         "Modernisation need, planning deviations and defective garage doors make the low asking price less innocent than it first appears"
       ],
       take: "Wonderful garden, alarming footnotes. It works as a family house on paper, but the unapproved hybel, LNFR constraints and geotechnical caution make this a diligence trap rather than a rental bargain. Only pursue if the garden premium justifies paying professionals to disprove the risks."
+    },
+    {
+      id: "rosestien-1",
+      name: "Rosestien 1",
+      area: "Stokka, Stavanger",
+      type: "Enebolig",
+      ask: 12.5,
+      total: 12.814,
+      sqm: 297,
+      plot: 892,
+      beds: 5,
+      year: 1971,
+      status: "sold",
+      viewing: "Sold · final price not visible",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474154858",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/29/8/474/154/858_d044678b-6683-4c94-b993-0f00815cac24.jpg",
+      verdict: "sold",
+      flags: ["family", "baths", "garden", "zones", "gym", "rental", "benchmark"],
+      scores: { family: 100, garden: 82, area: 95, risk: 82, forus: 82 },
+      score: 87,
+      facts: [
+        "Broker and FINN material verify a sold 1971 house with 5 bedrooms, 3 living rooms, 3 bathrooms, 297 m² BRA-i and an 892 m² owned plot",
+        "The ad explicitly describes the basement apartment as godkjent; advertised or achieved rent is not stated and must be verified",
+        "The large basement and garage provide credible gym capacity, although the apartment competes for the easiest separated lower-floor space (inference)",
+        "Stokka-to-Forus is roughly 14–20 minutes in ordinary traffic, with E39 peak variability (inference)"
+      ],
+      risks: [
+        "The broker confirms the sale but neither achieved price nor rental income is published; 12.5m is only the last ask",
+        "Do not underwrite the +2m rental allowance until unit separation, approval documents and market rent near 15k are evidenced",
+        "Vacancy, tenant wear, maintenance, tax treatment and loss of family/gym space remain real costs"
+      ],
+      take: "Sold, but unusually useful: this is the preferred-area benchmark for five bedrooms, three living zones, three baths, real garden, gym flexibility and an approved unit at a 12.81m advertised total. Rent and achieved sale price remain unverified, because listings retain some modesty where numbers would be useful."
     },
     {
       id: "per-spelemanns-29",
