@@ -1,18 +1,18 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-07.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-08.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-07T20:24:00+02:00",
-  scrapedLabel: "7 Sep 2026, 20:24 CEST",
+  scrapedAt: "2026-09-08T18:10:09+02:00",
+  scrapedLabel: "8 Sep 2026, 18:10 CEST",
   source: "FINN.no live ads plus broker pages",
   methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
   stats: {
-    totalHouses: 24,
+    totalHouses: 25,
     stavangerHouses: 10,
     eiganesHouses: 1,
     valandHouses: 0,
-    fitCount: 17,
+    fitCount: 16,
     strongestScore: 77
   },
   houses: [
@@ -222,11 +222,11 @@ window.WAR_ROOM = {
       plot: 498,
       beds: 4,
       year: 1984,
-      status: "live",
-      viewing: "7 Sep · 17:00–18:00",
+      status: "sold",
+      viewing: "Sold 8 Sep · final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474866838",
       image: "https://images.finncdn.no/dynamic/default/2026/8/vertical-2/28/8/474/866/838_81eae50a-ddf2-44f3-b9fd-c70acbf183d2.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "rental"],
       scores: { family: 82, garden: 82, area: 93, risk: 62, forus: 85 },
       score: 77,
@@ -242,7 +242,7 @@ window.WAR_ROOM = {
         "Vacancy, tenant wear, maintenance, tax/legal compliance and loss of family space reduce headline income value",
         "Confirm how many of the four bedrooms remain in the owner volume if the basement is kept let"
       ],
-      take: "The first live Stokka specimen in this round: 307 m², approved basement unit and a real garden, but 13.84m total. It is reconnaissance for the preferred-area premium, not a cheap family answer. Do not add the extra 2m until rent is evidenced."
+      take: "Sold on 8 Sep. Retain briefly as a Stokka rental-and-volume comp at 13.84m advertised total; achieved price and rent remain unpublished. The +2m rental allowance still requires evidence near 15k/month, even after the market has completed its paperwork without us."
     },
     {
       id: "sandestubben-11",
@@ -373,6 +373,38 @@ window.WAR_ROOM = {
         "1981 construction requires drainage, wet-room, electrical, roof and alteration diligence; commute friction is material"
       ],
       take: "A credible space/value alternative rather than a location pick: four bedrooms, two stues, two baths, garden and gym-capable volume at 8.07m total. Treat the former rental section as family space only until municipal approvals, separation and market rent are documented."
+    },
+    {
+      id: "fjordgata-10c",
+      name: "Fjordgata 10C",
+      area: "Varatun, Sandnes",
+      type: "Enebolig",
+      ask: 4.99,
+      total: 5.116,
+      sqm: 164,
+      plot: 473,
+      beds: 4,
+      year: 1988,
+      status: "live",
+      viewing: "17 Sep · 16:15–17:15",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475795008",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/07/8/475/795/008_3a8daadf-fee0-410b-b0cc-fce76237475b.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus", "risk"],
+      scores: { family: 90, garden: 70, area: 62, risk: 30, forus: 92 },
+      score: 65,
+      facts: [
+        "FINN verifies 4 bedrooms, 164 m² BRA-i, 473 m² owned plot, 1988 build and 5.12m total",
+        "The area schedule verifies a loft living room and three bathrooms; the ad describes a screened garden, mark terrace and 73 m² double garage with loft",
+        "The large garage makes rack plus treadmill credible without deleting a bedroom or second living zone, subject to dimensions, floor and temperature (inference)",
+        "Varatun-to-Forus is roughly 10–18 minutes in ordinary traffic; E39 congestion can add friction (inference)"
+      ],
+      risks: [
+        "The condition material says all three bathrooms and the laundry need major upgrading or total renovation; budget before treating the low price as savings",
+        "The glazed balcony was not applied for, and the complete municipal/alteration file needs review",
+        "No separate approved rental unit is advertised; no rental flag, rent or allowance assumed"
+      ],
+      take: "New value watch at 5.12m total: four bedrooms, two living zones, three baths, private garden and an unusually useful double garage close to Forus. The catch is structural rather than poetic—three old wet rooms, laundry and permit issues can consume a heroic fraction of the price gap."
     },
     {
       id: "bruvikveien-48c",
@@ -577,11 +609,11 @@ window.WAR_ROOM = {
       plot: 1327,
       beds: 4,
       year: 1960,
-      status: "live",
-      viewing: "6 Sep · 17:30–18:30",
+      status: "sold",
+      viewing: "Sold 8 Sep · final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475199038",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/31/8/475/199/038_2a64fb5b-0402-4d0f-9d48-96e341f7064d.jpg",
-      verdict: "trap",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "value", "risk"],
       scores: { family: 82, garden: 100, area: 55, risk: 20, forus: 45 },
       score: 64,
@@ -597,7 +629,7 @@ window.WAR_ROOM = {
         "Property is within a mapped landslide/possible quick-clay caution zone requiring geotechnical documentation for measures",
         "Modernisation need, planning deviations and defective garage doors make the low asking price less innocent than it first appears"
       ],
-      take: "Wonderful garden, alarming footnotes. It works as a family house on paper, but the unapproved hybel, LNFR constraints and geotechnical caution make this a diligence trap rather than a rental bargain. Only pursue if the garden premium justifies paying professionals to disprove the risks."
+      take: "Sold on 8 Sep; achieved price is not visible. Retain briefly as the 7.18m advertised comp for exceptional land with exceptional footnotes: unapproved hybel, LNFR constraints, geotechnical caution and modernisation risk."
     },
     {
       id: "rosestien-1",
