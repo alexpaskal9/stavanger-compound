@@ -1,18 +1,18 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-09.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-10.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-09T18:14:41+02:00",
-  scrapedLabel: "9 Sep 2026, 18:14 CEST",
+  scrapedAt: "2026-09-10T18:08:52+02:00",
+  scrapedLabel: "10 Sep 2026, 18:08 CEST",
   source: "FINN.no live ads plus broker pages",
-  methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's accessible search was partial, so inventory totals are not claimed.",
+  methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's municipality search was accessible for Stavanger but partial or blocked elsewhere, so inventory totals are curated-card counts rather than complete market counts.",
   stats: {
-    totalHouses: 27,
-    stavangerHouses: 11,
-    eiganesHouses: 1,
+    totalHouses: 30,
+    stavangerHouses: 13,
+    eiganesHouses: 3,
     valandHouses: 0,
-    fitCount: 18,
+    fitCount: 9,
     strongestScore: 79
   },
   houses: [
@@ -79,6 +79,106 @@ window.WAR_ROOM = {
         "No rental unit is advertised; no rental allowance assumed"
       ],
       take: "New functional leader at 9.74m total: five bedrooms, two proper living zones, two baths, a genuine 881 m² child plot and plausible detached-garage gym, with a practical Forus run. The compromise is a 1962 technical file wearing newer clothes; approvals and condition decide whether the value is real."
+    },
+    {
+      id: "andrew-smiths-21",
+      name: "Andrew Smiths gate 21",
+      area: "Byhaugen, Stavanger",
+      type: "Hel tomannsbolig",
+      ask: 9.25,
+      total: 9.483,
+      sqm: 377,
+      plot: 484,
+      beds: 6,
+      year: 1949,
+      status: "live",
+      viewing: "17 Sep · 16:30–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475907055",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/08/5/475/907/055_860b47c1-f3af-4759-86a8-2706f73ed055.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "rental", "value"],
+      scores: { family: 95, garden: 70, area: 88, risk: 30, forus: 80 },
+      score: 74,
+      facts: [
+        "FINN verifies a complete freehold duplex with 6 bedrooms, 377 m² BRA-i, 484 m² owned plot, 1949 build and 9.48m total",
+        "The prospectus verifies three bathrooms, several living rooms, lawn, south-facing terrace and a 21 m² integrated garage",
+        "The municipality has approved the property as a complete duplex with two dwellings that may be rented; advertised or achieved rent is not stated and needs verification",
+        "The garage or very large internal volume makes rack plus treadmill credible, but the exact room must be measured without sacrificing parking or a legal family room (inference)",
+        "Byhaugen-to-Forus is roughly 12–22 minutes in ordinary traffic; E39 queues can add friction (inference)"
+      ],
+      risks: [
+        "Do not underwrite 15k/month until unit division, separation and a current lease or market evidence are checked; vacancy, maintenance, tax and tenant wear apply",
+        "The prospectus says current basement and loft use diverges from approved 1948 drawings; bathroom, kitchen and living-room changes may be unapproved",
+        "The 1949 shell has material technical risk, including old wet-room elements, possible chimney moisture, floor deviations and an electrical system needing extended inspection",
+        "Verify which four bedrooms and two living zones remain in one coherent owner volume if the other dwelling is rented"
+      ],
+      take: "The new volume-and-rental watch: a legal two-dwelling duplex, six bedrooms, three baths, lawn and 377 m² at 9.48m total. Rent is unpriced, and the basement/loft contain unapproved use changes plus 1949-condition risk. Excellent reconnaissance; not permission to capitalize imaginary rent or ignore the municipal paperwork department."
+    },
+    {
+      id: "rosehagen-42",
+      name: "Rosehagen 42",
+      area: "Stokka, Stavanger",
+      type: "Enebolig/kjedehus",
+      ask: 9.3,
+      total: 9.534,
+      sqm: 207,
+      plot: 154,
+      beds: 4,
+      year: 2012,
+      status: "live",
+      viewing: "16 Sep · 16:30–17:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475974844",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/09/4/475/974/844_7d2660e4-30f0-4a75-9d40-b8c8fb6005a9.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "forus", "low-maintenance"],
+      scores: { family: 90, garden: 45, area: 95, risk: 45, forus: 82 },
+      score: 65,
+      facts: [
+        "FINN and the broker verify 4 bedrooms, 207 m² BRA-i, 3 living rooms, 3 bathrooms plus WC, 2012 build and 9.53m total",
+        "The owned plot is only 154 m², but the broker verifies a private screened 33 m² ground terrace suitable for small children plus a 17 m² roof terrace",
+        "The broker explicitly describes the basement living room as a combined youth/gaming/training room with adjacent sauna and shower",
+        "Stokka-to-Forus is roughly 12–22 minutes in ordinary traffic; E39 peak queues can add friction (inference)"
+      ],
+      risks: [
+        "The broker says the basement was not building-approved: its living room, bathroom and sauna remain approved only as an unfinished ancillary basement, so the gym/family value is conditional",
+        "The top advertised bedroom is building-approved as a living room; confirm bedroom daylight, escape and fire requirements before counting it conservatively",
+        "Outdoor space is private and usable but terrace-led rather than a real lawn garden",
+        "Several wet rooms lack membrane documentation, and the electrical documentation is incomplete; no rental unit is advertised"
+      ],
+      take: "A rare sub-10m Stokka functional watch: four advertised bedrooms, three living zones, three baths and an existing training room. The price is attractive because the plot is a 154 m² terrace proposition and the basement is not approved for its current use. Very good daily logistics; not the garden benchmark, and the paperwork has eaten the gym before breakfast."
+    },
+    {
+      id: "akselmarka-3",
+      name: "Akselmarkå 3",
+      area: "Håbafjell, Sandnes",
+      type: "Enebolig",
+      ask: 7.79,
+      total: 7.986,
+      sqm: 222,
+      plot: 353,
+      beds: 5,
+      year: 1998,
+      status: "live",
+      viewing: "16 Sep · 18:15–19:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476013772",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/10/2/476/013/772_6503e1b3-07c3-4f87-850a-6d49808e2d49.jpg",
+      verdict: "watch",
+      flags: ["baths", "garden", "zones", "gym", "rental", "value", "forus"],
+      scores: { family: 72, garden: 52, area: 52, risk: 68, forus: 85 },
+      score: 64,
+      facts: [
+        "FINN and DNB verify 5 bedrooms, 222 m² BRA-i, 353 m² owned plot, 1998 build and 7.99m total",
+        "The ad explicitly verifies an approved two-bedroom basement apartment; advertised or achieved rent is not stated and needs verification",
+        "The main dwelling has three bedrooms and several living areas; the property also has a garage, 81 m² of terraces and landscaped outdoor space",
+        "The garage makes rack plus treadmill plausible subject to dimensions and retained parking (inference)",
+        "Håbafjell-to-Forus is roughly 12–22 minutes in ordinary traffic; E39 congestion can add friction (inference)"
+      ],
+      risks: [
+        "Keeping the approved apartment rented leaves only three owner bedrooms, below the family brief",
+        "Do not underwrite 15k/month until unit separation, condition and a current lease or market evidence are checked; vacancy, maintenance, tax and tenant wear apply",
+        "The 353 m² plot is compact and terrace-heavy, so verify level private lawn; confirm bathroom count and garage dimensions in the complete prospectus"
+      ],
+      take: "New low-price legal-rental watch at 7.99m total. The two-bedroom apartment is approved, but rent is unstated and the owner part has only three bedrooms while it is let. Useful economics reconnaissance; not a complete six-person-family solution unless the unit is reclaimed, which rather defeats the income argument."
     },
     {
       id: "hauagata-10",
