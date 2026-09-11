@@ -1,21 +1,150 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-10.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-11.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-10T18:08:52+02:00",
-  scrapedLabel: "10 Sep 2026, 18:08 CEST",
+  scrapedAt: "2026-09-11T18:05:15+02:00",
+  scrapedLabel: "11 Sep 2026, 18:05 CEST",
   source: "FINN.no live ads plus broker pages",
   methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's municipality search was accessible for Stavanger but partial or blocked elsewhere, so inventory totals are curated-card counts rather than complete market counts.",
   stats: {
-    totalHouses: 30,
-    stavangerHouses: 13,
+    totalHouses: 34,
+    stavangerHouses: 16,
     eiganesHouses: 3,
     valandHouses: 0,
-    fitCount: 9,
+    fitCount: 10,
     strongestScore: 79
   },
   houses: [
+    {
+      id: "postveien-10c",
+      name: "Postveien 10C",
+      area: "Madla, Stavanger",
+      type: "Enebolig",
+      ask: 13.2,
+      total: 13.531,
+      sqm: 260,
+      plot: 650,
+      beds: 5,
+      year: 2015,
+      status: "live",
+      viewing: "21 Sep · 16:30–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476119506",
+      image: "",
+      verdict: "dream",
+      flags: ["family", "baths", "garden", "zones", "gym", "forus", "low-maintenance"],
+      scores: { family: 98, garden: 78, area: 78, risk: 85, forus: 82 },
+      score: 79,
+      facts: [
+        "FINN and the broker verify a 2015 detached house with 5 bedrooms, 260 m² BRA-i, 650 m² owned plot and 13.53m total",
+        "The ad explicitly verifies 2 living rooms, 2 tiled bathrooms plus guest WC, laundry, south/west garden and an integrated garage",
+        "The integrated garage is the plausible rack-and-treadmill solution without deleting a bedroom or second living room, subject to measurement (inference)",
+        "Madla-to-Forus is roughly 12–22 minutes in ordinary traffic; Madlaveien/E39 queues can add friction (inference)"
+      ],
+      risks: [
+        "At 13.53m total with no advertised rental unit, this is 1.03m above the owner-only reconnaissance ceiling",
+        "Confirm the garage's clear floor area and that the photographed outdoor space includes level private child lawn",
+        "A 2015 shell lowers near-term risk but does not replace permits, wet-room and condition diligence"
+      ],
+      take: "New dream/price benchmark: a genuinely complete modern family plan—five bedrooms, two stuer, two baths, sunny garden and plausible garage gym—in Madla. The house fits; the 13.53m owner-only total does not. Keep it as evidence of what the premium buys, not as permission for the budget to develop opinions."
+    },
+    {
+      id: "mergelbakken-32",
+      name: "Mergelbakken 32",
+      area: "Sandved, Sandnes",
+      type: "Enebolig",
+      ask: 8.9,
+      total: 9.141,
+      sqm: 298,
+      plot: 979,
+      beds: 5,
+      year: 1987,
+      status: "live",
+      viewing: "23 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475887345",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/10/5/475/887/345_cbe1920e-3a25-4544-a787-c66b0fd27a0c.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
+      scores: { family: 96, garden: 95, area: 62, risk: 58, forus: 92 },
+      score: 77,
+      facts: [
+        "FINN and the broker verify 5 bedrooms, 298 m² BRA-i, 979 m² owned plot, 1987 build and 9.14m total",
+        "The main floors provide a large living room, loft living room and two bathrooms; the basement apartment adds living/kitchen, bedroom and a third bathroom",
+        "The basement is currently let for NOK 9,500/month, but neither FINN nor the accessible broker page verifies municipal approval; no rental flag or allowance is assigned",
+        "Several basement stores/hobby rooms make a dedicated gym physically credible without deleting an owner bedroom or loft living room (inference)",
+        "Sandved-to-Forus is roughly 8–15 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "Treat the current NOK 9,500/month tenancy as unapproved until municipal drawings and lawful unit status are produced; vacancy, maintenance, tax and tenant wear still apply",
+        "Confirm that four legal owner bedrooms remain while the basement is occupied and that all advertised rooms match approved use",
+        "The 1987 technical file requires drainage, wet-room, roof, electrical and alteration diligence"
+      ],
+      take: "New strongest value/volume candidate: 298 m², five bedrooms, two owner living zones, three bathroom spaces, near-1,000 m² plot and hobby-room gym potential at 9.14m total, close to Forus. The basement earns a verified advertised 9.5k/month, but legality is not verified, so the rental allowance remains exactly zero—the municipality has not been replaced by a tenant."
+    },
+    {
+      id: "sorstrandveien-44",
+      name: "Sørstrandveien 44",
+      area: "Vassøy, Stavanger",
+      type: "Enebolig",
+      ask: 8.49,
+      total: 8.703,
+      sqm: 222,
+      plot: 999,
+      beds: 5,
+      year: 2007,
+      status: "live",
+      viewing: "20 Sep · 14:00–16:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476058250",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/10/0/476/058/250_fa2e3f41-1476-4e29-ab53-f2ac3cfec6d3.png",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "value"],
+      scores: { family: 96, garden: 96, area: 58, risk: 55, forus: 42 },
+      score: 74,
+      facts: [
+        "FINN verifies 5 bedrooms, 3 living rooms, 3 bathrooms, 222 m² BRA-i, 999 m² owned plot, 2007 build and 8.70m total",
+        "The ad verifies a screened garden with fruit trees and greenhouse, several terraces, conservatory and garage",
+        "Garage, conservatory and three living zones make a dedicated gym credible without deleting a bedroom or the core family plan (inference)",
+        "The ad mentions a hybel but does not verify approval, separation or rent; no rental flag or allowance is assigned"
+      ],
+      risks: [
+        "Vassøy requires a car ferry; a Forus trip is likely roughly 35–50 minutes door-to-door and timetable/queue dependent (inference)",
+        "Verify the hybel and every lower-floor room against municipal approvals before assigning family or rental value",
+        "Ferry dependence complicates school, activities and emergency logistics despite excellent house economics"
+      ],
+      take: "Location is not a gate, so this belongs in reconnaissance: five bedrooms, three stuer, three baths, real land and easy gym volume for 8.70m. The price is compensation for ferry dependence, not a clerical error. Treat the hybel as zero-income family flexibility until approvals and rent are documented."
+    },
+    {
+      id: "vistafjords-27",
+      name: "Vistafjords vei 27",
+      area: "Hundvåg, Stavanger",
+      type: "Enebolig",
+      ask: 10.75,
+      total: 11.02,
+      sqm: 230,
+      plot: 958,
+      beds: 4,
+      year: 1936,
+      status: "live",
+      viewing: "16 Sep · 16:00–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475438078",
+      image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/11/8/475/438/078_1464ea40-9caa-4dfb-ab63-fb553ba08c28.jpg",
+      verdict: "watch",
+      flags: ["family", "garden", "zones", "gym"],
+      scores: { family: 90, garden: 95, area: 58, risk: 48, forus: 55 },
+      score: 70,
+      facts: [
+        "FINN verifies 4 bedrooms, 230 m² BRA-i, 958 m² owned plot, 1936 build and 11.02m total",
+        "The ad explicitly verifies several social zones, a large screened garden, 45 m² double garage with loft and an existing conservatory training room",
+        "The basement is separated with its own entrance and contains hobby/workshop/guest rooms, but no rental unit is advertised or assumed",
+        "Hundvåg-to-Forus is roughly 20–35 minutes in ordinary traffic and vulnerable to tunnel/E39 queues (inference)"
+      ],
+      risks: [
+        "The ad verifies one large bathroom plus guest WC, not two full bathrooms; this fails the complete brief until the prospectus proves another bathroom or a credible legal conversion",
+        "The 1936 shell, 1997–2001 renovation and basement uses require full condition, moisture and permit diligence",
+        "Exactly four bedrooms leaves no spare legal-bedroom buffer"
+      ],
+      take: "A near-fit with unusually good land and a literal training room: four bedrooms, big social volume, 958 m² plot and double garage at 11.02m total. The defect is less photogenic but decisive—only one full bathroom is verified. Keep watching if a second-bath route survives the drawings and drainage department."
+    },
     {
       id: "agatveien-15",
       name: "Agatveien 15",
@@ -356,7 +485,7 @@ window.WAR_ROOM = {
       beds: 4,
       year: 1975,
       status: "live",
-      viewing: "10 Sep · 16:30–17:30",
+      viewing: "By appointment",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=473676094",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/18/4/473/676/094_274d6dc3-387c-4c8b-aebd-fc18587d2c72.jpg",
       verdict: "strong",
@@ -374,7 +503,7 @@ window.WAR_ROOM = {
         "Exactly four bedrooms leaves no legal spare if one room fails approval or function",
         "1975 construction requires drainage, wet-room, roof, electrical and alteration diligence; no rental unit is advertised"
       ],
-      take: "The strongest land-and-location candidate still live: four bedrooms, two baths, 245 m² and a real 723 m² garden at 11.27m total, close to Forus. It is not yet a clean brief match because the second proper living zone and dedicated gym room are inferred rather than advertised."
+      take: "The strongest land-and-location candidate still live: four bedrooms, two baths, 245 m², a TV zone and a real 723 m² garden at 11.27m total, close to Forus. Dedicated gym space remains inferred rather than advertised."
     },
     {
       id: "adjunkt-hauglands-28",
@@ -420,11 +549,11 @@ window.WAR_ROOM = {
       plot: 985,
       beds: 6,
       year: 1970,
-      status: "live",
-      viewing: "10 Sep · 18:00",
+      status: "sold",
+      viewing: "Sold 11 Sep · final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474749842",
       image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/01/2/474/749/842_a45367f5-87c5-4349-88d0-038071ff9f31.jpg",
-      verdict: "strong",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
       scores: { family: 92, garden: 95, area: 65, risk: 55, forus: 85 },
       score: 75,
@@ -439,7 +568,7 @@ window.WAR_ROOM = {
         "1970 construction requires drainage, wet-room, electrical, roof and alteration diligence",
         "A garage gym is credible, but confirm clear internal dimensions and whether vehicles can still be accommodated"
       ],
-      take: "Still the value leader for owner use: six bedrooms, two living levels, two baths, a near-1,000 m² plot and double garage at 8.70m total. Treat the basement as family space only until the municipality says otherwise; a kitchenette is not a planning decision, however earnestly it poses as one."
+      take: "Sold on 11 Sep; achieved price is not visible. Retain briefly as the 8.70m advertised Sola comp for six bedrooms, two living levels, two baths, near-1,000 m² plot and double garage. The basement was never verified as a legal rental unit."
     },
     {
       id: "tvarabergkroken-22",
@@ -478,14 +607,14 @@ window.WAR_ROOM = {
       name: "Vestbøtunet 41A/B",
       area: "Stokka, Stavanger",
       type: "Enebolig",
-      ask: 10.5,
-      total: 10.764,
+      ask: 9.95,
+      total: 10.2,
       sqm: 190,
       plot: 540,
       beds: 4,
       year: 1985,
       status: "live",
-      viewing: "By appointment",
+      viewing: "22 Sep · 16:00–17:00",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=472851006",
       image: "https://images.finncdn.no/dynamic/default/2026/8/vertical-2/18/6/472/851/006_4bf1cb8b-2beb-4876-b9ab-1ee264a334d6.jpg",
       verdict: "watch",
@@ -493,7 +622,7 @@ window.WAR_ROOM = {
       scores: { family: 78, garden: 70, area: 92, risk: 58, forus: 82 },
       score: 72,
       facts: [
-        "FINN verifies 4 bedrooms, 190 m² BRA-i, 540 m² owned plot, 1985 build and 10.76m total",
+        "FINN verifies 4 bedrooms, 190 m² BRA-i, 540 m² owned plot, 1985 build and the reduced 10.20m total",
         "The ad states the house is registered as an enebolig with hybel/sokkelleilighet and two boenheter; the secondary unit was upgraded in 2022",
         "Advertised rent is not stated and must be verified",
         "A rammetillatelse exists for extension, facade changes, a new garage and an extra driveway — there is no current garage gym",
@@ -504,7 +633,7 @@ window.WAR_ROOM = {
         "No dedicated gym volume is established until the permitted garage is built and measured",
         "Vacancy, tenant wear, maintenance, tax/legal compliance and loss of family space apply if the unit is used for income"
       ],
-      take: "Live Stokka at 10.76m with two registered units and a lake view. Good reconnaissance for the preferred belt. It is not a gym answer today, and the rental case has no stated rent — do not spend the +2m until the lease and approvals are on the table."
+      take: "Live Stokka after a verified 0.55m ask cut: now 10.20m total with two registered units and a lake view. Good preferred-belt reconnaissance. It is not a gym answer today, and rent remains unstated—do not spend the +2m until the lease and approvals are on the table."
     },
     {
       id: "bulegsbakken-22",
@@ -582,11 +711,11 @@ window.WAR_ROOM = {
       plot: 465,
       beds: 4,
       year: 2022,
-      status: "live",
-      viewing: "By appointment",
+      status: "sold",
+      viewing: "Sold · confirmed 11 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=474768680",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/28/0/474/768/680_e27cfecd-99d4-4228-a699-c141447dad35.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "garden", "zones", "forus", "low-maintenance"],
       scores: { family: 82, garden: 70, area: 78, risk: 82, forus: 100 },
       score: 72,
@@ -601,7 +730,7 @@ window.WAR_ROOM = {
         "No rental unit is advertised; no rental allowance assumed",
         "Confirm there are at least two full bathrooms rather than one bathroom plus WC"
       ],
-      take: "The low-maintenance control case: good commute, four bedrooms, loftstue and a genuine private garden. The unresolved issue is not family fit but gym fit—the square metres are already assigned jobs. Measure the garage and verify the bathroom count."
+      take: "Sold status confirmed 11 Sep; achieved price is not visible. Retain briefly as the 11.17m advertised low-maintenance Mariero comp. Four bedrooms, loftstue and private garden were strong, but the bathroom count and garage-gym fit remained unresolved."
     },
     {
       id: "folkvordveien-101",
@@ -743,11 +872,11 @@ window.WAR_ROOM = {
       plot: 280,
       beds: 5,
       year: 1961,
-      status: "live",
-      viewing: "9 Sep · 18:30–19:30",
+      status: "sold",
+      viewing: "Sold · confirmed 11 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475467795",
       image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/03/5/475/467/795_316156af-8525-41a6-9e26-3d8777f10c5e.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "value", "forus"],
       scores: { family: 78, garden: 55, area: 88, risk: 60, forus: 100 },
       score: 65,
@@ -761,7 +890,7 @@ window.WAR_ROOM = {
         "No dedicated gym volume is established; using the garage may sacrifice parking and still needs clear-height and floor checks",
         "The 280 m² plot and 148 m² interior are tight for the eventual six-person brief; no rental unit is advertised"
       ],
-      take: "Excellent location/value reconnaissance at 6.71m total, with two baths, two living rooms and some private lawn. It is a compact duplex, not a hidden compound; resolve the four-versus-five-bedroom contradiction and garage-gym reality before treating the headline count as usable capacity."
+      take: "Sold status confirmed 11 Sep; achieved price is not visible. Retain briefly as the 6.71m advertised Ullandhaug duplex comp; its four-versus-five-bedroom contradiction, compact plot and unresolved garage-gym fit remain part of the comparison."
     },
     {
       id: "randeberggeilen-41",
