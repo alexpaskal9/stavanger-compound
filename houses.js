@@ -1,21 +1,54 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-11.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-12.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-11T18:05:15+02:00",
-  scrapedLabel: "11 Sep 2026, 18:05 CEST",
+  scrapedAt: "2026-09-12T18:01:13+02:00",
+  scrapedLabel: "12 Sep 2026, 18:01 CEST",
   source: "FINN.no live ads plus broker pages",
-  methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN's municipality search was accessible for Stavanger but partial or blocked elsewhere, so inventory totals are curated-card counts rather than complete market counts.",
+  methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad and broker pages; commute, gym fit and verdicts are analyst inference. FINN's combined municipality search returned an error during this refresh, so discovery used separate web searches and live-ad checks. Inventory totals are curated-card counts, not complete market counts.",
   stats: {
-    totalHouses: 34,
-    stavangerHouses: 16,
-    eiganesHouses: 3,
+    totalHouses: 36,
+    stavangerHouses: 17,
+    eiganesHouses: 4,
     valandHouses: 0,
     fitCount: 10,
     strongestScore: 79
   },
   houses: [
+    {
+      id: "ovre-stokkavei-86",
+      name: "Øvre Stokkavei 86",
+      area: "Stokka, Stavanger",
+      type: "Enebolig",
+      ask: 12.5,
+      total: 12.814,
+      sqm: 278,
+      plot: 919,
+      beds: 6,
+      year: 1933,
+      status: "live",
+      viewing: "21 Sep · 16:30–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476096691",
+      image: "",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "forus"],
+      scores: { family: 96, garden: 95, area: 97, risk: 35, forus: 85 },
+      score: 77,
+      facts: [
+        "FINN and the 12 September sales prospectus verify 6 bedrooms, 278 m² BRA-i, 919 m² owned plot, 1933 build and 12.81m total",
+        "The prospectus verifies a main-floor living/dining zone, basement living room, four upstairs bedrooms plus basement bedroom and office, and two full bathrooms plus WC",
+        "The screened lawn is explicitly child-usable; the 25 m² garage or basement volume makes a rack-and-treadmill room physically credible, subject to remediation and measurement (inference)",
+        "Stokka-to-Forus is roughly 12–22 minutes in ordinary traffic; E39 peak queues can add friction (inference)"
+      ],
+      risks: [
+        "At 12.81m total this is 0.31m above the owner-only reconnaissance ceiling, and the prospectus explicitly says there is no separate rental unit",
+        "The basement rooms are approved for permanent use and could form an internally connected hybel after adding a kitchen, but no rent is stated and no rental flag or allowance is assigned",
+        "The condition report gives TG3 to the basement bathroom floor/drainage and the garage, with extensive TG2 items across drainage, roof, services and below-grade construction",
+        "The 1933 shell and 1960 alterations require a full municipal, moisture, fire and technical review"
+      ],
+      take: "New preferred-area watch: six bedrooms, two proper living levels, two full baths, a genuinely child-usable 919 m² Stokka garden and plausible gym volume. It misses the owner-only total ceiling by 0.31m and carries a formidable 1933/TG3 file. The basement is legal living space, not a separate rental unit; no income allowance is awarded by decorative optimism."
+    },
     {
       id: "postveien-10c",
       name: "Postveien 10C",
@@ -80,6 +113,39 @@ window.WAR_ROOM = {
         "The 1987 technical file requires drainage, wet-room, roof, electrical and alteration diligence"
       ],
       take: "New strongest value/volume candidate: 298 m², five bedrooms, two owner living zones, three bathroom spaces, near-1,000 m² plot and hobby-room gym potential at 9.14m total, close to Forus. The basement earns a verified advertised 9.5k/month, but legality is not verified, so the rental allowance remains exactly zero—the municipality has not been replaced by a tenant."
+    },
+    {
+      id: "marknesringen-30",
+      name: "Marknesringen 30",
+      area: "Røyneberg, Sola",
+      type: "Enebolig",
+      ask: 8.79,
+      total: 9.011,
+      sqm: 253,
+      plot: 921,
+      beds: 5,
+      year: 1979,
+      status: "live",
+      viewing: "17 Sep · 17:00–17:45",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475990964",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/11/4/475/990/964_db3ed234-cfce-44c8-8c06-fee298bad97d.jpg",
+      verdict: "watch",
+      flags: ["baths", "garden", "zones", "rental", "value", "forus"],
+      scores: { family: 62, garden: 95, area: 78, risk: 65, forus: 95 },
+      score: 71,
+      facts: [
+        "FINN and Nordvik verify 5 bedrooms, 253 m² BRA-i, 921 m² owned plot, 1979 build and 9.01m total",
+        "Nordvik explicitly states the lower-floor apartment is approved; it contains two bedrooms, living/kitchen and bathroom, while advertised or achieved rent is not stated and needs verification",
+        "The owner floor has two conventional bedrooms plus a TV-room/bedroom, one bathroom and living/kitchen; the separate unit has the second bathroom and living zone",
+        "The east/south/west garden is private and substantial, and Røyneberg-to-Forus is roughly 7–15 minutes in ordinary traffic (commute inference)"
+      ],
+      risks: [
+        "Keeping the approved apartment rented leaves only two conventional owner bedrooms, or three if the TV room is sacrificed; this fails both the four-bedroom and two-living-zone family brief",
+        "No rack-and-treadmill room is established without consuming the TV room, storage, carport utility or rental/family function",
+        "Do not underwrite 15k/month until a current lease or grounded market evidence is produced; vacancy, maintenance, tax/legal compliance and tenant wear apply",
+        "The 1979 technical file still requires drainage, wet-room, roof, electrical and alteration diligence"
+      ],
+      take: "New legal-rental economics watch: 9.01m total buys 253 m², an approved two-bedroom apartment and a 921 m² garden minutes from Forus. The catch is not subtle: while rented, the owner side has only two conventional bedrooms, or three by deleting its TV room, and no clean gym solution. Rent is unstated, so the +2m allowance remains provisional."
     },
     {
       id: "sorstrandveien-44",
@@ -150,14 +216,14 @@ window.WAR_ROOM = {
       name: "Agatveien 15",
       area: "Sandved, Sandnes",
       type: "Enebolig",
-      ask: 10.99,
-      total: 11.266,
+      ask: 11.9,
+      total: 12.199,
       sqm: 188,
       plot: 439,
       beds: 4,
       year: 2026,
       status: "live",
-      viewing: "13 Sep · 14:00–15:00",
+      viewing: "By appointment",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=467085262",
       image: "https://images.finncdn.no/dynamic/1280w/2026/6/vertical-2/15/2/467/085/262_52205c16-c4ca-44ca-8291-a5495019a732.jpg",
       verdict: "strong",
@@ -165,17 +231,17 @@ window.WAR_ROOM = {
       scores: { family: 100, garden: 65, area: 60, risk: 95, forus: 95 },
       score: 78,
       facts: [
-        "FINN now verifies a completed 2026 freehold detached house with 4 bedrooms, 188 m² BRA-i and a 439 m² owned plot",
+        "FINN verifies a completed 2026 freehold detached house with 4 bedrooms, 188 m² BRA-i, a 439 m² owned plot and the current 12.20m total",
         "The current ad explicitly verifies 3 living rooms, 2 full bathrooms, separate laundry, garage and a garden",
         "A dedicated multipurpose cinema/training room makes rack plus treadmill plausible without deleting a bedroom or living zone (inference)",
         "Sandved-to-Forus is roughly 8–12 minutes in ordinary traffic (inference)"
       ],
       risks: [
-        "No rental unit is advertised; no rental allowance assumed",
+        "The ask is now 11.90m, up 0.91m from the value previously recorded in the war room; no rental unit is advertised and no rental allowance is assumed",
         "The 439 m² plot is moderate, so verify level child-usable lawn after house, garage and terraces",
         "Exactly four bedrooms leaves no legal spare if a room fails approval or family function"
       ],
-      take: "Best turnkey owner-only fit, but FINN's current facts are materially dearer and smaller-bedroomed than the previous card: four bedrooms, three living zones, two baths and a dedicated cinema/training room at 11.27m total. The 1.03m overnight correction belongs to the data, not necessarily the market; verify the 439 m² plot's actual child lawn."
+      take: "The turnkey owner-only fit remains complete on paper—four bedrooms, three living zones, two baths and a dedicated cinema/training room—but FINN now shows 11.90m ask and 12.20m total, a 0.93m total-price correction from the prior card. It stays just inside the reconnaissance ceiling, not the 11m baseline; verify the 439 m² plot's actual child lawn."
     },
     {
       id: "gosenbakken-17",
