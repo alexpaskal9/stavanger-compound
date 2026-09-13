@@ -13,7 +13,7 @@
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--coal);color:var(--bone);font-family:Inter,system-ui,-apple-system,sans-serif}button,input{font:inherit}button{cursor:pointer}
 #scene{position:fixed;inset:0}canvas{display:block}
 #grain{position:fixed;inset:0;pointer-events:none;opacity:.14;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
-#header{position:fixed;z-index:10;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;padding:24px 28px;pointer-events:none}.brand{letter-spacing:.36em;font-size:13px;font-weight:700}.brand small{display:block;color:var(--ash);font-size:8px;letter-spacing:.24em;margin-top:8px}.draft{border:1px solid #5b4939;color:#bda98c;padding:7px 10px;font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:#eadbc2;color:#100b07;padding:8px 12px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}.skip:focus{left:8px}#header{position:fixed;z-index:10;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:24px 28px;pointer-events:none}.brand{letter-spacing:.36em;font-size:13px;font-weight:700}.brand small{display:block;color:var(--ash);font-size:8px;letter-spacing:.24em;margin-top:8px}.header-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;pointer-events:auto;max-width:min(520px,70vw)}.hub-link,.nav-toggle{background:#0c0e0cdd;color:#eadbc2;border:1px solid #5b4939;padding:7px 10px;font-size:8px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}.hub-link:hover,.nav-toggle:hover{border-color:#c07a45;color:#fff}.hub-link:focus-visible,.nav-toggle:focus-visible,.side-btn:focus-visible,#forge:focus-visible,.hear:focus-visible,.cta:focus-visible,input:focus-visible,#film-close:focus-visible,#proof-close:focus-visible{outline:2px solid #d48845;outline-offset:2px}.nav-toggle{display:none;cursor:pointer;font:inherit}.draft{border:1px solid #5b4939;color:#bda98c;padding:7px 10px;font-size:8px;letter-spacing:.2em;text-transform:uppercase}.forge-msg{margin:8px 0 0;color:#d4b48a;font-size:9px;letter-spacing:.06em;line-height:1.4}.forge-msg[hidden]{display:none!important}#result.is-empty .runes{min-height:0;opacity:.45}#source-meta{margin-top:8px;color:#6b675f;font-size:8px;letter-spacing:.08em;line-height:1.45;text-transform:uppercase}
 #intro{position:fixed;z-index:9;left:5vw;top:24vh;width:min(420px,90vw);transition:opacity .5s,transform .5s}#intro.quiet{opacity:.34;transform:translateY(-12px);pointer-events:none}.eyebrow{color:var(--ember);font-size:9px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px}h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(42px,7vw,88px);line-height:.9;margin:0 0 18px;letter-spacing:-.035em}.lede{color:#b9b1a2;font-family:Georgia,serif;font-size:15px;line-height:1.55;max-width:370px}
 #forge-panel{position:fixed;z-index:12;left:5vw;bottom:5vh;width:min(460px,90vw);background:#0d0f0de8;border:1px solid #30332f;box-shadow:0 24px 80px #000b;padding:18px;backdrop-filter:blur(12px)}label{display:block;color:var(--ash);font-size:8px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px}.input-row{display:grid;grid-template-columns:1fr auto;gap:8px}input{width:100%;background:#161816;border:1px solid #393d38;color:#f0e7d4;padding:13px 14px;font-family:Georgia,serif;font-size:18px;outline:none;text-transform:none}input:focus{border-color:var(--bronze)}#forge{border:0;background:var(--bronze);color:#100b07;padding:0 18px;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}#forge:hover{background:#c07a45}
 #result{display:grid;grid-template-columns:1fr auto;gap:12px;margin-top:13px;align-items:end}.runes{font-family:'Fornvegr Futhark','Apple Symbols','Segoe UI Symbol',serif;font-size:clamp(23px,4vw,38px);letter-spacing:.15em;line-height:1.2;min-height:43px;color:#eadbc2}.groups{font-size:8px;letter-spacing:.14em;color:var(--ash);margin-top:7px;text-transform:uppercase}.result-actions{display:flex;flex-direction:column;gap:7px}.hear{background:transparent;border:1px solid #3a403a;color:#aeadac;padding:8px 10px;font-size:8px;letter-spacing:.12em;text-transform:uppercase}.cta{display:block;background:var(--bronze);color:#100b07;padding:9px 12px;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}.cta:hover{background:#c07a45}.note{border-top:1px solid #292c29;margin-top:12px;padding-top:10px;color:#817b70;font-size:9px;line-height:1.5}.progress{height:2px;background:#242724;margin-top:11px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:var(--ember);box-shadow:0 0 12px var(--ember)}
@@ -22,25 +22,25 @@
 #proof{position:fixed;z-index:75;inset:0;display:none;background:#090a09f7;padding:7vh 8vw;overflow:auto}#proof.open{display:block}#proof-close{position:fixed;right:24px;top:20px;border:0;background:none;color:#fff;font-size:24px}.proof-wrap{max-width:900px;margin:auto}.proof-wrap h2{font-family:Georgia,serif;font-size:38px;font-weight:400;margin:0 0 8px}.proof-wrap p{color:#aaa293;font-size:12px;line-height:1.6}.proof-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:28px}.proof-card{border:1px solid #343833;background:#111311;padding:16px}.proof-name{font-size:10px;letter-spacing:.15em;color:#9a9285}.proof-runes{font-family:'Fornvegr Futhark','Apple Symbols',serif;font-size:23px;letter-spacing:.12em;margin:12px 0;color:#eadcc3}.match{font-size:8px;color:#6f9672;letter-spacing:.14em}.source{margin-top:28px;border-left:2px solid var(--bronze);padding:12px 18px;color:#8f887c;font-size:10px;line-height:1.65}
 #status{position:fixed;z-index:9;right:26px;bottom:20px;color:#5e625c;font-size:8px;letter-spacing:.13em;text-transform:uppercase}
 #render-overlay{position:fixed;z-index:70;inset:0;display:none;pointer-events:none;padding:7vh 6vw}.render-copy{position:absolute;left:6vw;bottom:8vh}.render-copy b{display:block;font-family:Georgia,serif;font-weight:400;font-size:clamp(42px,7vw,88px);letter-spacing:-.03em}.render-copy span{display:block;color:#bd9a76;font-size:10px;letter-spacing:.32em;text-transform:uppercase;margin-top:10px}.render-mark{position:absolute;right:6vw;top:6vh;text-align:right;font-size:11px;letter-spacing:.36em}.render-mark small{display:block;color:#888174;font-size:8px;margin-top:8px;letter-spacing:.22em}
-@media(max-width:760px){#header{padding:16px}.brand{font-size:11px}#intro{left:16px;top:15vh;width:calc(100vw - 32px)}h1{font-size:48px}.lede{font-size:13px;max-width:300px}#forge-panel{left:12px;bottom:max(12px,env(safe-area-inset-bottom));width:calc(100vw - 24px);padding:13px}.input-row{grid-template-columns:1fr 92px}#forge{padding:0 10px}.note{font-size:8px}.groups{max-width:250px}#side{right:12px;top:78px;transform:none}.side-btn{padding:7px 8px;font-size:7px}.proof-grid{grid-template-columns:1fr 1fr}.proof-wrap h2{font-size:30px}#status{display:none}}
+@media(max-width:760px){#header{padding:10px 12px;align-items:center}.brand{font-size:11px}.header-tools{max-width:none;gap:6px}.nav-toggle{display:inline-flex}.header-tools .draft{display:none}#intro{left:16px;top:18vh;width:calc(100vw - 32px)}h1{font-size:42px}.lede{font-size:13px;max-width:300px}#forge-panel{left:12px;bottom:max(12px,env(safe-area-inset-bottom));width:calc(100vw - 24px);padding:13px;max-height:min(48vh,calc(100dvh - 8rem));overflow:auto}.input-row{grid-template-columns:1fr 92px}#forge{padding:0 10px}.note{font-size:8px}.groups{max-width:250px}#side{display:none;left:12px;right:12px;top:52px;bottom:auto;transform:none;flex-direction:row;flex-wrap:wrap;justify-content:stretch;z-index:20;background:#0c0e0cf2;padding:8px;border:1px solid #313530}#side.open{display:flex}.side-btn{padding:10px 8px;font-size:8px;flex:1 1 30%}.proof-grid{grid-template-columns:1fr 1fr}.proof-wrap h2{font-size:30px}#status{display:none}}
 @media(prefers-reduced-motion:reduce){#grain{display:none}*{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
 </style>
 </head>
 <body>
 <div id="scene"></div><div id="grain"></div>
-<header id="header"><div class="brand">FORNVEGR<small>FOR VI GLEMTE.</small></div><div class="draft">Fornvegr interactive</div></header>
+<a class="skip" href="#name">Skip to name input</a><header id="header"><div class="brand">FORNVEGR<small>FOR VI GLEMTE.</small></div><div class="header-tools"><a class="hub-link" href="https://alexpaskal9.github.io/pantheon/hub.html">Command centre</a><button type="button" class="nav-toggle" id="nav-toggle" aria-controls="side" aria-expanded="false">Menu</button><div class="draft" title="Static GitHub Pages copy. Engine inlined 21 Aug 2026. Not a live production feed.">Pages snapshot 21 Aug 2026</div></div></header>
 <section id="intro"><div class="eyebrow">The name is modern. The method is documented.</div><h1>Forge your name.</h1><p class="lede">Enter a name. The same deterministic system used for Fornvegr pieces maps its sounds into Elder Futhark.</p></section>
 <section id="forge-panel">
 <label for="name">A modern name</label>
-<div class="input-row"><input id="name" maxlength="24" value="Ingrid" autocomplete="off" spellcheck="false"><button id="forge">Carve</button></div>
-<div id="result"><div><div class="runes" id="runes">ᛁᛜᚱᛁᛞ</div><div class="groups" id="groups">I · NG · R · I · D</div></div><div class="result-actions"><button class="hear" id="hear">Hear groups</button><a class="cta" id="cta" href="https://fornvegr.com/products/name-print" target="_blank" rel="noopener">Order the Name Print</a></div></div>
+<div class="input-row"><input id="name" maxlength="24" value="Ingrid" autocomplete="off" spellcheck="false" aria-describedby="forge-note forge-msg" enterkeyhint="go"><button type="button" id="forge">Carve</button></div><p id="forge-msg" class="forge-msg" role="status" aria-live="polite" hidden></p>
+<div id="result"><div><div class="runes" id="runes" aria-live="polite">ᛁᛜᚱᛁᛞ</div><div class="groups" id="groups">I · NG · R · I · D</div></div><div class="result-actions"><button class="hear" id="hear">Hear groups</button><a class="cta" id="cta" href="https://fornvegr.com/products/name-print" target="_blank" rel="noopener">Order the Name Print</a></div></div>
 <div class="progress"><i id="progress"></i></div>
-<div class="note">Transliteration, not translation. This system records modern names through a documented Elder Futhark mapping. It does not claim one historical spelling.</div>
+<div class="note" id="forge-note">Transliteration, not translation. This system records modern names through a documented Elder Futhark mapping. It does not claim one historical spelling.</div><div id="source-meta">GitHub Pages copy. Engine inlined 21 Aug 2026 from scripts/rune_transliteration.py. Not a live production feed.</div>
 </section>
-<nav id="side"><button class="side-btn" id="watch">Watch film</button><button class="side-btn" id="show-proof">Engine proof</button><button class="side-btn" id="reset-view">Reset view</button></nav>
-<div id="film"><div class="film-title">Review film</div><button id="film-close">✕</button><video id="film-video" controls preload="none" poster="../media/for-vi-glemte-reel-cover.jpg" src="../media/for-vi-glemte-reel.mp4"></video></div>
-<section id="proof"><button id="proof-close">✕</button><div class="proof-wrap"><div class="eyebrow">Production parity</div><h2>One engine. Five proofs.</h2><p>Each name below was mapped twice. The rune strings match.</p><div class="proof-grid" id="proof-grid"></div><div class="source"><b>Source of truth</b><br>scripts/rune_transliteration.py<br>Visual glyphs: 24 Elder Futhark outlines extracted from Apple Symbols.ttf, the rune font family used by the production renderer.<br>Approved live examples Emma, Erik and Ingrid also match fornvegr.com/pages/name-in-runes.</div></div></section>
-<div id="status">Real engine · 24 glyph outlines · zero generated runes</div>
+<nav id="side" aria-label="Forge tools"><button type="button" class="side-btn" id="watch">Watch film</button><button type="button" class="side-btn" id="show-proof">Engine proof</button><button type="button" class="side-btn" id="reset-view">Reset view</button></nav>
+<div id="film" role="dialog" aria-modal="true" aria-labelledby="film-title"><div class="film-title" id="film-title">Review film</div><button type="button" id="film-close" aria-label="Close film">✕</button><video id="film-video" controls preload="none" poster="../media/for-vi-glemte-reel-cover.jpg" src="../media/for-vi-glemte-reel.mp4"></video></div>
+<section id="proof" role="dialog" aria-modal="true" aria-labelledby="proof-heading"><button type="button" id="proof-close" aria-label="Close engine proof">✕</button><div class="proof-wrap"><div class="eyebrow">Production parity</div><h2 id="proof-heading">One engine. Five proofs.</h2><p>Each name below was mapped twice. The rune strings match.</p><div class="proof-grid" id="proof-grid"></div><div class="source"><b>Source of truth</b><br>scripts/rune_transliteration.py<br>Visual glyphs: 24 Elder Futhark outlines extracted from Apple Symbols.ttf, the rune font family used by the production renderer.<br>Approved live examples Emma, Erik and Ingrid also match fornvegr.com/pages/name-in-runes.</div></div></section>
+<div id="status">Real engine · 24 glyph outlines · zero generated runes · snapshot 21 Aug 2026</div>
 <div id="render-overlay"><div class="render-mark">FORNVEGR<small>FOR VI GLEMTE.</small></div><div class="render-copy"><b id="render-title"></b><span id="render-sub"></span></div></div>
 <script>
 // AUTO-GENERATED from Fornvegr production engine. Source of truth:
@@ -3745,6 +3745,68 @@ three/build/three.module.js:
    * SPDX-License-Identifier: MIT
    *)
 */
+</script>
+
+<script>
+(function(){
+  var name=document.getElementById('name');
+  var runes=document.getElementById('runes');
+  var groups=document.getElementById('groups');
+  var msg=document.getElementById('forge-msg');
+  var result=document.getElementById('result');
+  var side=document.getElementById('side');
+  var toggle=document.getElementById('nav-toggle');
+  if(!name||!runes||!msg||!result) return;
+  function isErr(t){
+    return t.indexOf('Enter at least')===0 || t.indexOf('Unsupported letter')===0;
+  }
+  function setEmpty(on, text){
+    if(on){
+      msg.hidden=false;
+      msg.textContent=text||'Enter a name with at least one supported letter.';
+      result.classList.add('is-empty');
+    } else {
+      msg.hidden=true;
+      msg.textContent='';
+      result.classList.remove('is-empty');
+    }
+  }
+  var mo=new MutationObserver(function(){
+    var t=runes.textContent||'';
+    if(isErr(t)){
+      setEmpty(true, t);
+      runes.textContent='';
+      if(groups) groups.textContent='';
+    } else if(t.trim()){
+      setEmpty(false);
+    }
+  });
+  mo.observe(runes,{childList:true,characterData:true,subtree:true});
+  name.addEventListener('input',function(){
+    if(!name.value.trim()) setEmpty(true);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape') return;
+    var film=document.getElementById('film');
+    var proof=document.getElementById('proof');
+    var fv=document.getElementById('film-video');
+    if(film&&film.classList.contains('open')){
+      if(fv) fv.pause();
+      film.classList.remove('open');
+    }
+    if(proof&&proof.classList.contains('open')) proof.classList.remove('open');
+    if(side&&side.classList.contains('open')){
+      side.classList.remove('open');
+      if(toggle) toggle.setAttribute('aria-expanded','false');
+    }
+  });
+  if(toggle&&side){
+    toggle.addEventListener('click',function(){
+      var open=side.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+})();
 </script>
 </body>
 </html>
