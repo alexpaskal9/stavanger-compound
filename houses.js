@@ -1,21 +1,117 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-12.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-13.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-12T18:01:13+02:00",
-  scrapedLabel: "12 Sep 2026, 18:01 CEST",
+  scrapedAt: "2026-09-13T18:08:02+02:00",
+  scrapedLabel: "13 Sep 2026, 18:08 CEST",
   source: "FINN.no live ads plus broker pages",
-  methodology: "Broad manual reconnaissance across Stavanger, Sola, Randaberg and northern Sandnes/Hommersåk. House types only. Listing facts were checked on live ad and broker pages; commute, gym fit and verdicts are analyst inference. FINN's combined municipality search returned an error during this refresh, so discovery used separate web searches and live-ad checks. Inventory totals are curated-card counts, not complete market counts.",
+  methodology: "Broad manual reconnaissance across separate FINN municipality searches for Stavanger, Sola, Randaberg and Sandnes, including northern Sandnes/Hommersåk. Enebolig, tomannsbolig and relevant rekkehus only; apartments were excluded. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN result parameters were imperfect and some extract responses were cached, so decisive prices/statuses were rechecked in a real browser. Inventory totals are curated-card counts, not complete market counts.",
   stats: {
-    totalHouses: 36,
-    stavangerHouses: 17,
+    totalHouses: 39,
+    stavangerHouses: 18,
     eiganesHouses: 4,
     valandHouses: 0,
-    fitCount: 10,
+    fitCount: 12,
     strongestScore: 79
   },
   houses: [
+    {
+      id: "hinnakroken-14",
+      name: "Hinnakroken 14",
+      area: "Hinna, Stavanger",
+      type: "Enebolig",
+      ask: 11.0,
+      total: 11.276,
+      sqm: 315,
+      plot: 1030,
+      beds: 4,
+      year: 1978,
+      status: "live",
+      viewing: "21 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=464987101",
+      image: "https://images.finncdn.no/dynamic/1600w/2026/9/vertical-2/12/1/464/987/101_ea1b9eda-29bf-498c-908c-5a8dd10fa927.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
+      scores: { family: 96, garden: 98, area: 86, risk: 52, forus: 100 },
+      score: 79,
+      facts: [
+        "FINN verifies 4 bedrooms, 315 m² BRA-i, 1,030 m² owned plot, 1978 build and 11.276m total",
+        "The ad verifies three bathrooms, a main living room and a separate basement living room, plus a large private family plot",
+        "The advertised garage can plausibly take a rack and treadmill while the separate carport retains covered parking, subject to dimensions and storage needs (inference)",
+        "Hinna-to-Forus is roughly 6–12 minutes in ordinary traffic; E39/Jåttå peak queues can add friction (inference)"
+      ],
+      risks: [
+        "Exactly four bedrooms leaves no spare legal-bedroom buffer",
+        "The kitchen and three bathrooms were renovated in 1999 according to the ad, so wet-room age, drainage, electrical and 1978 construction require serious technical diligence",
+        "Confirm every basement room and later alteration against approved drawings; no separate rental unit is advertised or assumed"
+      ],
+      take: "New strongest broad-search fit: 315 m², four bedrooms, two proper living levels, three baths, 1,030 m² of private family land and redundant garage/carport volume at 11.276m total, with Forus close. The drawback is a 1978 shell whose kitchen and wet rooms largely date to 1999. Excellent reconnaissance; condition and approvals now get to ruin the brochure's afternoon."
+    },
+    {
+      id: "lindeveien-19",
+      name: "Lindeveien 19",
+      area: "Lura, Sandnes",
+      type: "Enebolig",
+      ask: 7.99,
+      total: 8.191,
+      sqm: 180,
+      plot: 820,
+      beds: 4,
+      year: 1979,
+      status: "live",
+      viewing: "20 Sep · 12:00–13:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476173266",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/12/6/476/173/266_41cc8371-d28c-4c5f-8dad-8da8401f1402.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
+      scores: { family: 78, garden: 92, area: 68, risk: 58, forus: 100 },
+      score: 70,
+      facts: [
+        "FINN verifies 4 bedrooms, 180 m² BRA-i, 820 m² owned plot, 1979 build and 8.191m total",
+        "The ad verifies two bathrooms in the main part plus a lower-floor hybel with living/kitchen, bedroom and bathroom",
+        "The large insulated and heated double garage makes a dedicated rack-and-treadmill room unusually credible while retaining some practical garage function (inference)",
+        "Lura-to-Forus is roughly 5–10 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "No rental flag or allowance: the accessible ad does not call the hybel approved, and it states no rent; legality, separation and rent need verification",
+        "Keeping the hybel occupied would leave three owner bedrooms and only the main living zone, below the family brief",
+        "Confirm the modernisation scope, all lower-floor approvals and the 1979 drainage, wet-room, electrical and alteration file"
+      ],
+      take: "New Lura economics watch: 8.191m total buys four bedrooms, three bathroom spaces, an 820 m² screened garden and a heated double-garage gym solution almost on Forus. The hybel is useful family flexibility, not underwritten income: approval and rent are unverified, and renting it leaves only three owner bedrooms."
+    },
+    {
+      id: "postveien-128",
+      name: "Postveien 128",
+      area: "Trones, Sandnes",
+      type: "Enebolig",
+      ask: 7.65,
+      total: 7.842,
+      sqm: 168,
+      plot: 390,
+      beds: 4,
+      year: 2014,
+      status: "live",
+      viewing: "20 Sep · 14:00–15:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476105212",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/11/2/476/105/212_97846cb3-eac5-4a89-a16c-04a42b87c6ff.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus", "low-maintenance"],
+      scores: { family: 92, garden: 66, area: 65, risk: 84, forus: 94 },
+      score: 74,
+      facts: [
+        "FINN verifies 4 bedrooms, 168 m² BRA-i, 390 m² owned plot, 2014 build and 7.842m total",
+        "The ad explicitly verifies two separate living rooms, two full bathrooms, laundry and a screened private garden",
+        "The 22 m² garage is a plausible rack-and-treadmill room while driveway parking remains, subject to measurement and family storage needs (inference)",
+        "Trones-to-Forus is roughly 8–15 minutes in ordinary traffic (inference)"
+      ],
+      risks: [
+        "Exactly four bedrooms leaves no spare legal-bedroom buffer",
+        "The 390 m² plot is moderate; verify how much level child lawn remains after the house, garage and terraces",
+        "A garage gym trades away covered parking and some storage; no rental unit is advertised or assumed"
+      ],
+      take: "New low-maintenance value fit: four bedrooms, two real stuer, two baths, private garden and plausible garage gym at 7.842m total, with a practical Forus run. It is compact and exactly four-bedroom rather than lavish, but unlike several larger options it does not require a planning fiction to function."
+    },
     {
       id: "ovre-stokkavei-86",
       name: "Øvre Stokkavei 86",
