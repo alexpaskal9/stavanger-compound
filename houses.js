@@ -1,21 +1,151 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-13.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-14.
 // Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-13T18:08:02+02:00",
-  scrapedLabel: "13 Sep 2026, 18:08 CEST",
+  scrapedAt: "2026-09-14T18:05:29+02:00",
+  scrapedLabel: "14 Sep 2026, 18:05 CEST",
   source: "FINN.no live ads plus broker pages",
-  methodology: "Broad manual reconnaissance across separate FINN municipality searches for Stavanger, Sola, Randaberg and Sandnes, including northern Sandnes/Hommersåk. Enebolig, tomannsbolig and relevant rekkehus only; apartments were excluded. Listing facts were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN result parameters were imperfect and some extract responses were cached, so decisive prices/statuses were rechecked in a real browser. Inventory totals are curated-card counts, not complete market counts.",
+  methodology: "Broad manual reconnaissance across one combined FINN search for Stavanger, Sola, Randaberg and Sandnes, including northern Sandnes/Hommersåk. The search required 4+ bedrooms and included enebolig, tomannsbolig and relevant rekkehus only; apartments were excluded. All 27 previously tracked live ads remained in the current filtered result set. Listing facts for the strongest additions and the Agatveien price change were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN exposed 161 ads but only 104 unique listing cards were enumerated because result rendering was partial, so inventory totals are curated-card counts, not complete market counts.",
   stats: {
-    totalHouses: 39,
-    stavangerHouses: 18,
+    totalHouses: 43,
+    stavangerHouses: 19,
     eiganesHouses: 4,
     valandHouses: 0,
-    fitCount: 12,
+    fitCount: 14,
     strongestScore: 79
   },
   houses: [
+    {
+      id: "askepottveien-21",
+      name: "Askepottveien 21",
+      area: "Lura, Sandnes",
+      type: "Enebolig",
+      ask: 7.99,
+      total: 8.191,
+      sqm: 242,
+      plot: 505,
+      beds: 5,
+      year: 1984,
+      status: "live",
+      viewing: "23 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476106029",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/11/9/476/106/029_ec134f3a-7dfa-4c2b-b49f-8eb158bf8340.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
+      scores: { family: 94, garden: 82, area: 68, risk: 60, forus: 100 },
+      score: 75,
+      facts: [
+        "FINN verifies 5 bedrooms, 242 m² BRA-i, 505 m² owned plot, 1984 build and 8.191m total",
+        "The live ad verifies a main living room, separate loft living room, two full bathrooms plus WC, and a private garden with several terraces",
+        "The 19 m² garage or two lower-floor stores could take a rack and treadmill without deleting a bedroom or living room, subject to dimensions and approvals (inference)",
+        "Lura-to-Forus is roughly 5–10 minutes in ordinary traffic; E39 peak queues can add friction (inference)"
+      ],
+      risks: [
+        "The 19 m² garage is a plausible but tight two-machine gym; measure clear width, ceiling, storage and retained parking",
+        "The ad says the house has had the same owner since 1984; confirm drainage, roof, electrical, wet-room and alteration condition despite the 2019 lower bathroom and electrical updates",
+        "No separate rental unit is advertised or assumed"
+      ],
+      take: "Best new value/function fit: 8.191m total buys five bedrooms, two real living zones, two baths, usable garden and a near-trivial Forus run. Gym space is plausible rather than proven—the 19 m² garage may be a rack-and-treadmill room only after cars, storage and geometry have been invited to the same meeting."
+    },
+    {
+      id: "eikebergvegen-152",
+      name: "Eikebergvegen 152",
+      area: "Hålandsmarka, Ræge",
+      type: "Enebolig",
+      ask: 6.15,
+      total: 6.323,
+      sqm: 155,
+      plot: 515,
+      beds: 4,
+      year: 1987,
+      status: "live",
+      viewing: "21 Sep · 16:30–17:30",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476116894",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/11/4/476/116/894_67919ec0-fe46-4e71-a533-c3cf63f6c4bf.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
+      scores: { family: 88, garden: 78, area: 55, risk: 58, forus: 92 },
+      score: 70,
+      facts: [
+        "FINN verifies 4 bedrooms, 155 m² BRA-i, 515 m² owned plot, 1987 build and 6.323m total",
+        "The ad explicitly verifies two bathrooms, a screened landscaped garden, hagestue and a 59 m² garage with an upper loft room",
+        "The garage level is a credible dedicated rack-and-treadmill solution while the advertised loft room supplies a second retreat, subject to measurements and approved use (inference)",
+        "Hålandsmarka-to-Forus is roughly 10–18 minutes in ordinary traffic; Sømmevågen/airport-road queues can add friction (inference)"
+      ],
+      risks: [
+        "Exactly four bedrooms leaves no spare legal-bedroom buffer",
+        "The second living zone is over the detached garage; verify insulation, fire separation, access and municipal approval before counting it as ordinary family space",
+        "The 1987 technical file needs drainage, wet-room, roof, electrical and alteration diligence; no rental unit is advertised"
+      ],
+      take: "New low-price complete-paper fit: four bedrooms, two baths, child-usable garden and a two-level 59 m² garage that can separate gym and retreat functions for 6.323m total. The catch is that the second zone sits over the garage; approval and year-round comfort must survive more than an estate agent's adjective."
+    },
+    {
+      id: "plogveien-21",
+      name: "Plogveien 21",
+      area: "Madla, Stavanger",
+      type: "Enebolig",
+      ask: 10.49,
+      total: 10.753,
+      sqm: 277,
+      plot: 619,
+      beds: 4,
+      year: 1980,
+      status: "live",
+      viewing: "20 Sep · 12:00–13:00; 21 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475938540",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/08/0/475/938/540_ef9f502e-49c1-4c77-8c34-229a1b7f8483.jpg",
+      verdict: "watch",
+      flags: ["baths", "garden", "zones", "gym", "rental", "forus"],
+      scores: { family: 68, garden: 78, area: 82, risk: 65, forus: 82 },
+      score: 70,
+      facts: [
+        "FINN verifies 4 bedrooms, 277 m² BRA-i, 619 m² owned plot, 1980 build and 10.753m total",
+        "The live ad explicitly calls the lower-floor one-bedroom hybel approved; advertised or achieved rent is not stated and needs verification",
+        "The owner part has three bedrooms, a main living room, loft living room and two bathrooms; the screened garden is private",
+        "The garage and substantial lower-floor storage make a dedicated gym physically plausible, subject to dimensions and retaining rental/family function (inference)",
+        "Madla-to-Forus is roughly 12–22 minutes in ordinary traffic; Madlaveien/E39 queues can add friction (inference)"
+      ],
+      risks: [
+        "Keeping the approved hybel let leaves only three owner bedrooms, below the eventual family brief",
+        "Do not underwrite 15k/month until a lease or grounded market evidence verifies achievable rent; vacancy, maintenance, tax/legal compliance and tenant wear apply",
+        "Confirm the garage/storage gym solution and the 1980 drainage, wet-room, electrical and alteration file"
+      ],
+      take: "New Madla rental watch: 277 m², approved hybel, two owner living zones, two owner baths and a screened 619 m² plot at 10.753m total. Rent is unstated, and letting the unit leaves three owner bedrooms. The +2m allowance exists on paper; the family arithmetic remains unpersuaded."
+    },
+    {
+      id: "skarahodden-11",
+      name: "Skarahødden 11",
+      area: "Skaarlia, Sandnes",
+      type: "Enebolig",
+      ask: 11.95,
+      total: 12.268,
+      sqm: 286,
+      plot: 552,
+      beds: 6,
+      year: 2003,
+      status: "live",
+      viewing: "17 Sep · 17:00–18:00",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=464232509",
+      image: "https://images.finncdn.no/dynamic/default/2026/8/vertical-2/03/9/464/232/509_5228cd5e-aadd-4812-98b3-724785d21cb5.jpg",
+      verdict: "watch",
+      flags: ["family", "baths", "zones", "gym", "forus"],
+      scores: { family: 90, garden: 58, area: 52, risk: 68, forus: 72 },
+      score: 67,
+      facts: [
+        "FINN verifies 6 bedrooms, 286 m² BRA-i, 362 m² total BRA, 552 m² owned plot, 2003 build and the reduced 12.268m total",
+        "The ad verifies several living zones, an office, extensive storage, a large hobby room under the garage, hagestue and landscaped outdoor zones",
+        "The advertised three-room apartment is currently let for NOK 12,500/month, but the accessible ad does not call it approved; no rental flag or allowance is assigned",
+        "The under-garage hobby room is a credible dedicated rack-and-treadmill space without deleting a bedroom or core living zone (inference)",
+        "Skaarlia-to-Forus is roughly 15–25 minutes in ordinary traffic; Hove/E39 queues can add friction (inference)"
+      ],
+      risks: [
+        "Treat the NOK 12,500/month tenancy as unapproved until municipal drawings and lawful unit status are produced; it is also below the 15k target",
+        "Verify how many legal owner bedrooms remain while the apartment is occupied and confirm bathroom count in the complete prospectus",
+        "The landscaped 552 m² plot may be terrace-led; verify level private child lawn, plus vacancy, maintenance, tax and tenant-wear costs"
+      ],
+      take: "New volume watch after a live-browser price reduction to 12.268m total: six bedrooms, several living zones and an obvious hobby-room gym. The ad states 12.5k/month current rent, but not municipal approval, so it receives neither a rental flag nor income allowance. Plenty of house; one rather important missing stamp."
+    },
     {
       id: "hinnakroken-14",
       name: "Hinnakroken 14",
@@ -312,8 +442,8 @@ window.WAR_ROOM = {
       name: "Agatveien 15",
       area: "Sandved, Sandnes",
       type: "Enebolig",
-      ask: 11.9,
-      total: 12.199,
+      ask: 10.99,
+      total: 11.266,
       sqm: 188,
       plot: 439,
       beds: 4,
@@ -327,17 +457,17 @@ window.WAR_ROOM = {
       scores: { family: 100, garden: 65, area: 60, risk: 95, forus: 95 },
       score: 78,
       facts: [
-        "FINN verifies a completed 2026 freehold detached house with 4 bedrooms, 188 m² BRA-i, a 439 m² owned plot and the current 12.20m total",
+        "FINN verifies a completed 2026 freehold detached house with 4 bedrooms, 188 m² BRA-i, a 439 m² owned plot and the current 11.266m total",
         "The current ad explicitly verifies 3 living rooms, 2 full bathrooms, separate laundry, garage and a garden",
         "A dedicated multipurpose cinema/training room makes rack plus treadmill plausible without deleting a bedroom or living zone (inference)",
         "Sandved-to-Forus is roughly 8–12 minutes in ordinary traffic (inference)"
       ],
       risks: [
-        "The ask is now 11.90m, up 0.91m from the value previously recorded in the war room; no rental unit is advertised and no rental allowance is assumed",
+        "The ask is now 10.99m after a 0.91m reduction verified in the live browser on 14 September; no rental unit is advertised and no rental allowance is assumed",
         "The 439 m² plot is moderate, so verify level child-usable lawn after house, garage and terraces",
         "Exactly four bedrooms leaves no legal spare if a room fails approval or family function"
       ],
-      take: "The turnkey owner-only fit remains complete on paper—four bedrooms, three living zones, two baths and a dedicated cinema/training room—but FINN now shows 11.90m ask and 12.20m total, a 0.93m total-price correction from the prior card. It stays just inside the reconnaissance ceiling, not the 11m baseline; verify the 439 m² plot's actual child lawn."
+      take: "The turnkey owner-only fit is suddenly much more relevant: four bedrooms, three living zones, two baths and a dedicated cinema/training room at a verified 10.99m ask and 11.266m total, down 0.91m/0.93m from the prior card. It now sits on the 11m asking baseline; verify the 439 m² plot's actual child lawn."
     },
     {
       id: "gosenbakken-17",
