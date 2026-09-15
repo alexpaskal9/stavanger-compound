@@ -1,21 +1,86 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-14.
-// Search coverage was broad but partial; stats are curated-card counts, not complete FINN inventory.
+// Updated from live listing pages and broad Greater Stavanger search on 2026-09-15.
+// The filtered result pages were enumerated; stats remain curated-card counts, not complete FINN inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-14T18:05:29+02:00",
-  scrapedLabel: "14 Sep 2026, 18:05 CEST",
+  scrapedAt: "2026-09-15T18:07:12+02:00",
+  scrapedLabel: "15 Sep 2026, 18:07 CEST",
   source: "FINN.no live ads plus broker pages",
-  methodology: "Broad manual reconnaissance across one combined FINN search for Stavanger, Sola, Randaberg and Sandnes, including northern Sandnes/Hommersåk. The search required 4+ bedrooms and included enebolig, tomannsbolig and relevant rekkehus only; apartments were excluded. All 27 previously tracked live ads remained in the current filtered result set. Listing facts for the strongest additions and the Agatveien price change were checked on live ad pages; commute, gym fit and verdicts are analyst inference. FINN exposed 161 ads but only 104 unique listing cards were enumerated because result rendering was partial, so inventory totals are curated-card counts, not complete market counts.",
+  methodology: "Broad manual reconnaissance across one combined FINN search for Stavanger, Sola, Randaberg and Sandnes, including northern Sandnes/Hommersåk. The search selected 4+ bedrooms and included enebolig, tomannsbolig and relevant rekkehus only; apartments were excluded. All seven result pages were enumerated: FINN exposed 454 unit hits in 348 unique ad cards, including project ads whose displayed example can have fewer than four bedrooms. All 31 previously tracked live ads remained in the filtered result set and their live pages retained the recorded asking prices. Listing facts for the strongest additions were checked on live FINN pages; commute, garden utility, gym fit and verdicts are analyst inference. Inventory totals below are curated-card counts, not complete market counts.",
   stats: {
-    totalHouses: 43,
-    stavangerHouses: 19,
+    totalHouses: 45,
+    stavangerHouses: 21,
     eiganesHouses: 4,
-    valandHouses: 0,
-    fitCount: 14,
+    valandHouses: 1,
+    fitCount: 15,
     strongestScore: 79
   },
   houses: [
+    {
+      id: "forane-19",
+      name: "Forane 19",
+      area: "Forus, Stavanger",
+      type: "Enebolig",
+      ask: 6.49,
+      total: 6.653,
+      sqm: 241,
+      plot: 365,
+      beds: 4,
+      year: 1981,
+      status: "live",
+      viewing: "21 Sep · 16:30–17:15",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476135522",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/14/2/476/135/522_07dcd8cc-b244-4fbc-bcfd-cc997b07b536.jpg",
+      verdict: "strong",
+      flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
+      scores: { family: 94, garden: 58, area: 72, risk: 55, forus: 100 },
+      score: 70,
+      facts: [
+        "FINN verifies 4 approved bedrooms, 241 m² BRA-i, 365 m² owned plot, 1981 build and 6.653m total",
+        "The area schedule verifies a main living room, separate basement living room, two full bathrooms plus two WCs, hobby room and 24 m² garage",
+        "The hobby room is a credible dedicated rack-and-treadmill solution without deleting one of the four approved bedrooms or either living zone, subject to dimensions and basement condition (inference)",
+        "Forane is effectively on Forus; the ordinary drive should be roughly 3–8 minutes, with local/E39 peak friction still possible (inference)"
+      ],
+      risks: [
+        "The 365 m² plot is compact; FINN advertises a sunny private outdoor area, but level child-usable lawn needs a site check",
+        "A fifth basement room used as a bedroom is explicitly not approved; it receives no bedroom value",
+        "The 1981 shell and basement require serious drainage, moisture, wet-room, electrical and alteration diligence; no rental unit is advertised"
+      ],
+      take: "Best fresh economics/function fit: four approved bedrooms, two living levels, two baths, a separate hobby-room gym and a nearly ceremonial Forus commute for 6.653m total. The price is compelling because the plot is compact and the 1981 basement now gets to meet a moisture meter, municipal drawings and adult supervision."
+    },
+    {
+      id: "valkyrjegata-25",
+      name: "Valkyrjegata 25",
+      area: "Våland, Stavanger",
+      type: "Enebolig",
+      ask: 14.9,
+      total: 15.274,
+      sqm: 260,
+      plot: 439,
+      beds: 7,
+      year: 1928,
+      status: "live",
+      viewing: "By appointment",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476374136",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/14/6/476/374/136_f9238a9a-a8e4-4f90-bb5a-e5354e1fe196.jpg",
+      verdict: "dream",
+      flags: ["family", "baths", "garden", "gym", "rental"],
+      scores: { family: 80, garden: 62, area: 92, risk: 62, forus: 88 },
+      score: 72,
+      facts: [
+        "FINN verifies 7 bedrooms, 260 m² BRA-i, 439 m² owned plot, 1928 build and 15.274m total",
+        "The ad explicitly verifies five bedrooms and two bathrooms plus WC in the owner part, and a municipally approved two-bedroom apartment with its own entrance, living room/kitchen and bathroom",
+        "The ad verifies a private park-like garden and 32 m² external area including garage; a rack-and-treadmill garage solution is plausible, subject to clear dimensions and retained storage/parking (inference)",
+        "Våland-to-Forus is roughly 8–16 minutes in ordinary traffic; E39 and city traffic can add friction (inference)"
+      ],
+      risks: [
+        "At 15.274m total this is about 0.77m above the 14.5m rental-adjusted reconnaissance ceiling even before vacancy, maintenance and tax",
+        "Advertised or achieved rent is not stated; verify separation, lease evidence and achievable market rent near 15k/month before underwriting the +2m allowance",
+        "The owner description proves one large all-room and a winter garden, not two acoustically separate proper living zones; inspect the plan before granting full family credit",
+        "The 1928 shell was renovated in 2019, but permits, fire separation, moisture, hidden services and the condition report still require full diligence"
+      ],
+      take: "Fresh Våland dream/rental benchmark: five owner bedrooms, two owner baths, private garden, plausible garage gym and a genuinely approved two-bedroom apartment. Rent is unstated, the second owner living zone is not proved, and 15.274m total still exceeds the +2m ceiling by about 0.77m. Excellent house; the budget has filed an objection."
+    },
     {
       id: "askepottveien-21",
       name: "Askepottveien 21",
