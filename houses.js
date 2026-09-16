@@ -1,21 +1,55 @@
 // Curated FINN.no family-house shortlist.
-// Updated from live listing pages and broad Greater Stavanger search on 2026-09-15.
-// The filtered result pages were enumerated; stats remain curated-card counts, not complete FINN inventory.
+// Updated from live listing pages and a partial Greater Stavanger refresh on 2026-09-16.
+// FINN blocked the combined filtered search today; stats remain curated-card counts, not complete inventory.
 
 window.WAR_ROOM = {
-  scrapedAt: "2026-09-15T18:07:12+02:00",
-  scrapedLabel: "15 Sep 2026, 18:07 CEST",
+  scrapedAt: "2026-09-16T18:03:42+02:00",
+  scrapedLabel: "16 Sep 2026, 18:03 CEST",
   source: "FINN.no live ads plus broker pages",
-  methodology: "Broad manual reconnaissance across one combined FINN search for Stavanger, Sola, Randaberg and Sandnes, including northern Sandnes/Hommersåk. The search selected 4+ bedrooms and included enebolig, tomannsbolig and relevant rekkehus only; apartments were excluded. All seven result pages were enumerated: FINN exposed 454 unit hits in 348 unique ad cards, including project ads whose displayed example can have fewer than four bedrooms. All 31 previously tracked live ads remained in the filtered result set and their live pages retained the recorded asking prices. Listing facts for the strongest additions were checked on live FINN pages; commute, garden utility, gym fit and verdicts are analyst inference. Inventory totals below are curated-card counts, not complete market counts.",
+  methodology: "Partial Greater Stavanger refresh across Stavanger, Sola, Randaberg and Sandnes, using indexed FINN discovery plus direct checks of all 33 previously tracked live ads. FINN blocked the combined filtered result page, so this run does not claim complete market coverage or a current hit count. Houses, full duplexes and relevant row houses were considered; apartments were excluded. One material new rental candidate was verified on its live FINN page, and six tracked ads were confirmed sold. Listing facts are sourced from live FINN pages; commute, garden utility, gym fit and verdicts are analyst inference. Inventory totals below are curated-card counts, not complete market counts.",
   stats: {
-    totalHouses: 45,
+    totalHouses: 46,
     stavangerHouses: 21,
     eiganesHouses: 4,
     valandHouses: 1,
-    fitCount: 15,
+    fitCount: 13,
     strongestScore: 79
   },
   houses: [
+    {
+      id: "akselmarka-1",
+      name: "Akselmarkå 1",
+      area: "Håbafjell, Sandnes",
+      type: "Enebolig",
+      ask: 7.99,
+      total: 8.191,
+      sqm: 202,
+      plot: 429,
+      beds: 5,
+      year: 1998,
+      status: "live",
+      viewing: "24 Sep · 16:00–16:45",
+      url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476482968",
+      image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/15/8/476/482/968_c461b444-6d1e-4c95-972e-e8c25f05baa1.jpg",
+      verdict: "watch",
+      flags: ["baths", "garden", "gym", "rental", "value", "forus"],
+      rentMonthly: 14000,
+      scores: { family: 72, garden: 60, area: 52, risk: 70, forus: 85 },
+      score: 66,
+      facts: [
+        "FINN verifies 5 bedrooms, 202 m² BRA-i, 429 m² owned plot, 1998 build and 8.191m total",
+        "The ad explicitly states a godkjent 72 m² two-bedroom rental unit currently earning NOK 14,000/month; the owner floors contain three bedrooms, a living/kitchen zone, bathroom and WC",
+        "The 31 m² garage/bod is a plausible rack-and-treadmill solution without consuming a bedroom or the rented unit, subject to clear dimensions and retained storage (inference)",
+        "Håbafjell-to-Forus is roughly 12–22 minutes in ordinary traffic; E39 congestion can add friction (inference)"
+      ],
+      risks: [
+        "Keeping the approved apartment let leaves only three owner bedrooms and one owner living zone, below the eventual family brief",
+        "The verified NOK 14,000/month is close to but below the 15k target; inspect the lease, inclusions, separation and approval documents before relying on the +2m allowance",
+        "Vacancy, tenant wear, maintenance, tax/legal compliance and loss of 72 m² of family space reduce the headline income value",
+        "The 429 m² plot and 67 m² terrace may leave limited level child lawn; a garage gym also trades away covered parking and storage"
+      ],
+      take: "Best new rental-economics watch: 8.191m total with a genuinely approved 72 m² unit earning a stated 14k/month, two baths and a plausible garage gym. It is not a complete six-person-family plan while rented—the owner side has three bedrooms and one living zone. Real income, awkward geometry; bureaucracy has at least supplied the correct stamp."
+    },
     {
       id: "forane-19",
       name: "Forane 19",
@@ -254,11 +288,11 @@ window.WAR_ROOM = {
       plot: 820,
       beds: 4,
       year: 1979,
-      status: "live",
-      viewing: "20 Sep · 12:00–13:00",
+      status: "sold",
+      viewing: "Sold · confirmed 16 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476173266",
       image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/12/6/476/173/266_41cc8371-d28c-4c5f-8dad-8da8401f1402.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "value", "forus"],
       scores: { family: 78, garden: 92, area: 68, risk: 58, forus: 100 },
       score: 70,
@@ -273,7 +307,7 @@ window.WAR_ROOM = {
         "Keeping the hybel occupied would leave three owner bedrooms and only the main living zone, below the family brief",
         "Confirm the modernisation scope, all lower-floor approvals and the 1979 drainage, wet-room, electrical and alteration file"
       ],
-      take: "New Lura economics watch: 8.191m total buys four bedrooms, three bathroom spaces, an 820 m² screened garden and a heated double-garage gym solution almost on Forus. The hybel is useful family flexibility, not underwritten income: approval and rent are unverified, and renting it leaves only three owner bedrooms."
+      take: "Sold status confirmed 16 Sep; achieved price is not visible. Retain briefly as the 8.191m advertised Lura comp: four bedrooms, three bathroom spaces, an 820 m² garden and heated double-garage gym potential. The hybel was never verified as an approved rental unit."
     },
     {
       id: "postveien-128",
@@ -416,11 +450,11 @@ window.WAR_ROOM = {
       plot: 921,
       beds: 5,
       year: 1979,
-      status: "live",
-      viewing: "17 Sep · 17:00–17:45",
+      status: "sold",
+      viewing: "Sold · confirmed 16 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475990964",
       image: "https://images.finncdn.no/dynamic/default/2026/9/vertical-2/11/4/475/990/964_db3ed234-cfce-44c8-8c06-fee298bad97d.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["baths", "garden", "zones", "rental", "value", "forus"],
       scores: { family: 62, garden: 95, area: 78, risk: 65, forus: 95 },
       score: 71,
@@ -436,7 +470,7 @@ window.WAR_ROOM = {
         "Do not underwrite 15k/month until a current lease or grounded market evidence is produced; vacancy, maintenance, tax/legal compliance and tenant wear apply",
         "The 1979 technical file still requires drainage, wet-room, roof, electrical and alteration diligence"
       ],
-      take: "New legal-rental economics watch: 9.01m total buys 253 m², an approved two-bedroom apartment and a 921 m² garden minutes from Forus. The catch is not subtle: while rented, the owner side has only two conventional bedrooms, or three by deleting its TV room, and no clean gym solution. Rent is unstated, so the +2m allowance remains provisional."
+      take: "Sold status confirmed 16 Sep; achieved price and rent are not visible. Retain briefly as the 9.01m advertised Røyneberg comp with an approved two-bedroom apartment and 921 m² garden. The owner-side bedroom and gym deficits remain."
     },
     {
       id: "sorstrandveien-44",
@@ -481,11 +515,11 @@ window.WAR_ROOM = {
       plot: 958,
       beds: 4,
       year: 1936,
-      status: "live",
-      viewing: "16 Sep · 16:00–17:30",
+      status: "sold",
+      viewing: "Sold · confirmed 16 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475438078",
       image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/11/8/475/438/078_1464ea40-9caa-4dfb-ab63-fb553ba08c28.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "garden", "zones", "gym"],
       scores: { family: 90, garden: 95, area: 58, risk: 48, forus: 55 },
       score: 70,
@@ -500,7 +534,7 @@ window.WAR_ROOM = {
         "The 1936 shell, 1997–2001 renovation and basement uses require full condition, moisture and permit diligence",
         "Exactly four bedrooms leaves no spare legal-bedroom buffer"
       ],
-      take: "A near-fit with unusually good land and a literal training room: four bedrooms, big social volume, 958 m² plot and double garage at 11.02m total. The defect is less photogenic but decisive—only one full bathroom is verified. Keep watching if a second-bath route survives the drawings and drainage department."
+      take: "Sold status confirmed 16 Sep; achieved price is not visible. Retain briefly as the 11.02m advertised Hundvåg comp with four bedrooms, a 958 m² plot, double garage and literal training room; only one full bathroom was verified."
     },
     {
       id: "agatveien-15",
@@ -644,11 +678,11 @@ window.WAR_ROOM = {
       plot: 353,
       beds: 5,
       year: 1998,
-      status: "live",
-      viewing: "16 Sep · 18:15–19:00",
+      status: "sold",
+      viewing: "Sold · confirmed 16 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=476013772",
       image: "https://images.finncdn.no/dynamic/1280w/2026/9/vertical-2/10/2/476/013/772_6503e1b3-07c3-4f87-850a-6d49808e2d49.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["baths", "garden", "zones", "gym", "rental", "value", "forus"],
       scores: { family: 72, garden: 52, area: 52, risk: 68, forus: 85 },
       score: 64,
@@ -664,7 +698,7 @@ window.WAR_ROOM = {
         "Do not underwrite 15k/month until unit separation, condition and a current lease or market evidence are checked; vacancy, maintenance, tax and tenant wear apply",
         "The 353 m² plot is compact and terrace-heavy, so verify level private lawn; confirm bathroom count and garage dimensions in the complete prospectus"
       ],
-      take: "New low-price legal-rental watch at 7.99m total. The two-bedroom apartment is approved, but rent is unstated and the owner part has only three bedrooms while it is let. Useful economics reconnaissance; not a complete six-person-family solution unless the unit is reclaimed, which rather defeats the income argument."
+      take: "Sold status confirmed 16 Sep; achieved price and rent are not visible. Retain briefly as the 7.99m advertised legal-rental comp; the owner part had only three bedrooms while the two-bedroom apartment was let."
     },
     {
       id: "hauagata-10",
@@ -776,11 +810,11 @@ window.WAR_ROOM = {
       plot: 526,
       beds: 6,
       year: 1990,
-      status: "live",
-      viewing: "By appointment",
+      status: "sold",
+      viewing: "Sold · confirmed 16 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=465293643",
       image: "https://images.finncdn.no/dynamic/default/2026/5/vertical-2/29/3/465/293/643_60029efc-790d-48d1-9cdc-9676bc69a30d.jpg",
-      verdict: "strong",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "gym", "rental"],
       scores: { family: 90, garden: 68, area: 52, risk: 72, forus: 72 },
       score: 74,
@@ -796,7 +830,7 @@ window.WAR_ROOM = {
         "Vacancy, tenant wear, maintenance, tax treatment and the family-space sacrificed to the unit remain real costs",
         "Confirm how many of the six bedrooms remain if the approved unit is kept let"
       ],
-      take: "New rental-and-volume candidate: 313 m², six bedrooms, three baths, approved unit and double garage at 9.74m total. The location is not the benchmark, but Forus is practical. Rent is unverified, so the +2m allowance is a hypothesis until a lease or market evidence exists."
+      take: "Sold status confirmed 16 Sep; achieved price and rent are not visible. Retain briefly as the 9.74m advertised comp for 313 m², six bedrooms, three baths, an approved unit and double garage."
     },
     {
       id: "blokkebaervegen-13",
@@ -1197,11 +1231,11 @@ window.WAR_ROOM = {
       plot: 555,
       beds: 6,
       year: 1972,
-      status: "live",
-      viewing: "14 Sep · 17:00–17:45",
+      status: "sold",
+      viewing: "Sold · confirmed 16 Sep; final price not visible",
       url: "https://www.finn.no/realestate/homes/ad.html?finnkode=475201411",
       image: "https://images.finncdn.no/dynamic/1280w/2026/8/vertical-2/31/1/475/201/411_3cef885d-548a-4bd4-a74a-889f2410aa14.jpg",
-      verdict: "watch",
+      verdict: "sold",
       flags: ["family", "baths", "garden", "zones", "value", "forus"],
       scores: { family: 88, garden: 72, area: 65, risk: 65, forus: 92 },
       score: 70,
@@ -1216,7 +1250,7 @@ window.WAR_ROOM = {
         "At 165 m², six sleeping rooms may make circulation, storage and shared spaces tighter than the bedroom count suggests",
         "Verify approvals and condition behind the 2017 renovation; no rental unit is advertised"
       ],
-      take: "A compelling 6.88m value check, not a complete gym answer. Five bedrooms can remain while the TV room becomes training space, but that trades away the second proper living zone—the floor plan has performed the traditional miracle of counting one room twice."
+      take: "Sold status confirmed 16 Sep; achieved price is not visible. Retain briefly as the 6.88m advertised Trones comp: six advertised bedrooms and two baths, but no gym solution without consuming the TV room/second zone."
     },
     {
       id: "boygen-15",
